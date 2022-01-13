@@ -1,3 +1,1 @@
-import { Auth } from "./pages";
-
-export default Auth;
+export { Auth } from "./pages";

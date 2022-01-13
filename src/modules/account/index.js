@@ -1,3 +1,1 @@
-import { Account } from "./pages";
-
-export default Account;
+export { Account } from "./pages";

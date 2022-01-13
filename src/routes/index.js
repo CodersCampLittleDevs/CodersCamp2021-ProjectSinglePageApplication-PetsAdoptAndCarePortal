@@ -1,7 +1,7 @@
-import Auth from "../modules/auth/index";
-import Main from "../modules/main/index";
-import Account from "../modules/account/index";
-import Announcement from "../modules/announcement/index";
+import Auth from "../modules/auth";
+import Main from "../modules/main";
+import Account from "../modules/account";
+import Announcement from "../modules/announcement";
 import { announcementsRoutes } from "../modules/announcements";
 
 export const routes = [

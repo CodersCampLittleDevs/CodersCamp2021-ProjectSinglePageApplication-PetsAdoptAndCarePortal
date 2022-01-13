@@ -1,3 +1,1 @@
-import { Announcement } from "./pages";
-
-export default Announcement;
+export { Announcement } from "./pages";
