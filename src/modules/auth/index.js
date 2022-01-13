@@ -1,1 +1,1 @@
-export { Auth } from "./pages";
+export { Auth } from "./pages/Auth";

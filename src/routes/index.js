@@ -1,7 +1,6 @@
-import Auth from "../modules/auth";
-import Main from "../modules/main";
-import Account from "../modules/account";
-import Announcement from "../modules/announcement";
+import { Auth } from "../modules/auth";
+import { Main } from "../modules/main";
+import { Account } from "../modules/account";
 import { announcementsRoutes } from "../modules/announcements";
 
 export const routes = [
@@ -19,8 +18,4 @@ export const routes = [
     component: <Account />,
   },
   ...announcementsRoutes,
-  {
-    path: "/announcements/:id",
-    component: <Announcement />,
-  },
 ];

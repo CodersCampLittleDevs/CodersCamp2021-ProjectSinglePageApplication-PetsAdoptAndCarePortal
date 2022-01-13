@@ -1,6 +1,7 @@
 import { Favorites } from "../pages/Favorites";
 import { AnnouncementList } from "../pages/Announcements";
 import { AnnouncementNew } from "../pages/New";
+import { Announcement } from "../pages/Announcement";
 
 export const announcementsRoutes = [
   {
@@ -15,5 +16,9 @@ export const announcementsRoutes = [
   {
     path: "/announcements/favorites",
     component: <Favorites />,
+  },
+  {
+    path: "/announcements/:id",
+    component: <Announcement />,
   },
 ];
