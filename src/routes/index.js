@@ -1,11 +1,12 @@
-import { Auth } from "../modules/auth/pages/index";
-import { Main } from "../modules/main/pages/index";
-import { Account } from "../modules/account/pages/index";
-import { Favorites } from "../modules/announcements/pages/favorites";
-import { Announcement } from "../modules/announcements/pages/announcement";
-import { Hotel } from "../modules/announcements/pages/hotel";
-import { Services } from "../modules/announcements/pages/services";
-import { Adoption } from "../modules/announcements/pages/adoption";
+import Auth from "../modules/auth/index";
+import Main from "../modules/main/index";
+import Account from "../modules/account/index";
+import Announcement from "../modules/announcement/index";
+import AnnouncementNew from "../modules/announcement-new/index";
+import {
+  Favorites,
+  AnnouncementList,
+} from "../modules/announcement-list/index";
 
 export const routes = [
   {
@@ -22,28 +23,20 @@ export const routes = [
     component: <Account />,
   },
   {
-    path: "/announcements/hotel",
-    component: <Hotel />,
-    exact: "exact",
+    path: "/new-announcement",
+    component: <AnnouncementNew />,
   },
   {
-    path: "/announcements/services",
-    component: <Services />,
-    exact: "exact",
-  },
-  {
-    path: "/announcements/adoption",
-    component: <Adoption />,
+    path: "/announcements",
+    component: <AnnouncementList />,
     exact: "exact",
   },
   {
     path: "/announcements/favorites",
     component: <Favorites />,
-    exact: "exact",
   },
   {
     path: "/announcements/:id",
     component: <Announcement />,
-    exact: "exact",
   },
 ];
