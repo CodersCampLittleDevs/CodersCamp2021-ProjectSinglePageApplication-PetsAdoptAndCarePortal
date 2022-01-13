@@ -1,14 +1,22 @@
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect,
+} from "react-router-dom";
 import { routes } from "./index";
 
 export const Routes = () => {
   return (
     <Router>
-      {routes.map((route) => (
-        <Route key={route.path} path={route.path} exact={route.exact}>
-          {route.component}
-        </Route>
-      ))}
+      <Switch>
+        {routes.map((route) => (
+          <Route key={route.path} path={route.path} exact={route.exact}>
+            {route.component}
+          </Route>
+        ))}
+        <Redirect to="/" />
+      </Switch>
     </Router>
   );
 };
