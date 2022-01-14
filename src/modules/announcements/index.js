@@ -1,0 +1,1 @@
+export { announcementsRoutes } from "./routes";
