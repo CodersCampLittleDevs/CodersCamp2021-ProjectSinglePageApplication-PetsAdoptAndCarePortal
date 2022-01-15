@@ -1,36 +1,28 @@
-import React from "react";
-import "./footerStyles.scss";
+import styles from "./footer.module.scss";
 
 export const Footer = () => {
   return (
-    <div className="container">
-      <img className="logo" alt="logo" />
-      <section className="column">
-        <h1 className="heading">O nas</h1>
-        <h2 className="link" href="#">
-          Nasza misja
-        </h2>
-        <h2 className="link">Kontakt</h2>
-        <h2 className="link">Regulamin</h2>
+    <footer className={styles.footer}>
+      <img className={styles.logo} alt="logo" />
+      <section className={styles.column}>
+        <heading className={styles.heading}>O nas</heading>
+        <ul className={styles.list}>
+          <li className={styles.link}>Nasza misja</li>
+          <li className={styles.link}>Kontakt</li>
+          <li className={styles.link}>Regulamin</li>
+        </ul>
       </section>
-      <section className="column">
-        <h1 className="heading">Wyszukaj</h1>
-        <h2 className="link">Adopcje</h2>
-        <h2 className="link">Hotele</h2>
-        <h2 className="link">Usługi dla zwierząt</h2>
+      <section className={styles.column}>
+        <heading className={styles.heading}>Wyszukaj</heading>
+        <ul className={styles.list}>
+          <li className={styles.link}>Adopcje</li>
+          <li className={styles.link}>Hotele</li>
+          <li className={styles.link}>Usługi dla zwierząt</li>
+        </ul>
       </section>
-      <section className="column">
-        <h1 className="heading">Social Media</h1>
-        <h2 className="link" href="#">
-          {/* <FontAwesomeIcon icon={["fab", "fa-instagram"]} /> */}
-        </h2>
-        <h2 className="link" href="#">
-          {/* <FontAwesomeIcon icon={["fab fa-facebook-square"]} /> */}
-        </h2>
-        <h2 className="link" href="#">
-          {/* <FontAwesomeIcon icon={["fab fa-twitter-square"]} />{" "} */}
-        </h2>
+      <section className={styles.column}>
+        <heading className={styles.heading}>Social Media</heading>
       </section>
-    </div>
+    </footer>
   );
 };

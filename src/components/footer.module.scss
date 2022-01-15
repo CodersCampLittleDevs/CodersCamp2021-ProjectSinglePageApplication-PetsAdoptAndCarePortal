@@ -1,4 +1,4 @@
-.container {
+.footer {
   display: flex;
   justify-content: space-around;
   background: rgba(14, 150, 9, 0.747);
@@ -16,12 +16,16 @@
   .column {
     display: flex;
     flex-direction: column;
+    // justify-content: center;
+    align-items: center;
     padding: 0 10px;
   }
   .link {
     color: #fff;
     font-size: 16px;
     text-decoration: none;
+    list-style: none;
+    text-align: center;
     margin: 5px 0;
     &:hover {
       color: #000;
