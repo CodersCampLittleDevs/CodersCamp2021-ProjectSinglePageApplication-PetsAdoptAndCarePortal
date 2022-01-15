@@ -1,3 +1,10 @@
+import { StepByStepList } from "./StepList";
+
 export const Main = () => {
-  return <div>Main</div>;
+  return (
+    <div>
+      Main
+      <StepByStepList />
+    </div>
+  );
 };
