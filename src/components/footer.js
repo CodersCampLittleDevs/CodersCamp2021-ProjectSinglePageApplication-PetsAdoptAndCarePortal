@@ -5,23 +5,31 @@ export const Footer = () => {
     <footer className={styles.footer}>
       <img className={styles.logo} alt="logo" />
       <section className={styles.column}>
-        <heading className={styles.heading}>O nas</heading>
-        <ul className={styles.list}>
-          <li className={styles.link}>Nasza misja</li>
-          <li className={styles.link}>Kontakt</li>
-          <li className={styles.link}>Regulamin</li>
-        </ul>
+        <header className={styles.header}>O nas</header>
+        <a href="/" className={styles.link}>
+          Nasza misja
+        </a>
+        <a href="/" className={styles.link}>
+          Kontakt
+        </a>
+        <a href="/" className={styles.link}>
+          Regulamin
+        </a>
       </section>
       <section className={styles.column}>
-        <heading className={styles.heading}>Wyszukaj</heading>
-        <ul className={styles.list}>
-          <li className={styles.link}>Adopcje</li>
-          <li className={styles.link}>Hotele</li>
-          <li className={styles.link}>Usługi dla zwierząt</li>
-        </ul>
+        <header className={styles.header}>Wyszukaj</header>
+        <a href="/" className={styles.link}>
+          Adopcje
+        </a>
+        <a href="/" className={styles.link}>
+          Hotele
+        </a>
+        <a href="/" className={styles.link}>
+          Usługi dla zwierząt
+        </a>
       </section>
       <section className={styles.column}>
-        <heading className={styles.heading}>Social Media</heading>
+        <header className={styles.header}>Social Media</header>
       </section>
     </footer>
   );
