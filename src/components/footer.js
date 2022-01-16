@@ -1,3 +1,4 @@
+import { BrowserRouter as Router, NavLink } from "react-router-dom";
 import styles from "./footer.module.scss";
 
 export const Footer = () => {
@@ -6,27 +7,31 @@ export const Footer = () => {
       <img className={styles.logo} alt="logo" />
       <section className={styles.column}>
         <header className={styles.header}>O nas</header>
-        <a href="/" className={styles.link}>
-          Nasza misja
-        </a>
-        <a href="/" className={styles.link}>
-          Kontakt
-        </a>
-        <a href="/" className={styles.link}>
-          Regulamin
-        </a>
+        <Router>
+          <NavLink to="/" className={styles.link}>
+            Nasza misja
+          </NavLink>
+          <NavLink to="/" className={styles.link}>
+            Kontakt
+          </NavLink>
+          <NavLink to="/" className={styles.link}>
+            Regulamin
+          </NavLink>
+        </Router>
       </section>
       <section className={styles.column}>
         <header className={styles.header}>Wyszukaj</header>
-        <a href="/" className={styles.link}>
-          Adopcje
-        </a>
-        <a href="/" className={styles.link}>
-          Hotele
-        </a>
-        <a href="/" className={styles.link}>
-          Usługi dla zwierząt
-        </a>
+        <Router>
+          <NavLink to="/" className={styles.link}>
+            Adopcje
+          </NavLink>
+          <NavLink to="/" className={styles.link}>
+            Hotele
+          </NavLink>
+          <NavLink to="/" className={styles.link}>
+            Usługi dla zwierząt
+          </NavLink>
+        </Router>
       </section>
       <section className={styles.column}>
         <header className={styles.header}>Social Media</header>
