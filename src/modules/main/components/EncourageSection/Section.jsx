@@ -1,10 +1,10 @@
 import PropTypes from "prop-types";
-import styles from "./EncourageSection.module.scss";
+import styles from "./section.module.scss";
 
-export const EncourageSection = ({ image, title, description }) => {
+export const EncourageSection = ({ imageSrc, title, description }) => {
   return (
     <section className={styles.section}>
-      <img className={styles.section__image} src={image} alt={image} />
+      <img className={styles.section__image} src={imageSrc} alt="" />
       <div className={styles.description}>
         <h3 className={styles.description__title}>{title}</h3>
         <p className={styles.description__text}>{description}</p>
@@ -14,7 +14,7 @@ export const EncourageSection = ({ image, title, description }) => {
 };
 
 EncourageSection.propTypes = {
-  image: PropTypes.string.isRequired,
+  imageSrc: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
 };
