@@ -7,7 +7,7 @@ export const routes = [
   {
     path: "/",
     component: <Main />,
-    exact: "exact",
+    exact: true,
   },
   {
     path: "/auth",

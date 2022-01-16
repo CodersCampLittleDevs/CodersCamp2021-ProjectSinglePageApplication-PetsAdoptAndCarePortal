@@ -1,3 +1,10 @@
+import { SearchFilter } from "../components/SearchFilter";
+
 export const Main = () => {
-  return <div>Main</div>;
+  return (
+    <div>
+      Main
+      <SearchFilter />
+    </div>
+  );
 };
