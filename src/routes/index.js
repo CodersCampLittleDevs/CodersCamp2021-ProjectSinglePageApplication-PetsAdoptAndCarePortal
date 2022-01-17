@@ -1,14 +1,21 @@
-import { Auth } from "../modules/auth/pages";
-import { Main } from "../modules/main/pages";
+import { Auth } from "../modules/auth";
+import { Main } from "../modules/main";
+import { Account } from "../modules/account";
+import { announcementsRoutes } from "../modules/announcements";
 
 export const routes = [
   {
     path: "/",
-    component: <Auth />,
+    component: <Main />,
     exact: "exact",
   },
   {
-    path: "/main",
-    component: <Main />,
+    path: "/auth",
+    component: <Auth />,
   },
+  {
+    path: "/account",
+    component: <Account />,
+  },
+  ...announcementsRoutes,
 ];
