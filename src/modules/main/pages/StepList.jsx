@@ -1,4 +1,5 @@
 import { StepByStepItem } from "./StepItem";
+import styles from "./stepitem.module.scss";
 
 const STEPS = [
   {
@@ -23,7 +24,7 @@ const STEPS = [
   },
 ];
 export const StepByStepList = () => (
-  <div>
+  <div className={styles.steplist}>
     {STEPS.map((step) => (
       <StepByStepItem
         title={step.title}
