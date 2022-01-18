@@ -1,48 +1,47 @@
 .navbar {
     background: #c9c9f1;
     height: 250px;
-   width: 100%;
-    position: fixed;
+    width: 100%;
+    position: sticky;
     display:flex;
     justify-content: space-between;
     align-items: center;
     font-size: 34px;
     padding: 0 30px;
-    @media screen and(max-width:960px) {
-       display:flex;
-      flex-direction:column;
-      width:100%;
-      height:500px;
-      transition:all 0.5s ease;
+    
+  @media screen and(max-width:960px) {
+    display:flex;
+    flex-direction:column;
+    width:100%;
+    height:500px;
+    transition:all 0.5s ease;
     }
     
-
-&__logo-container {
-   margin-left:0px;
+  &__logo-container {
+    margin-left:0px;
     background-size: cover;
-width: 200px;
-height: 200px;
-padding: 6px;
+    width: 200px;
+    height: 200px;
+    padding: 6px;
 
- @media screen and(max-width:960px){
-   margin-top: 20px;
- }
-}
+  @media screen and(max-width:960px){
+    margin-top: 20px;
+      }
+    }
 
-    &__logo {
-  border-radius: 50%;
-  width: 150%;
-  height: 150%;
-  object-fit: contain;
+  &__logo {
+    border-radius: 50%;
+    width: 150%;
+    height: 150%;
+    object-fit: contain;
 
   @media screen and(max-width:960px){
     width: 100%;
     height: 100%;
     border-radius: 50%;
-   
+   }
   }
-  }
-&__items {
+  &__items {
     display: grid;
     grid-template-columns:repeat(
         4,auto
@@ -53,57 +52,27 @@ padding: 6px;
     justify-content: end;
 
  @media screen and(max-width:960px){
-   text-align:center;
-          padding:32px;
-          width:100%;
-          display:table;
-       
-
-        }
-        
+    text-align:center;
+    padding:32px;
+    width:100%;
+    display:table;
+    }
   }
   &__links {
-  color:white;
-  text-decoration:none;
-  padding:8px 16px;
+    color:white;
+    text-decoration:none;
+    padding:8px 16px;
 
  @media screen and(max-width:960px){
-   padding: 20px;
-   font-size: 35px;
+    padding: 20px;
+    font-size: 35px;
  }
 }
- &__span {
-  margin-left: 16px;
-  font-size: 30px;
-@media screen and(max-width:960px){
-     font-size: 20px;
+  &__span {
+    margin-left: 16px;
+    font-size: 30px;
+
+  @media screen and(max-width:960px){
+    font-size: 20px;
    }
-}
-
-}
-  
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-      
-
- 
- 
-
-
-
-
-
-
+}};

@@ -1,9 +1,11 @@
 import { Routes } from "./routes/Routes";
+import { Navbar } from "./components/Navbar/Navbar";
 
 function App() {
   return (
     <div className="App">
-      <h1>Coderscamp</h1>
+      <Navbar />
+
       <Routes />
     </div>
   );
