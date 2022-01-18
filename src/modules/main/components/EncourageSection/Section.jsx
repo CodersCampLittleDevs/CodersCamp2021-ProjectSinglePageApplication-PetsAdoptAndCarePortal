@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import styles from "./section.module.scss";
 
-export const EncourageSection = ({ imageSrc, title, description }) => {
+export const Section = ({ imageSrc, title, description }) => {
   return (
     <section className={styles.section}>
       <img className={styles.section__image} src={imageSrc} alt="" />
@@ -13,7 +13,7 @@ export const EncourageSection = ({ imageSrc, title, description }) => {
   );
 };
 
-EncourageSection.propTypes = {
+Section.propTypes = {
   imageSrc: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
