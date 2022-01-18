@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 import { routes } from "./index";
 
-export const Routes = () => {
+export const AppRoutes = () => {
   return (
     <Router>
       <Switch>
