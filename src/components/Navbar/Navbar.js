@@ -1,31 +1,11 @@
-import React from "react";
-import Logo from "../logo/Logo";
-import { MenuItems } from "./MenuItems";
 import styles from "./Navbar.module.scss";
+import { routes } from "../../routes/index";
+import { Menu } from "./Menu";
 
-// import * as FaIcons from "react-icons/fa";
-
-function Navbar() {
+export const Navbar = () => {
   return (
     <nav className={styles.navbar}>
-      <div className={`${styles["navbar__logo-container"]}`}>
-        <Logo classX={`${styles.navbar__logo}`} />
-      </div>
-
-      <ul className={styles.navbar__items}>
-        {MenuItems.map((item, inx) => {
-          return (
-            <li keys={inx}>
-              <a className={styles.navbar__links} href={item.url}>
-                {item.icon}
-                <span className={styles.navbar__span}>{item.title}</span>
-              </a>
-            </li>
-          );
-        })}
-      </ul>
+      <Menu list={routes} />
     </nav>
   );
-}
-
-export default Navbar;
+};
