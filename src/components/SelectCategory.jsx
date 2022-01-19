@@ -1,4 +1,4 @@
-import { SERVICES } from "../constants/SelectCategory";
+import { SERVICES } from "../constants/options";
 
 export const SelectCategory = () => (
   <select id="services">
