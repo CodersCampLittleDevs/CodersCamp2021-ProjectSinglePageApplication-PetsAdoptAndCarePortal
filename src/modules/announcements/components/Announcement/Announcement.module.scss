@@ -1,0 +1,79 @@
+@import "../../../../index.scss";
+.announcement {
+  width: 100%;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "image"
+    "user"
+    "description "
+    "related"
+    "contact "
+    "comments";
+  @media screen and(min-width: $desktop-breakpoint) {
+    width: 900px;
+
+    grid-template-rows: 200px 200px auto auto auto;
+    grid-template-areas:
+      "image image user"
+      "image image user"
+      "description description related"
+      "contact contact related"
+      "comments comments related";
+  }
+  &__image {
+    grid-area: image;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  &__contactContainer {
+    grid-area: user;
+  }
+  &__contact {
+    position: sticky;
+    top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__details {
+    grid-area: description;
+  }
+  &__title {
+  }
+  &__price {
+  }
+  &__description {
+  }
+  &__rate {
+  }
+  &__phoneNumber {
+  }
+  &__contactFormContainer {
+    grid-area: contact;
+  }
+  &__textarea {
+    width: 100%;
+    height: 100px;
+    resize: none;
+  }
+  &__comments {
+    grid-area: comments;
+  }
+  &__relatedContainer {
+    grid-area: related;
+  }
+  &__relatedList {
+    position: sticky;
+    top: 1rem;
+  }
+  &__relatedItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
