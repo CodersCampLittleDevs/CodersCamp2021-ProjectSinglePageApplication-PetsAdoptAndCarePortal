@@ -7,7 +7,7 @@ export const announcementsRoutes = [
   {
     path: "/announcements",
     component: <AnnouncementList />,
-    exact: "exact",
+    exact: true,
   },
   {
     path: "/announcements/new",
