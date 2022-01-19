@@ -1,23 +1,10 @@
-const typeOfService = [
-  {
-    type: "adoption",
-    
-  },
-  {
-    type: "hotel,",
-  },
-  {
-    type: "services",
-  },
-];
+import { SERVICES } from "../constants/SelectCategory";
 
 export const SelectCategory = () => (
-  <div>
-    Wybierz rodzaj usługi:
-    <select id="services">
-      {typeOfService.map((category) => (
-        <option value={category.type}>{category.type}</option>
-      ))}
-    </select>
-  </div>
+  <select id="services">
+    <option value="">Kategoria</option>
+    {SERVICES.map((category) => (
+      <option value={category}>{category}</option>
+    ))}
+  </select>
 );
