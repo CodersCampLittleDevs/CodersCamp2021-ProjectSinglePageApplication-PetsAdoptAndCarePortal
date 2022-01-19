@@ -1,21 +1,14 @@
 import { Link } from "react-router-dom";
 import propTypes from "prop-types";
 
-export const Button = ({
-  to,
-  children,
-  type,
-  styleClass,
-  onClick,
-  disabled,
-}) => {
+export const Button = ({ to, children, type, classes, onClick, disabled }) => {
   if (to) {
     return <Link to={to}>{children}</Link>;
   }
   return (
     <button
       type={type}
-      className={`btn ${styleClass}`}
+      className={classes}
       onClick={() => onClick()}
       disabled={disabled}
     >
@@ -28,7 +21,7 @@ Button.propTypes = {
   to: propTypes.string,
   children: propTypes.node.isRequired,
   type: propTypes.string,
-  styleClass: propTypes.string,
+  classes: propTypes.string,
   onClick: propTypes.func.isRequired,
   disabled: propTypes.string,
 };
@@ -36,6 +29,6 @@ Button.propTypes = {
 Button.defaultProps = {
   to: "",
   type: "button",
-  styleClass: "",
+  classes: "",
   disabled: "",
 };
