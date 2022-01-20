@@ -1,4 +1,7 @@
-.steplist {
-  display: flex;
-  background-color: rgb(93, 180, 75);
+.steps {
+  &__list {
+    display: flex;
+    background-color: rgb(93, 180, 75);
+    width: 100%;
+  }
 }

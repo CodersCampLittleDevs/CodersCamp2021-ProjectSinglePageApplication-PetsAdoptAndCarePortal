@@ -1,10 +1,10 @@
-import { StepByStepList } from "./StepList";
+import { StepsList } from "../../../constants/steps/StepList";
 
 export const Main = () => {
   return (
     <div>
       Main
-      <StepByStepList />
+      <StepsList />
     </div>
   );
 };
