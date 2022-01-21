@@ -27,6 +27,7 @@ export const StepByStepList = () => (
   <div className={styles.steplist}>
     {STEPS.map((step) => (
       <StepByStepItem
+        key={step.title}
         title={step.title}
         description={step.description}
         image={step.image}

@@ -1,3 +1,9 @@
+import { SearchFilter } from "../../../components/SearchFilter/SearchFilter";
+
 export const AnnouncementList = () => {
-  return <div>announcement list</div>;
+  return (
+    <div>
+      <SearchFilter />
+    </div>
+  );
 };

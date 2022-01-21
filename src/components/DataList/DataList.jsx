@@ -1,19 +1,32 @@
 import PropTypes from "prop-types";
 
-export const DataList = ({ list }) => {
+export const DataList = ({ list, register, required }) => {
   return (
-    <div>
-      <input list="list-items" type="text" placeholder="Szukaj..." />
+    <>
+      <input
+        {...register(list.title, { required })}
+        list="list-items"
+        type="text"
+        placeholder="Szukaj..."
+      />
 
       <datalist id="list-items">
-        {list.map((item) => (
+        {list.items.map((item) => (
           <option key={item} aria-label="list-items" value={item} />
         ))}
       </datalist>
-    </div>
+    </>
   );
 };
 
 DataList.propTypes = {
-  list: PropTypes.arrayOf(PropTypes.string).isRequired,
+  list: PropTypes.objectOf(
+    PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
+  ).isRequired,
+  register: PropTypes.func.isRequired,
+  required: PropTypes.bool,
+};
+
+DataList.defaultProps = {
+  required: false,
 };
