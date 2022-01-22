@@ -1,14 +1,16 @@
+import imageA from "../assets/image/encourages/dog.jpg";
+
 export const ANNOUNCEMENTS_LIST = [
   {
     id: 1,
     title: "Wyprowadzanie psa",
-    image: "dog",
+    image: imageA,
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus quae dolor, optio qui dolore incidunt dignissimos, consequuntur accusamus dicta eligendi dolorem deserunt assumenda corrupti molestias explicabo illum accusantium provident commodi. Alias asperiores, eveniet repudiandae inventore ipsum nisi suscipit facere culpa nostrum in quod? Magnam, obcaecati accusantium? Aliquid ducimus accusantium earum?",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus quae dolor, optio qui dolore ",
     username: "userTest",
     userId: 2,
     favorite: [],
-    price: 4.99,
+    price: "4.99",
     company: null,
     rate: 4.7,
     openHours: "8-20",
@@ -20,9 +22,9 @@ export const ANNOUNCEMENTS_LIST = [
   {
     id: 2,
     title: "Hotel kota",
-    image: "dog",
+    image: imageA,
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus quae dolor, optio qui dolore incidunt dignissimos, consequuntur accusamus dicta eligendi dolorem deserunt assumenda corrupti molestias explicabo illum accusantium provident commodi. Alias asperiores, eveniet repudiandae inventore ipsum nisi suscipit facere culpa nostrum in quod? Magnam, obcaecati accusantium? Aliquid ducimus accusantium earum?",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus quae dolor, optio qui dolore",
     username: "userTest",
     userId: 2,
     favorite: [],
@@ -38,9 +40,9 @@ export const ANNOUNCEMENTS_LIST = [
   {
     id: 3,
     title: "Strzyżenie chomika",
-    image: "dog",
+    image: imageA,
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus quae dolor, optio qui dolore incidunt dignissimos, consequuntur accusamus dicta eligendi dolorem deserunt assumenda corrupti molestias explicabo illum accusantium provident commodi. Alias asperiores, eveniet repudiandae inventore ipsum nisi suscipit facere culpa nostrum in quod? Magnam, obcaecati accusantium? Aliquid ducimus accusantium earum?",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus quae dolor, optio qui dolore",
     username: "userTest",
     userId: 2,
     favorite: [],
@@ -56,9 +58,9 @@ export const ANNOUNCEMENTS_LIST = [
   {
     id: 4,
     title: "Adopcja rybek",
-    image: "dog",
+    image: imageA,
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus quae dolor, optio qui dolore incidunt dignissimos, consequuntur accusamus dicta eligendi dolorem deserunt assumenda corrupti molestias explicabo illum accusantium provident commodi. Alias asperiores, eveniet repudiandae inventore ipsum nisi suscipit facere culpa nostrum in quod? Magnam, obcaecati accusantium? Aliquid ducimus accusantium earum?",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus quae dolor, optio qui dolore",
     username: "userName",
     userId: 1,
     favorite: [],
@@ -74,9 +76,9 @@ export const ANNOUNCEMENTS_LIST = [
   {
     id: 5,
     title: "Głaskanie szynszyla",
-    image: "dog",
+    image: imageA,
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus quae dolor, optio qui dolore incidunt dignissimos, consequuntur accusamus dicta eligendi dolorem deserunt assumenda corrupti molestias explicabo illum accusantium provident commodi. Alias asperiores, eveniet repudiandae inventore ipsum nisi suscipit facere culpa nostrum in quod? Magnam, obcaecati accusantium? Aliquid ducimus accusantium earum?",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus quae dolor, optio qui dolore",
     username: "userName",
     userId: 1,
     favorite: [],
@@ -92,9 +94,9 @@ export const ANNOUNCEMENTS_LIST = [
   {
     id: 6,
     title: "Nocleg dla pająków",
-    image: "dog",
+    image: imageA,
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus quae dolor, optio qui dolore incidunt dignissimos, consequuntur accusamus dicta eligendi dolorem deserunt assumenda corrupti molestias explicabo illum accusantium provident commodi. Alias asperiores, eveniet repudiandae inventore ipsum nisi suscipit facere culpa nostrum in quod? Magnam, obcaecati accusantium? Aliquid ducimus accusantium earum?",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus quae dolor, optio qui dolore",
     username: "userName",
     userId: 1,
     favorite: [],
@@ -110,9 +112,9 @@ export const ANNOUNCEMENTS_LIST = [
   {
     id: 7,
     title: "Adopcja węża",
-    image: "dog",
+    image: imageA,
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus quae dolor, optio qui dolore incidunt dignissimos, consequuntur accusamus dicta eligendi dolorem deserunt assumenda corrupti molestias explicabo illum accusantium provident commodi. Alias asperiores, eveniet repudiandae inventore ipsum nisi suscipit facere culpa nostrum in quod? Magnam, obcaecati accusantium? Aliquid ducimus accusantium earum?",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus quae dolor, optio qui dolore",
     username: "userName",
     userId: 1,
     favorite: [],
@@ -128,9 +130,9 @@ export const ANNOUNCEMENTS_LIST = [
   {
     id: 8,
     title: "Turlanie psa",
-    image: "dog",
+    image: imageA,
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus quae dolor, optio qui dolore incidunt dignissimos, consequuntur accusamus dicta eligendi dolorem deserunt assumenda corrupti molestias explicabo illum accusantium provident commodi. Alias asperiores, eveniet repudiandae inventore ipsum nisi suscipit facere culpa nostrum in quod? Magnam, obcaecati accusantium? Aliquid ducimus accusantium earum?",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus quae dolor, optio qui dolore",
     username: "userTest",
     userId: 2,
     favorite: [],
@@ -146,9 +148,9 @@ export const ANNOUNCEMENTS_LIST = [
   {
     id: 9,
     title: "Łaskotanie psa",
-    image: "dog",
+    image: imageA,
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus quae dolor, optio qui dolore incidunt dignissimos, consequuntur accusamus dicta eligendi dolorem deserunt assumenda corrupti molestias explicabo illum accusantium provident commodi. Alias asperiores, eveniet repudiandae inventore ipsum nisi suscipit facere culpa nostrum in quod? Magnam, obcaecati accusantium? Aliquid ducimus accusantium earum?",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus quae dolor, optio qui dolore",
     username: "userTest",
     userId: 2,
     favorite: [],

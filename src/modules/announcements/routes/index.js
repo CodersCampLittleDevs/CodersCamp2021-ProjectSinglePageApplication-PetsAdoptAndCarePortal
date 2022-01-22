@@ -1,12 +1,12 @@
 import { Favorites } from "../pages/Favorites";
-import { AnnouncementList } from "../pages/Announcements";
+import { Announcements } from "../pages/Announcements";
 import { AnnouncementNew } from "../pages/New";
 import { Announcement } from "../pages/Announcement";
 
 export const announcementsRoutes = [
   {
     path: "/announcements",
-    component: <AnnouncementList />,
+    component: <Announcements />,
     exact: true,
   },
   {
