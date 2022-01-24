@@ -6,7 +6,7 @@ import { Logo } from "../logo/Logo";
 
 export const Menu = ({ list }) => {
   return (
-    <div className={clsx(["navbar__logo-container", "menu"])}>
+    <div className={clsx([styles.navbar__logo_container, styles.menu])}>
       {list.map((item) => {
         if (item.logo) {
           return (
