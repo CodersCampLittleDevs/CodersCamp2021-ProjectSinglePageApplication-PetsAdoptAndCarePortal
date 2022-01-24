@@ -30,6 +30,7 @@ export const StepByStepList = () => (
         title={step.title}
         description={step.description}
         image={step.image}
+        key={step.title}
       />
     ))}
   </div>
