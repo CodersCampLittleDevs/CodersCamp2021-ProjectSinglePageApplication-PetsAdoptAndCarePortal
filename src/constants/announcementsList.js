@@ -1,10 +1,10 @@
-import imageA from "../assets/image/encourages/dog.jpg";
+import dogImage from "../assets/image/encourages/dog.jpg";
 
 export const ANNOUNCEMENTS_LIST = [
   {
     id: 1,
     title: "Wyprowadzanie psa",
-    image: imageA,
+    image: dogImage,
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus quae dolor, optio qui dolore ",
     username: "userTest",
@@ -22,7 +22,7 @@ export const ANNOUNCEMENTS_LIST = [
   {
     id: 2,
     title: "Hotel kota",
-    image: imageA,
+    image: dogImage,
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus quae dolor, optio qui dolore",
     username: "userTest",
@@ -40,7 +40,7 @@ export const ANNOUNCEMENTS_LIST = [
   {
     id: 3,
     title: "Strzyżenie chomika",
-    image: imageA,
+    image: dogImage,
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus quae dolor, optio qui dolore",
     username: "userTest",
@@ -58,7 +58,7 @@ export const ANNOUNCEMENTS_LIST = [
   {
     id: 4,
     title: "Adopcja rybek",
-    image: imageA,
+    image: dogImage,
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus quae dolor, optio qui dolore",
     username: "userName",
@@ -76,7 +76,7 @@ export const ANNOUNCEMENTS_LIST = [
   {
     id: 5,
     title: "Głaskanie szynszyla",
-    image: imageA,
+    image: dogImage,
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus quae dolor, optio qui dolore",
     username: "userName",
@@ -94,7 +94,7 @@ export const ANNOUNCEMENTS_LIST = [
   {
     id: 6,
     title: "Nocleg dla pająków",
-    image: imageA,
+    image: dogImage,
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus quae dolor, optio qui dolore",
     username: "userName",
@@ -112,7 +112,7 @@ export const ANNOUNCEMENTS_LIST = [
   {
     id: 7,
     title: "Adopcja węża",
-    image: imageA,
+    image: dogImage,
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus quae dolor, optio qui dolore",
     username: "userName",
@@ -130,7 +130,7 @@ export const ANNOUNCEMENTS_LIST = [
   {
     id: 8,
     title: "Turlanie psa",
-    image: imageA,
+    image: dogImage,
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus quae dolor, optio qui dolore",
     username: "userTest",
@@ -148,7 +148,7 @@ export const ANNOUNCEMENTS_LIST = [
   {
     id: 9,
     title: "Łaskotanie psa",
-    image: imageA,
+    image: dogImage,
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus quae dolor, optio qui dolore",
     username: "userTest",

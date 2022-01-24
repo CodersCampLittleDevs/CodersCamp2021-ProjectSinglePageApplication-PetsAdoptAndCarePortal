@@ -1,16 +1,13 @@
 import PropTypes from "prop-types";
+import { loopThroughPageNumbers } from "../../utils/loopThroughPageNumbers";
 import styles from "./Pagination.module.scss";
 
-export const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
-  const pageNumbers = [];
-
-  for (let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
-    pageNumbers.push(i);
-  }
+export const Pagination = ({ totalPosts, paginate }) => {
+  const pages = loopThroughPageNumbers(totalPosts);
 
   return (
     <nav className={styles.nav}>
-      {pageNumbers.map((item) => {
+      {pages.map((item) => {
         return (
           <button
             className={styles.nav__button}
@@ -26,7 +23,6 @@ export const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
 };
 
 Pagination.propTypes = {
-  postsPerPage: PropTypes.number.isRequired,
   totalPosts: PropTypes.number.isRequired,
   paginate: PropTypes.func.isRequired,
 };

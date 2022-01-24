@@ -1,10 +1,10 @@
 import PropTypes from "prop-types";
-import styles from "./AnnouncementItem.module.scss";
+import styles from "./announcementItem.module.scss";
 
-export const AnnouncementItem = ({ posts }) => {
+export const AnnouncementItem = ({ post }) => {
   return (
     <>
-      {posts.map((item) => {
+      {post.map((item) => {
         return (
           <div key={item.id} className={styles.wrapper}>
             <h2 className={styles.title}>{item.title}</h2>
@@ -19,5 +19,5 @@ export const AnnouncementItem = ({ posts }) => {
 };
 
 AnnouncementItem.propTypes = {
-  posts: PropTypes.arrayOf(PropTypes.object).isRequired,
+  post: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
