@@ -1,8 +1,8 @@
-import logo from "./3.png";
+import propTypes from "prop-types";
+import logo from "./logo.png";
 
-const Logo = (props) => {
-  const { classX } = props;
-  return <img className={classX} src={logo} alt="Logo" />;
+export const Logo = ({ classes }) => {
+  return <img className={classes} src={logo} alt="Logo" />;
 };
 
-export default Logo;
+Logo.propTypes = { classes: propTypes.string.isRequired };

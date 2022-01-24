@@ -1,34 +1,33 @@
 import { Link } from "react-router-dom";
+import propTypes from "prop-types";
 import styles from "./Navbar.module.scss";
-import { MenuItem } from "./MenuItem";
-import { Logo } from "../../assets/logo/Logo";
+import { Logo } from "../Logo/Logo";
 
 export const Menu = ({ list }) => {
-  const logo = list.filter((element) => element.logo === true);
-  const leftMenu = list.filter((element) => element.left === true);
-  const rightMenu = list.filter((element) => element.right === true);
-
   return (
-    <div className={styles["navbar__logo-container"]}>
-      <Link to={logo.path}>
-        <Logo classes={styles.navbar__logo} />
-      </Link>
-      {leftMenu.map((element) => {
+    <div className={styles[("navbar__logo-container", "menu")]}>
+      {list.map((element) => {
+        if (element.logo) {
+          return (
+            <Link to={element.path} key={element.title}>
+              <Logo classes={styles.navbar__logo} />
+            </Link>
+          );
+        }
         return (
-          <MenuItem to={element.path}>
+          <div key={element.title} to={element.path}>
             {element.title} {element.icon}
-          </MenuItem>
+          </div>
         );
       })}
-      ;
-      {rightMenu.map((element) => {
-        return (
-          <MenuItem to={element.path}>
-            {element.title} {element.icon}
-          </MenuItem>
-        );
-      })}
-      ;
     </div>
   );
+};
+
+Menu.propTypes = {
+  list: propTypes.arrayOf(
+    propTypes.objectOf(
+      propTypes.oneOfType([propTypes.string, propTypes.node, propTypes.bool]),
+    ),
+  ).isRequired,
 };
