@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { createPageNumbers } from "../../utils/createPageNumbers";
-import styles from "./Pagination.module.scss";
+import styles from "./pagination.module.scss";
 
 export const Pagination = ({ totalPosts, paginate }) => {
   const pages = createPageNumbers(totalPosts);

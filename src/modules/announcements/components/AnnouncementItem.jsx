@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import styles from "./announcementItem.module.scss";
+import styles from "./announcement_item.module.scss";
 
 export const AnnouncementItem = ({ title, imageSrc, description, price }) => {
   return (

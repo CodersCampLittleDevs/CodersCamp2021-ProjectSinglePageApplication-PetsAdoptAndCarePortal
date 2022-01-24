@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { AnnouncementItem } from "./AnnouncementItem";
 import { Pagination } from "../../../components/Pagination/Pagination";
-import { ANNOUNCEMENTS_LIST } from "../../../constants/announcementsList";
-import styles from "./announcementsList.module.scss";
+import { ANNOUNCEMENTS_LIST } from "../../../constants/announcements_list";
+import styles from "./announcements_list.module.scss";
 import { POSTS_PER_PAGE } from "../../../constants/pagination";
 
 export const AnnouncementsList = () => {
@@ -14,7 +14,7 @@ export const AnnouncementsList = () => {
     startIndex + POSTS_PER_PAGE,
   );
 
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  const onPaginationClick = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
     <div className={styles.wrapper}>
@@ -29,7 +29,10 @@ export const AnnouncementsList = () => {
           />
         );
       })}
-      <Pagination totalPosts={ANNOUNCEMENTS_LIST.length} paginate={paginate} />
+      <Pagination
+        totalPosts={ANNOUNCEMENTS_LIST.length}
+        paginate={onPaginationClick}
+      />
     </div>
   );
 };
