@@ -1,5 +1,5 @@
-import { StepItem } from "../../modules/main/pages/StepItem";
-import styles from "../../modules/main/pages/stepitem.module.scss";
+import styles from "./stepitem.module.scss";
+import { StepItem } from "./StepItem";
 
 const STEPS = [
   {
@@ -35,6 +35,7 @@ export const StepsList = () => (
         description={step.description}
         image={step.image}
         alt={step.alt}
+        key={step.title}
       />
     ))}
   </div>
