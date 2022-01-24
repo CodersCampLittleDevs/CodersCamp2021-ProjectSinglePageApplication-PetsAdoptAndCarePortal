@@ -1,7 +1,7 @@
 import { Route, Switch, Redirect } from "react-router-dom";
 import { routes } from "./index";
 
-export const Routes = () => {
+export const AppRoutes = () => {
   return (
     <Switch>
       {routes.map((route) => (

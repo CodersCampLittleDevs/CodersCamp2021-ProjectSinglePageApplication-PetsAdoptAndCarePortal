@@ -1,0 +1,19 @@
+.section {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+}
+
+.description {
+  width: 600px;
+  margin-top: 140px;
+
+  &__title {
+    margin-bottom: 50px;
+    font-size: 30px;
+  }
+}
+
+.description__text {
+  font-size: 20px;
+}
