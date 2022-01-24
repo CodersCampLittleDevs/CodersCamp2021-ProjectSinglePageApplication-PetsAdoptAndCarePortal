@@ -1,23 +1,20 @@
 import PropTypes from "prop-types";
 import styles from "./announcementItem.module.scss";
 
-export const AnnouncementItem = ({ post }) => {
+export const AnnouncementItem = ({ title, imageSrc, description, price }) => {
   return (
-    <>
-      {post.map((item) => {
-        return (
-          <div key={item.id} className={styles.wrapper}>
-            <h2 className={styles.title}>{item.title}</h2>
-            <img className={styles.image} src={item.image} alt="" />
-            <p className={styles.description}>{item.description}</p>
-            <p>{`Cena: ${item.price}`}</p>
-          </div>
-        );
-      })}
-    </>
+    <div className={styles.wrapper}>
+      <h2 className={styles.title}>{title}</h2>
+      <img className={styles.image} src={imageSrc} alt="" />
+      <p className={styles.description}>{description}</p>
+      <p>{`Cena: ${price}`}</p>
+    </div>
   );
 };
 
 AnnouncementItem.propTypes = {
-  post: PropTypes.arrayOf(PropTypes.object).isRequired,
+  title: PropTypes.string.isRequired,
+  imageSrc: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
 };

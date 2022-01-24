@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
-import { loopThroughPageNumbers } from "../../utils/loopThroughPageNumbers";
+import { createPageNumbers } from "../../utils/createPageNumbers";
 import styles from "./Pagination.module.scss";
 
 export const Pagination = ({ totalPosts, paginate }) => {
-  const pages = loopThroughPageNumbers(totalPosts);
+  const pages = createPageNumbers(totalPosts);
 
   return (
     <nav className={styles.nav}>

@@ -10,7 +10,7 @@ export const ANNOUNCEMENTS_LIST = [
     username: "userTest",
     userId: 2,
     favorite: [],
-    price: "4.99",
+    price: 4.99,
     company: null,
     rate: 4.7,
     openHours: "8-20",
