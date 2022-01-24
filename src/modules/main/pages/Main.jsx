@@ -1,13 +1,11 @@
 import { StepByStepList } from "./StepList";
 import { Section } from "../components/EncourageSection/Section";
 import dog from "../../../assets/image/encourages/dog.jpg";
-import { SelectCategory } from "../../../components/SelectCategory";
 
 export const Main = () => {
   return (
     <div>
       Main
-      <SelectCategory />
       <Section
         imageSrc={dog}
         title="W trosce o potrzeby Twojego zwierzaka"

@@ -1,22 +1,23 @@
 import { Link } from "react-router-dom";
 import propTypes from "prop-types";
-import styles from "./Navbar.module.scss";
+import clsx from "clsx";
+import styles from "./navbar.module.scss";
 import { Logo } from "../Logo/Logo";
 
 export const Menu = ({ list }) => {
   return (
-    <div className={styles[("navbar__logo-container", "menu")]}>
-      {list.map((element) => {
-        if (element.logo) {
+    <div className={clsx(["navbar__logo-container", "menu"])}>
+      {list.map((item) => {
+        if (item.logo) {
           return (
-            <Link to={element.path} key={element.title}>
+            <Link to={item.path} key={item.title}>
               <Logo classes={styles.navbar__logo} />
             </Link>
           );
         }
         return (
-          <div key={element.title} to={element.path}>
-            {element.title} {element.icon}
+          <div key={item.title} to={item.path}>
+            {item.title} {item.icon}
           </div>
         );
       })}
