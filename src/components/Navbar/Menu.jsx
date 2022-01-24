@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import propTypes from "prop-types";
+import PropTypes from "prop-types";
 import clsx from "clsx";
 import styles from "./navbar.module.scss";
 import { Logo } from "../logo/Logo";
@@ -26,9 +26,9 @@ export const Menu = ({ list }) => {
 };
 
 Menu.propTypes = {
-  list: propTypes.arrayOf(
-    propTypes.objectOf(
-      propTypes.oneOfType([propTypes.string, propTypes.node, propTypes.bool]),
+  list: PropTypes.arrayOf(
+    PropTypes.objectOf(
+      PropTypes.oneOfType([PropTypes.string, PropTypes.node, PropTypes.bool]),
     ),
   ).isRequired,
 };
