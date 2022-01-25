@@ -17,11 +17,12 @@ export const ANNOUNCEMENTS_LIST = [
     comments: [],
     information: "i dont know",
     category: "usługi",
-    animal: "pies",
+    animal: "psy",
+    city: "Warszawa",
   },
   {
     id: 2,
-    title: "Hotel kota",
+    title: "Wyprowadzanie kota",
     image: dog,
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus quae dolor, optio qui dolore incidunt dignissimos, consequuntur accusamus dicta eligendi dolorem deserunt assumenda corrupti molestias explicabo illum accusantium provident commodi. Alias asperiores, eveniet repudiandae inventore ipsum nisi suscipit facere culpa nostrum in quod? Magnam, obcaecati accusantium? Aliquid ducimus accusantium earum?",
@@ -34,8 +35,9 @@ export const ANNOUNCEMENTS_LIST = [
     openHours: "8-20",
     comments: [],
     information: "i dont know",
-    category: "hotel",
-    animal: "cat",
+    category: "usługi",
+    animal: "koty",
+    city: "Warszawa",
   },
   {
     id: 3,
@@ -53,7 +55,8 @@ export const ANNOUNCEMENTS_LIST = [
     comments: [],
     information: "i dont know",
     category: "services",
-    animal: "hamster",
+    animal: "psy",
+    city: "Warszawa",
   },
   {
     id: 4,
@@ -71,7 +74,8 @@ export const ANNOUNCEMENTS_LIST = [
     comments: ["Bardzo fajne rybki na obrazku"],
     information: "i dont know",
     category: "adoption",
-    animal: "fish",
+    animal: "psy",
+    city: "Warszawa",
   },
   {
     id: 5,
@@ -89,7 +93,8 @@ export const ANNOUNCEMENTS_LIST = [
     comments: [],
     information: "i dont know",
     category: "services",
-    animal: "chinchilla",
+    animal: "psy",
+    city: "Warszawa",
   },
   {
     id: 6,
@@ -107,7 +112,8 @@ export const ANNOUNCEMENTS_LIST = [
     comments: [],
     information: "i dont know",
     category: "hotel",
-    animal: "fish",
+    animal: "psy",
+    city: "Warszawa",
   },
   {
     id: 7,
@@ -125,7 +131,8 @@ export const ANNOUNCEMENTS_LIST = [
     comments: [],
     information: "i dont know",
     category: "adoption",
-    animal: "snake",
+    animal: "psy",
+    city: "Warszawa",
   },
   {
     id: 8,
@@ -143,7 +150,8 @@ export const ANNOUNCEMENTS_LIST = [
     comments: [],
     information: "i dont know",
     category: "services",
-    animal: "fish",
+    animal: "psy",
+    city: "Warszawa",
   },
   {
     id: 9,
@@ -161,6 +169,7 @@ export const ANNOUNCEMENTS_LIST = [
     comments: [],
     information: "i dont know",
     category: "services",
-    animal: "dog",
+    animal: "psy",
+    city: "Warszawa",
   },
 ];

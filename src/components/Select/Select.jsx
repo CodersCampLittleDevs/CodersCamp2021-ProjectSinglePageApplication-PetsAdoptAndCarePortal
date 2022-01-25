@@ -1,4 +1,4 @@
-import propTypes from "prop-types";
+import PropTypes from "prop-types";
 
 export const Select = ({ list, register, required }) => (
   <select
@@ -6,7 +6,7 @@ export const Select = ({ list, register, required }) => (
     name={list.title}
     {...register(list.title, { required })}
   >
-    <option value="">{list.title}</option>
+    <option value="">{list.placeholder}</option>
     {list.items.map((category) => (
       <option key={category} value={category}>
         {category}
@@ -16,11 +16,11 @@ export const Select = ({ list, register, required }) => (
 );
 
 Select.propTypes = {
-  list: propTypes.objectOf(
-    propTypes.oneOfType([propTypes.string, propTypes.array]),
+  list: PropTypes.objectOf(
+    PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
   ).isRequired,
-  register: propTypes.func.isRequired,
-  required: propTypes.bool,
+  register: PropTypes.func.isRequired,
+  required: PropTypes.bool,
 };
 
 Select.defaultProps = {

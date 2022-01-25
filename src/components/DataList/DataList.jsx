@@ -5,14 +5,14 @@ export const DataList = ({ list, register, required }) => {
     <>
       <input
         {...register(list.title, { required })}
-        list="list-items"
+        list={list.title}
         type="text"
-        placeholder="Szukaj..."
+        placeholder={list.placeholder}
       />
 
-      <datalist id="list-items">
+      <datalist id={list.title}>
         {list.items.map((item) => (
-          <option key={item} aria-label="list-items" value={item} />
+          <option key={item} aria-label={list.title} value={item} />
         ))}
       </datalist>
     </>

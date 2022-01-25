@@ -1,15 +1,16 @@
-import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
+import PropTypes from "prop-types";
 import { Select } from "../Select/Select";
 import { DataList } from "../DataList/DataList";
-import { SERVICES, DATALIST, PETS } from "../../constants/SearchOptions";
-import AnnouncementsContext from "../../context/announcements/announcements-context";
-import styles from "./SearchFilter.module.scss";
+import { Input } from "../Input/Input";
+import { SERVICES, CATEGORIES, CITIES, PETS } from "../../constants/options";
+import styles from "./search_filter.module.scss";
+import { Button } from "../Button/Button";
+import searchButtonIcon from "../../assets/image/searchButton.png";
 
-export const SearchFilter = () => {
+export const SearchFilter = ({ filterAnnouncements }) => {
   const history = useHistory();
-  const announcementsCtx = useContext(AnnouncementsContext);
   const {
     register,
     handleSubmit,
@@ -17,35 +18,85 @@ export const SearchFilter = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    announcementsCtx.filter(data);
-    if (window.location.pathname === "/") {
-      history.push({
-        pathname: "/announcements",
+    let animalsSearchParams = "";
+    if (data.Animals) {
+      data.Animals.map((animal) => {
+        animalsSearchParams += `&animal=${animal}`;
+        return true;
       });
     }
+    history.push({
+      pathname: "/announcements",
+      search: `?phrase=${data.Phrase}&category=${data.Category}&city=${data.City}${animalsSearchParams}`,
+    });
+    filterAnnouncements({
+      Phrase: encodeURIComponent(data.Phrase),
+      Category: encodeURIComponent(data.Category),
+      City: encodeURIComponent(data.City),
+      Animals: data.Animals,
+    });
+  };
+
+  const toggleBadgeActive = (e) => {
+    const input = e.target;
+    const label = input.parentElement;
+    label.classList.toggle(styles.searchFilter__checkbox_active);
   };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
-      <label htmlFor={DATALIST.title} className={styles.label}>
-        <DataList register={register} required list={DATALIST} />
-        {errors[DATALIST.title] && (
-          <span className={styles.error}>Wpisz czego szukasz</span>
-        )}
-      </label>
-      <label htmlFor={SERVICES.title} className={styles.label}>
-        <Select register={register} required list={SERVICES} />
-        {errors[SERVICES.title] && (
-          <span className={styles.error}>Wybierz kategorię której szukasz</span>
-        )}
-      </label>
-      <label htmlFor={PETS.title} className={styles.label}>
-        <Select register={register} required list={PETS} />
-        {errors[PETS.title] && (
-          <span className={styles.error}>Wybierz zwierzę którego szukasz</span>
-        )}
-      </label>
-      <input type="submit" />
+      <div className={styles.searchFilter__top}>
+        {PETS.items.map((pet) => (
+          <Input
+            key={pet}
+            id={pet}
+            label={pet}
+            type="checkbox"
+            value={pet}
+            name={PETS.title}
+            register={register}
+            classes={styles.searchFilter__checkbox}
+            onClick={toggleBadgeActive}
+          />
+        ))}
+      </div>
+      <div className={styles.searchFilter__bottom}>
+        <label htmlFor={SERVICES.title} className={styles.label}>
+          <DataList register={register} required list={SERVICES} />
+          {errors[SERVICES.title] && (
+            <span className={styles.error}>Wpisz czego szukasz</span>
+          )}
+        </label>
+        <label htmlFor={CATEGORIES.title} className={styles.label}>
+          <Select register={register} required list={CATEGORIES} />
+          {errors[CATEGORIES.title] && (
+            <span className={styles.error}>
+              Wybierz kategorię której szukasz
+            </span>
+          )}
+        </label>
+        <label htmlFor={CITIES.title} className={styles.label}>
+          <DataList register={register} required list={CITIES} />
+          {errors[CITIES.title] && (
+            <span className={styles.error}>Wpisz czego szukasz</span>
+          )}
+        </label>
+        <Button
+          type="submit"
+          classes={styles.searchFilter__button}
+          onClick={() => {}}
+        >
+          <img src={searchButtonIcon} alt="" />
+        </Button>
+      </div>
     </form>
   );
+};
+
+SearchFilter.propTypes = {
+  filterAnnouncements: PropTypes.func,
+};
+
+SearchFilter.defaultProps = {
+  filterAnnouncements: () => {},
 };
