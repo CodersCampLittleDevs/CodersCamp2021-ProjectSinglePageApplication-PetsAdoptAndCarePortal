@@ -1,6 +1,5 @@
 import { useState } from "react";
 import propTypes from "prop-types";
-import { FaArrowDown } from "react-icons/fa";
 import styles from "./CheckboxSelect.module.scss";
 import { Button } from "../../Button/Button";
 
@@ -32,7 +31,6 @@ export const CheckboxSelect = ({ register, list }) => {
     <div className={styles.checkboxSelect__title}>
       <Button type="button" onClick={openList}>
         <span>{list.title}</span>
-        <FaArrowDown />
       </Button>
       <div className={DROPDOWN_CLASSES}>{CATEGORIES}</div>
     </div>

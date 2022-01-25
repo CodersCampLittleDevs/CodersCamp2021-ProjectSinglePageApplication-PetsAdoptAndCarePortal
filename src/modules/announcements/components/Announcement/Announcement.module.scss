@@ -7,10 +7,7 @@
   grid-template-areas:
     "image"
     "user"
-    "description "
-    "related"
-    "contact "
-    "comments";
+    "description ";
   @media screen and(min-width: $desktop-breakpoint) {
     width: 900px;
 
@@ -18,9 +15,7 @@
     grid-template-areas:
       "image image user"
       "image image user"
-      "description description related"
-      "contact contact related"
-      "comments comments related";
+      "description description description";
   }
   &__image {
     grid-area: image;
@@ -52,28 +47,5 @@
   &__rate {
   }
   &__phoneNumber {
-  }
-  &__contactFormContainer {
-    grid-area: contact;
-  }
-  &__textarea {
-    width: 100%;
-    height: 100px;
-    resize: none;
-  }
-  &__comments {
-    grid-area: comments;
-  }
-  &__relatedContainer {
-    grid-area: related;
-  }
-  &__relatedList {
-    position: sticky;
-    top: 1rem;
-  }
-  &__relatedItem {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
   }
 }
