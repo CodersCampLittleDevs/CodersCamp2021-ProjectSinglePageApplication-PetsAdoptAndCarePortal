@@ -1,9 +1,8 @@
 import PropTypes from "prop-types";
 
-export const Input = ({
+export const Checkbox = ({
   id,
   label,
-  type,
   value,
   name,
   register,
@@ -14,7 +13,7 @@ export const Input = ({
     <label htmlFor={id} className={classes}>
       <span>{label}</span>
       <input
-        type={type}
+        type="checkbox"
         id={id}
         value={value}
         name={name}
@@ -25,17 +24,16 @@ export const Input = ({
   );
 };
 
-Input.propTypes = {
+Checkbox.propTypes = {
   id: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
-  type: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   register: PropTypes.func.isRequired,
   classes: PropTypes.string,
   onClick: PropTypes.func,
 };
-Input.defaultProps = {
+Checkbox.defaultProps = {
   classes: "",
   onClick: () => {},
 };

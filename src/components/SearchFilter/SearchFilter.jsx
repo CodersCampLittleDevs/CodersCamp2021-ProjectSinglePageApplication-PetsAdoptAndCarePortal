@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import PropTypes from "prop-types";
 import { Select } from "../Select/Select";
 import { DataList } from "../DataList/DataList";
-import { Input } from "../Input/Input";
+import { Checkbox } from "../Checkbox/Checkbox";
 import { SERVICES, CATEGORIES, CITIES, PETS } from "../../constants/options";
 import styles from "./search_filter.module.scss";
 import { Button } from "../Button/Button";
@@ -47,11 +47,10 @@ export const SearchFilter = ({ filterAnnouncements }) => {
     <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
       <div className={styles.searchFilter__top}>
         {PETS.items.map((pet) => (
-          <Input
+          <Checkbox
             key={pet}
             id={pet}
             label={pet}
-            type="checkbox"
             value={pet}
             name={PETS.title}
             register={register}
