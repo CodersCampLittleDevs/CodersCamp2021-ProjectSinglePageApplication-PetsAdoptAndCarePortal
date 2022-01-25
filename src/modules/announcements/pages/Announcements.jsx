@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import { SearchFilter } from "../../../components/SearchFilter/SearchFilter";
 import { ANNOUNCEMENTS_LIST } from "../../../constants/announcements";
 
 export const AnnouncementList = () => {
-  const [filteredAnnouncements, setFilteredAnnouncements] =
-    useState(ANNOUNCEMENTS_LIST);
+  const [filteredAnnouncements, setFilteredAnnouncements] = useState([]);
+  const { search } = useLocation();
 
   const filterAnnouncements = (data) => {
     const { Phrase, Category, City, Animals } = data;
@@ -13,44 +14,33 @@ export const AnnouncementList = () => {
 
     announcements = announcements
       .filter((announcement) =>
-        encodeURIComponent(announcement.title.toLowerCase()).includes(
-          Phrase.toLowerCase(),
-        ),
+        announcement.title.toLowerCase().includes(Phrase.toLowerCase()),
       )
       .filter((announcement) =>
-        encodeURIComponent(announcement.category.toLowerCase()).includes(
-          Category,
-        ),
+        announcement.category.toLowerCase().includes(Category),
       )
       .filter((announcement) =>
-        encodeURIComponent(announcement.city.toLowerCase()).includes(
-          City.toLowerCase(),
-        ),
+        announcement.city.toLowerCase().includes(City.toLowerCase()),
       );
     if (Animals) {
       animalsArray = Animals.map((animal) => animal.toLowerCase());
       announcements = announcements.filter((announcement) =>
-        animalsArray.includes(
-          encodeURIComponent(announcement.animal.toLowerCase()),
-        ),
+        animalsArray.includes(announcement.animal.toLowerCase()),
       );
     }
 
     setFilteredAnnouncements(announcements);
   };
   useEffect(() => {
-    if (window.location.search) {
-      const search = window.location.search.slice(1).split("&");
-      const Phrase = search[0].slice(search[0].indexOf("=") + 1);
-      const Category = search[1].slice(search[1].indexOf("=") + 1);
-      const City = search[2].slice(search[2].indexOf("=") + 1);
-      const animalsParams = search.splice(3);
-      const Animals = [];
-      animalsParams.forEach((param) => {
-        const indexOfEqual = param.indexOf("=");
-        Animals.push(param.slice(indexOfEqual + 1));
-      });
+    if (search) {
+      const params = new URLSearchParams(search);
+      const Phrase = params.get("phrase");
+      const Category = params.get("category");
+      const City = params.get("city");
+      const Animals = params.getAll("animal");
       filterAnnouncements({ Phrase, Category, City, Animals });
+    } else {
+      setFilteredAnnouncements(ANNOUNCEMENTS_LIST);
     }
   }, []);
   console.log(filteredAnnouncements);
