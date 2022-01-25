@@ -6,7 +6,6 @@ import { SelectCategory } from "../../../components/SelectCategory";
 export const Main = () => {
   return (
     <div>
-      Main
       <SelectCategory />
       <Section
         imageSrc={dog}

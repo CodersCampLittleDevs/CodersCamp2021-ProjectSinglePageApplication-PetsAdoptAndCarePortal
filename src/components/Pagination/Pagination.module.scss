@@ -1,0 +1,12 @@
+.nav {
+  display: flex;
+  width: 25%;
+}
+
+.nav__button {
+  margin-left: 10px;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}

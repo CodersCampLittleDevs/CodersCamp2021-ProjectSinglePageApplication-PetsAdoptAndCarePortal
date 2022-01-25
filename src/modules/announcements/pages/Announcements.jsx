@@ -1,3 +1,3 @@
-export const AnnouncementList = () => {
-  return <div>announcement list</div>;
+export const Announcements = () => {
+  return <div>Announcements</div>;
 };
