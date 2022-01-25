@@ -16,9 +16,9 @@ export const Menu = ({ list }) => {
           );
         }
         return (
-          <div key={item.title} to={item.path}>
+          <Link key={item.title} to={item.path}>
             {item.title} {item.icon}
-          </div>
+          </Link>
         );
       })}
     </div>
