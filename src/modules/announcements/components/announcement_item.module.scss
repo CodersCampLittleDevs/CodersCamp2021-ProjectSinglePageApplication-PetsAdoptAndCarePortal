@@ -1,0 +1,26 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 250px;
+  height: 350px;
+  border: 1px solid black;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+
+.title {
+  border-bottom: 1px solid black;
+  text-align: center;
+  width: 100%;
+}
+
+.image {
+  height: 40%;
+  width: 100%;
+}
+
+.description {
+  text-align: center;
+}
