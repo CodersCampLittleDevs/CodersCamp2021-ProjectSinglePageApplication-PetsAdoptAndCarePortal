@@ -13,16 +13,16 @@ export const schema = yup.object().shape({
     .required("Podaj hasło"),
 });
 
-export const submitForm = (data, setValidData, login) => {
+export const submitForm = (data) => {
   console.log(data);
   const user = DUMMY_LOGINS.filter(
     (dummyUser) =>
       dummyUser.email === data.login || dummyUser.username === data.login,
-    setValidData(true),
+    // setValidData(true),
   )[0];
   if (user && user.password === data.password) {
-    login();
+    // login();
   } else {
-    setValidData(false);
+    // setValidData(false);
   }
 };

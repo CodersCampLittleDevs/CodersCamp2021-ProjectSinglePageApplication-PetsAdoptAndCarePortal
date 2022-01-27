@@ -16,9 +16,11 @@ export const LoginForm = () => {
     formState: { errors },
   } = useForm({ resolver: yupResolver(schema) });
 
+  console.log(setValidData);
   const login = () => {
     authContext.onLogin();
   };
+  console.log(login);
 
   return (
     <>

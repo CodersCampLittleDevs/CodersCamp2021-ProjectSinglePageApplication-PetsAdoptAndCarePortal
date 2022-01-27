@@ -6,7 +6,7 @@ import { SearchFilter } from "../../../components/SearchFilter/SearchFilter";
 export const Main = () => {
   return (
     <div>
-      <SelectCategory />
+      <SearchFilter />
       <Section
         imageSrc={dog}
         title="W trosce o potrzeby Twojego zwierzaka"
