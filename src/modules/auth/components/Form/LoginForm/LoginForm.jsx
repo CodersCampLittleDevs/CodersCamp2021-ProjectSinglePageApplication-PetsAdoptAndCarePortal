@@ -5,7 +5,8 @@ import { Button } from "../../../../../components/Button/Button";
 import { Input } from "../../../../../components/Input/Input";
 import AuthContext from "../../../../../context/auth/auth-context";
 import styles from "../form.module.scss";
-import { schema, submitForm } from "./LoginForm";
+import { schema } from "./LoginForm";
+import { DUMMY_LOGINS } from "../../../../../constants/auth/auth";
 
 export const LoginForm = () => {
   const authContext = useContext(AuthContext);
@@ -16,11 +17,22 @@ export const LoginForm = () => {
     formState: { errors },
   } = useForm({ resolver: yupResolver(schema) });
 
-  console.log(setValidData);
   const login = () => {
     authContext.onLogin();
   };
-  console.log(login);
+
+  const submitForm = (data) => {
+    const user = DUMMY_LOGINS.filter(
+      (dummyUser) =>
+        dummyUser.email === data.login || dummyUser.username === data.login,
+      setValidData(true),
+    )[0];
+    if (user && user.password === data.password) {
+      login();
+    } else {
+      setValidData(false);
+    }
+  };
 
   return (
     <>

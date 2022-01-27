@@ -14,10 +14,11 @@ export const schema = yup.object().shape({
     .required("Podaj nazwę użytkownika"),
   city: yup.string().required("Podaj miasto"),
   phone: yup
-    .number("Numer musi zawierać cyfry")
-    .positive("Numer musi być większy od 0")
-    .integer("Numer musi zaierać cyfry")
-    .required("Podaj numer telefonu"),
+    .string()
+    .required("Podaj numer telefonu")
+    .matches(/^[0-9]+$/, "Numer musi posiadać tylko cyfry")
+    .min(7, "Numer musi posiadać minimum 7 znaków")
+    .max(10, "Numer musi posiadać maksymalnie 10 znaków"),
   password: yup
     .string()
     .min(4, "Minimum 4 znaki")

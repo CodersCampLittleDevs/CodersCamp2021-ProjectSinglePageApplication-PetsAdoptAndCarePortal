@@ -50,7 +50,7 @@ export const RegisterForm = () => {
         {...register("phone")}
         placeholder="Numer telefonu"
         label="Numer telefonu"
-        type="number"
+        type="string"
         classes={styles.form__input}
       />
       <span className={styles.form__error}>{errors.phone?.message}</span>
