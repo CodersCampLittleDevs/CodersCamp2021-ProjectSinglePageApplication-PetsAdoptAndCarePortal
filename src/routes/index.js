@@ -1,4 +1,4 @@
-import { Auth } from "../modules/auth";
+import { authRoutes } from "../modules/auth/routes";
 import { Main } from "../modules/main";
 import { Account } from "../modules/account";
 import { announcementsRoutes } from "../modules/announcements";
@@ -9,10 +9,7 @@ export const routes = [
     component: <Main />,
     exact: true,
   },
-  {
-    path: "/auth",
-    component: <Auth />,
-  },
+  ...authRoutes,
   {
     path: "/account",
     component: <Account />,
