@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import propTypes from "prop-types";
+import PropTypes from "prop-types";
 
 export const Button = ({ to, children, type, classes, onClick, disabled }) => {
   if (to) {
@@ -18,12 +18,12 @@ export const Button = ({ to, children, type, classes, onClick, disabled }) => {
 };
 
 Button.propTypes = {
-  to: propTypes.string,
-  children: propTypes.node.isRequired,
-  type: propTypes.string,
-  classes: propTypes.string,
-  onClick: propTypes.func.isRequired,
-  disabled: propTypes.string,
+  to: PropTypes.string,
+  children: PropTypes.node.isRequired,
+  type: PropTypes.string,
+  classes: PropTypes.string,
+  onClick: PropTypes.func.isRequired,
+  disabled: PropTypes.string,
 };
 
 Button.defaultProps = {

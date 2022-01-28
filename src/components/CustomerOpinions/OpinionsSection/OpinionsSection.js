@@ -14,11 +14,20 @@ export const OpinionsSection = () => {
     <section className={styles.section}>
       <h2 className={styles.title}>Opinie naszych klientów</h2>
       <Swiper
-        slidesPerView={window.innerWidth < 361 ? 1 : 2}
+        slidesPerView={1}
         spaceBetween={0}
-        navigation
-        className="mySwiper"
+        navigation={{
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        }}
+        breakpoints={{
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+        }}
       >
+        <div className="swiper-button-prev"> </div>
         {OPINIONS_LIST.map((opinion) => (
           <SwiperSlide key={opinion.id}>
             <Opinion
@@ -29,6 +38,7 @@ export const OpinionsSection = () => {
             />
           </SwiperSlide>
         ))}
+        <div className="swiper-button-next"> </div>
       </Swiper>
     </section>
   );
