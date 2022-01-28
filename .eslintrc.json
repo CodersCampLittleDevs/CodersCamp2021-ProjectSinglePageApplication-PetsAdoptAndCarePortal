@@ -18,7 +18,6 @@
   },
   "plugins": ["react", "react-hooks"],
   "rules": {
-    "no-plusplus": "off",
     "react/no-unused-prop-types": "error",
     "react/no-unused-state": "error",
     "no-unused-vars": "error",
