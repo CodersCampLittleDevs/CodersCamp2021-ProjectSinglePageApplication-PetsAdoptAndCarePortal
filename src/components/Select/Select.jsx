@@ -1,10 +1,13 @@
 import PropTypes from "prop-types";
+import { forwardRef } from "react";
 
-export const Select = ({ list, register, required }) => (
+export const Select = forwardRef(({ list, onChange, onBlur, name }, ref) => (
   <select
     id={list.title}
-    name={list.title}
-    {...register(list.title, { required })}
+    ref={ref}
+    onChange={onChange}
+    onBlur={onBlur}
+    name={name}
   >
     <option value="">{list.placeholder}</option>
     {list.items.map((category) => (
@@ -13,16 +16,13 @@ export const Select = ({ list, register, required }) => (
       </option>
     ))}
   </select>
-);
+));
 
 Select.propTypes = {
   list: PropTypes.objectOf(
     PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
   ).isRequired,
-  register: PropTypes.func.isRequired,
-  required: PropTypes.bool,
-};
-
-Select.defaultProps = {
-  required: false,
+  name: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+  onBlur: PropTypes.func.isRequired,
 };

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { SearchFilter } from "../../../components/SearchFilter/SearchFilter";
+import { SearchForm } from "../../../components/SearchForm/SearchForm";
 import { ANNOUNCEMENTS_LIST } from "../../../constants/announcements";
 
 export const AnnouncementList = () => {
@@ -47,7 +47,7 @@ export const AnnouncementList = () => {
 
   return (
     <div>
-      <SearchFilter filterAnnouncements={filterAnnouncements} />
+      <SearchForm filterAnnouncements={filterAnnouncements} />
     </div>
   );
 };

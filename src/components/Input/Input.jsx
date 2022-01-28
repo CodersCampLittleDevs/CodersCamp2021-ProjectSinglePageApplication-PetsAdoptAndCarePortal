@@ -1,29 +1,39 @@
+import { forwardRef } from "react";
 import PropTypes from "prop-types";
 
-export const Input = ({
-  id,
-  label,
-  type,
-  value,
-  name,
-  register,
-  classes,
-  onClick,
-}) => {
-  return (
-    <label htmlFor={id} className={classes}>
-      <span>{label}</span>
-      <input
-        type={type}
-        id={id}
-        value={value}
-        name={name}
-        {...register(name)}
-        onClick={onClick}
-      />
-    </label>
-  );
-};
+export const Input = forwardRef(
+  (
+    {
+      id,
+      label,
+      type,
+      value,
+      onChange,
+      onBlur,
+      name,
+      classes,
+      onClick,
+      isActiveClass,
+    },
+    ref,
+  ) => {
+    return (
+      <label htmlFor={id} className={`${classes} ${isActiveClass}`}>
+        <span>{label}</span>
+        <input
+          type={type}
+          id={id}
+          value={value}
+          name={name}
+          onChange={onChange}
+          onBlur={onBlur}
+          ref={ref}
+          onClick={onClick}
+        />
+      </label>
+    );
+  },
+);
 
 Input.propTypes = {
   id: PropTypes.string.isRequired,
@@ -31,9 +41,12 @@ Input.propTypes = {
   type: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  register: PropTypes.func.isRequired,
   classes: PropTypes.string,
   onClick: PropTypes.func,
+  onChange: PropTypes.func.isRequired,
+  onBlur: PropTypes.func.isRequired,
+  isActiveClass: PropTypes.oneOfType([PropTypes.string, PropTypes.bool])
+    .isRequired,
 };
 Input.defaultProps = {
   classes: "",

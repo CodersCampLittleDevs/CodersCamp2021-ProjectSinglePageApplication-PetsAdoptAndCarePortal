@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
 import PropTypes from "prop-types";
@@ -5,11 +6,12 @@ import { Select } from "../Select/Select";
 import { DataList } from "../DataList/DataList";
 import { Input } from "../Input/Input";
 import { SERVICES, CATEGORIES, CITIES, PETS } from "../../constants/options";
-import styles from "./search_filter.module.scss";
+import styles from "./search_form.module.scss";
 import { Button } from "../Button/Button";
 import searchButtonIcon from "../../assets/image/searchButton.png";
 
-export const SearchFilter = ({ filterAnnouncements }) => {
+export const SearchForm = ({ filterAnnouncements }) => {
+  const [filterState, setFilterState] = useState([]);
   const history = useHistory();
   const {
     register,
@@ -18,29 +20,36 @@ export const SearchFilter = ({ filterAnnouncements }) => {
   } = useForm();
 
   const onSubmit = (data) => {
-    let animalsSearchParams = "";
+    const params = new URLSearchParams();
+    params.set("phrase", data.Phrase);
+    params.set("category", data.Category);
+    params.set("city", data.City);
     if (data.Animals) {
       data.Animals.map((animal) => {
-        animalsSearchParams += `&animal=${animal}`;
+        params.append("animal", animal);
         return true;
       });
     }
     history.push({
       pathname: "/announcements",
-      search: `?phrase=${data.Phrase}&category=${data.Category}&city=${data.City}${animalsSearchParams}`,
+      search: params.toString(),
     });
     filterAnnouncements({
-      Phrase: encodeURIComponent(data.Phrase),
-      Category: encodeURIComponent(data.Category),
-      City: encodeURIComponent(data.City),
+      Phrase: data.Phrase,
+      Category: data.Category,
+      City: data.City,
       Animals: data.Animals,
     });
   };
 
-  const toggleBadgeActive = (e) => {
-    const input = e.target;
-    const label = input.parentElement;
-    label.classList.toggle(styles.searchFilter__checkbox_active);
+  const toggleBadgeActive = (name) => {
+    if (!filterState.includes(name)) {
+      setFilterState([...filterState, name]);
+    } else {
+      const newFilterState = [...filterState];
+      newFilterState.splice(newFilterState.indexOf(name), 1);
+      setFilterState(newFilterState);
+    }
   };
 
   return (
@@ -53,22 +62,31 @@ export const SearchFilter = ({ filterAnnouncements }) => {
             label={pet}
             type="checkbox"
             value={pet}
-            name={PETS.title}
-            register={register}
+            {...register(PETS.title)}
             classes={styles.searchFilter__checkbox}
-            onClick={toggleBadgeActive}
+            onClick={() => toggleBadgeActive(pet)}
+            isActiveClass={
+              filterState.includes(pet) && styles.searchFilter__checkbox_active
+            }
           />
         ))}
       </div>
       <div className={styles.searchFilter__bottom}>
         <label htmlFor={SERVICES.title} className={styles.label}>
-          <DataList register={register} required list={SERVICES} />
+          <DataList
+            {...register(SERVICES.title, { required: true })}
+            list={SERVICES}
+          />
           {errors[SERVICES.title] && (
             <span className={styles.error}>Wpisz czego szukasz</span>
           )}
         </label>
         <label htmlFor={CATEGORIES.title} className={styles.label}>
-          <Select register={register} required list={CATEGORIES} />
+          <Select
+            {...register(CATEGORIES.title, { required: true })}
+            required
+            list={CATEGORIES}
+          />
           {errors[CATEGORIES.title] && (
             <span className={styles.error}>
               Wybierz kategorię której szukasz
@@ -76,7 +94,11 @@ export const SearchFilter = ({ filterAnnouncements }) => {
           )}
         </label>
         <label htmlFor={CITIES.title} className={styles.label}>
-          <DataList register={register} required list={CITIES} />
+          <DataList
+            {...register(CITIES.title, { required: true })}
+            required
+            list={CITIES}
+          />
           {errors[CITIES.title] && (
             <span className={styles.error}>Wpisz czego szukasz</span>
           )}
@@ -93,10 +115,10 @@ export const SearchFilter = ({ filterAnnouncements }) => {
   );
 };
 
-SearchFilter.propTypes = {
+SearchForm.propTypes = {
   filterAnnouncements: PropTypes.func,
 };
 
-SearchFilter.defaultProps = {
+SearchForm.defaultProps = {
   filterAnnouncements: () => {},
 };
