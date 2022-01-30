@@ -9,19 +9,13 @@ export const AnnouncementList = () => {
 
   const filterAnnouncements = (data) => {
     const { Phrase, Category, City, Animals } = data;
-    let announcements = [...ANNOUNCEMENTS_LIST];
     let animalsArray;
-
-    announcements = announcements
-      .filter((announcement) =>
-        announcement.title.toLowerCase().includes(Phrase.toLowerCase()),
-      )
-      .filter((announcement) =>
-        announcement.category.toLowerCase().includes(Category),
-      )
-      .filter((announcement) =>
+    let announcements = ANNOUNCEMENTS_LIST.filter(
+      (announcement) =>
+        announcement.title.toLowerCase().includes(Phrase.toLowerCase()) &&
+        announcement.category.toLowerCase().includes(Category) &&
         announcement.city.toLowerCase().includes(City.toLowerCase()),
-      );
+    );
     if (Animals) {
       animalsArray = Animals.map((animal) => animal.toLowerCase());
       announcements = announcements.filter((announcement) =>

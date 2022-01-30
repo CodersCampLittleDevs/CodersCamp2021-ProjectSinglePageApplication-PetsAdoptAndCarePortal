@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import PropTypes from "prop-types";
 import { Select } from "../Select/Select";
 import { DataList } from "../DataList/DataList";
-import { Input } from "../Input/Input";
+import { Checkbox } from "../Checkbox/Checkbox";
 import { SERVICES, CATEGORIES, CITIES, PETS } from "../../constants/options";
 import styles from "./search_form.module.scss";
 import { Button } from "../Button/Button";
@@ -19,17 +19,22 @@ export const SearchForm = ({ filterAnnouncements }) => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
+  const createSearchParamsString = (data) => {
     const params = new URLSearchParams();
-    params.set("phrase", data.Phrase);
-    params.set("category", data.Category);
-    params.set("city", data.City);
-    if (data.Animals) {
-      data.Animals.map((animal) => {
-        params.append("animal", animal);
-        return true;
-      });
-    }
+    Object.keys(data).forEach((key) => {
+      if (Array.isArray(data[key])) {
+        data[key].forEach((element) => {
+          params.set(key.toLowerCase(), element);
+        });
+      } else {
+        params.set(key.toLowerCase(), data[key]);
+      }
+    });
+    return params;
+  };
+
+  const onSubmit = (data) => {
+    const params = createSearchParamsString(data);
     history.push({
       pathname: "/announcements",
       search: params.toString(),
@@ -56,13 +61,13 @@ export const SearchForm = ({ filterAnnouncements }) => {
     <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
       <div className={styles.searchFilter__top}>
         {PETS.items.map((pet) => (
-          <Input
+          <Checkbox
             key={pet}
             id={pet}
             label={pet}
-            type="checkbox"
             value={pet}
-            {...register(PETS.title)}
+            name={PETS.title}
+            register={register}
             classes={styles.searchFilter__checkbox}
             onClick={() => toggleBadgeActive(pet)}
             isActiveClass={
