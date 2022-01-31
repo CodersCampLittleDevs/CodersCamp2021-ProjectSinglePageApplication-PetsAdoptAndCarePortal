@@ -16,8 +16,8 @@ export const Menu = ({ list }) => {
           );
         }
         return (
-          <Link key={item.title} to={item.path}>
-            {item.title} {item.icon}
+          <Link className={styles.navbar__Link} key={item.title} to={item.path}>
+            {item.title}
           </Link>
         );
       })}

@@ -17,3 +17,11 @@
 .description__text {
   font-size: 20px;
 }
+
+.section__image {
+  width: 600px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
+}

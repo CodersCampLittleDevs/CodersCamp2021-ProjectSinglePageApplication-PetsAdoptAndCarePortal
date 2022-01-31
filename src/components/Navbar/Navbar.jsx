@@ -34,7 +34,7 @@ export const Navbar = () => {
   return (
     <nav className={styles.navbar}>
       <Hamburger />
-      <Menu list={routes} />
+      <Menu className={styles.menu} list={routes} />
     </nav>
   );
 };
