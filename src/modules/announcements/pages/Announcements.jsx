@@ -22,7 +22,10 @@ export const AnnouncementList = () => {
         animalsArray.includes(announcement.animal.toLowerCase()),
       );
     }
+    return announcements;
+  };
 
+  const setFilters = (announcements) => {
     setFilteredAnnouncements(announcements);
   };
   useEffect(() => {
@@ -32,16 +35,25 @@ export const AnnouncementList = () => {
       const Category = params.get("category");
       const City = params.get("city");
       const Animals = params.getAll("animal");
-      filterAnnouncements({ Phrase, Category, City, Animals });
+      const announcements = filterAnnouncements({
+        Phrase,
+        Category,
+        City,
+        Animals,
+      });
+      setFilters(announcements);
     } else {
-      setFilteredAnnouncements(ANNOUNCEMENTS_LIST);
+      setFilters(ANNOUNCEMENTS_LIST);
     }
   }, []);
   console.log(filteredAnnouncements);
 
   return (
     <div>
-      <SearchForm filterAnnouncements={filterAnnouncements} />
+      <SearchForm
+        filterAnnouncements={filterAnnouncements}
+        setFilters={setFilters}
+      />
     </div>
   );
 };

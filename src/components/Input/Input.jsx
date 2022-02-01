@@ -3,22 +3,11 @@ import PropTypes from "prop-types";
 
 export const Input = forwardRef(
   (
-    {
-      id,
-      label,
-      type,
-      value,
-      onChange,
-      onBlur,
-      name,
-      classes,
-      onClick,
-      isActiveClass,
-    },
+    { id, label, type, value, onChange, onBlur, name, classes, onClick },
     ref,
   ) => {
     return (
-      <label htmlFor={id} className={`${classes} ${isActiveClass}`}>
+      <label htmlFor={id} className={classes}>
         <span>{label}</span>
         <input
           type={type}
@@ -45,8 +34,6 @@ Input.propTypes = {
   onClick: PropTypes.func,
   onChange: PropTypes.func.isRequired,
   onBlur: PropTypes.func.isRequired,
-  isActiveClass: PropTypes.oneOfType([PropTypes.string, PropTypes.bool])
-    .isRequired,
 };
 Input.defaultProps = {
   classes: "",

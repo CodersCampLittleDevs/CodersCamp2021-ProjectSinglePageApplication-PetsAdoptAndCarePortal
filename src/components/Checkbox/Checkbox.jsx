@@ -8,10 +8,9 @@ export const Checkbox = ({
   register,
   classes,
   onClick,
-  isActiveClass,
 }) => {
   return (
-    <label htmlFor={id} className={`${classes} ${isActiveClass}`}>
+    <label htmlFor={id} className={classes}>
       <span>{label}</span>
       <input
         type="checkbox"
@@ -33,8 +32,6 @@ Checkbox.propTypes = {
   register: PropTypes.func.isRequired,
   classes: PropTypes.string,
   onClick: PropTypes.func,
-  isActiveClass: PropTypes.oneOfType([PropTypes.string, PropTypes.bool])
-    .isRequired,
 };
 Checkbox.defaultProps = {
   classes: "",

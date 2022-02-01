@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
 import PropTypes from "prop-types";
+import clsx from "clsx";
 import { Select } from "../Select/Select";
 import { DataList } from "../DataList/DataList";
 import { Checkbox } from "../Checkbox/Checkbox";
@@ -10,7 +11,7 @@ import styles from "./search_form.module.scss";
 import { Button } from "../Button/Button";
 import searchButtonIcon from "../../assets/image/searchButton.png";
 
-export const SearchForm = ({ filterAnnouncements }) => {
+export const SearchForm = ({ filterAnnouncements, setFilters }) => {
   const [filterState, setFilterState] = useState([]);
   const history = useHistory();
   const {
@@ -39,12 +40,13 @@ export const SearchForm = ({ filterAnnouncements }) => {
       pathname: "/announcements",
       search: params.toString(),
     });
-    filterAnnouncements({
+    const announcements = filterAnnouncements({
       Phrase: data.Phrase,
       Category: data.Category,
       City: data.City,
       Animals: data.Animals,
     });
+    setFilters(announcements);
   };
 
   const toggleBadgeActive = (name) => {
@@ -68,11 +70,11 @@ export const SearchForm = ({ filterAnnouncements }) => {
             value={pet}
             name={PETS.title}
             register={register}
-            classes={styles.searchFilter__checkbox}
+            classes={clsx({
+              [styles.searchFilter__checkbox]: true,
+              [styles.searchFilter__checkbox_active]: filterState.includes(pet),
+            })}
             onClick={() => toggleBadgeActive(pet)}
-            isActiveClass={
-              filterState.includes(pet) && styles.searchFilter__checkbox_active
-            }
           />
         ))}
       </div>
@@ -122,6 +124,7 @@ export const SearchForm = ({ filterAnnouncements }) => {
 
 SearchForm.propTypes = {
   filterAnnouncements: PropTypes.func,
+  setFilters: PropTypes.func.isRequired,
 };
 
 SearchForm.defaultProps = {
