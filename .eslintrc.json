@@ -30,6 +30,7 @@
     "react/function-component-definition": "off",
     "prettier/prettier": ["error", { "endOfLine": "auto" }],
     "react/jsx-filename-extension": "off",
-    "react/button-has-type": "off"
+    "react/button-has-type": "off",
+    "react/jsx-props-no-spreading": "off"
   }
 }

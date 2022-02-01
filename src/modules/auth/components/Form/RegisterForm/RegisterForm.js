@@ -1,5 +1,5 @@
 import * as yup from "yup";
-import { DUMMY_LOGINS } from "../../../../../constants/auth/auth";
+import { DUMMY_LOGINS } from "../../../../../mock/auth";
 
 export const schema = yup.object().shape({
   email: yup
