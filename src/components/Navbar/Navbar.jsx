@@ -8,15 +8,16 @@ let hamburgerClasses = styles.hamburger;
 
 const Hamburger = () => {
   const [change, setChange] = useState(false);
+
   const hamburgerClick = () => {
     setChange(!change);
     if (change === false) {
       hamburgerClasses = clsx([styles.hamburger, styles.isActive]);
     } else {
-      setChange(!change);
       hamburgerClasses = styles.hamburger;
     }
   };
+
   return (
     <button
       className={hamburgerClasses}
@@ -30,6 +31,7 @@ const Hamburger = () => {
     </button>
   );
 };
+
 export const Navbar = () => {
   return (
     <nav className={styles.navbar}>
