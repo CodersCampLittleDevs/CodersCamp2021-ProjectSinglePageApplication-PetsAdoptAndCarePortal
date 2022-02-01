@@ -11,6 +11,6 @@ export const StepByStepItem = ({ description, image, alt }) => {
 };
 StepByStepItem.propTypes = {
   description: PropTypes.string.isRequired,
-  image: PropTypes.any.isRequired,
+  image: PropTypes.string.isRequired,
   alt: PropTypes.string.isRequired,
 };
