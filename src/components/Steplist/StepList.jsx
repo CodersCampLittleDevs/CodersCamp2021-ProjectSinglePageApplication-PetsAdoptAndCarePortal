@@ -1,37 +1,40 @@
 import { StepByStepItem } from "./StepItem";
 import styles from "./stepitem.module.scss";
+import step1 from "./images/step1.png";
 
 const STEPS = [
   {
     title: "Krok 1:",
-    description: "Wpisz interesującą cię frazę w wyszukiwarkę",
-    image: "ścieżka do img",
+    description: "Skorzystaj z naszej wyszukiwarki",
+    image: { step1 },
+    alt: "step1",
   },
   {
     title: "Krok 2:",
-    description: "Wybierz zwierzę, którego fraza dotyczy",
-    image: "ścieżka do img",
+    description: "Znajdź placówkę w Twojej okolicy",
+    image: { step1 },
+    alt: "step2",
   },
   {
     title: "Krok 3:",
-    description: "Znajdź interesujące Cię ogłoszenie",
-    image: "ścieżka do img",
-  },
-  {
-    title: "Krok 4:",
-    description: "Skontaktuj się z ogłoszeniodawcą!",
-    image: "ścieżka do img",
+    description: "Wygodnie umów wizytę przez internet lub telefon",
+    image: { step1 },
+    alt: "step3",
   },
 ];
 export const StepByStepList = () => (
-  <div className={styles.steplist}>
-    {STEPS.map((step) => (
-      <StepByStepItem
-        title={step.title}
-        description={step.description}
-        image={step.image}
-        key={step.title}
-      />
-    ))}
+  <div className={styles.step}>
+    <h1>W prosty i łatwy sposób wyszukasz interesujące Cię usługi</h1>
+    <div className={styles.steplist}>
+      {STEPS.map((step) => (
+        <StepByStepItem
+          title={step.title}
+          description={step.description}
+          image={step.image}
+          key={step.title}
+          alt={step.alt}
+        />
+      ))}
+    </div>
   </div>
 );
