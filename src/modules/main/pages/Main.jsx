@@ -4,7 +4,6 @@ import dog from "../../../assets/image/encourages/dog.jpg";
 export const Main = () => {
   return (
     <div>
-      Main
       <Section
         imageSrc={dog}
         title="W trosce o potrzeby Twojego zwierzaka"
