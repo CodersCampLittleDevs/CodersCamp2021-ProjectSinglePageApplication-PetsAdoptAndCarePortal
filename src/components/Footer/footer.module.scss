@@ -4,21 +4,21 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
+  margin: 25px 0 25px;
   padding: 10px 0;
   @media screen and (min-width: 767px) {
     flex-direction: row;
     justify-content: space-around;
     align-items: stretch;
-    padding: 30px 0;
+    margin: 50px 0 80px;
   }
 
   .logo_column {
     font-size: 12px;
     color: #243b70;
-    padding: 20px 0 10px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     @media screen and (min-width: 767px) {
       align-items: flex-start;
@@ -38,16 +38,24 @@
     width: 80px;
     @media screen and (min-width: 767px) {
       width: 100px;
+      margin-bottom: 15px;
     }
     @media screen and (min-width: 1023px) {
       width: 120px;
     }
     @media screen and (min-width: 1439px) {
       width: 140px;
+      margin-bottom: 40px;
     }
   }
   .description {
     line-height: 1.8;
+    @media screen and (min-width: 767px) {
+      margin-bottom: 15px;
+    }
+    @media screen and (min-width: 1439px) {
+      margin-bottom: 40px;
+    }
   }
 
   .column {
@@ -62,10 +70,10 @@
       font-size: 12px;
       color: #243b70;
       font-weight: bold;
-      padding-bottom: 10px;
+      margin-bottom: 10px;
       @media screen and (min-width: 767px) {
         font-size: 18px;
-        padding-bottom: 30px;
+        margin-bottom: 50px;
       }
       @media screen and (min-width: 1023px) {
         font-size: 20px;
@@ -81,7 +89,7 @@
       padding: 2px 0;
       transition: 0.2s;
       &:hover {
-        font-weight: bold;
+        text-shadow: 0 1px 1px #000;
       }
       @media screen and (min-width: 767px) {
         font-size: 16px;
