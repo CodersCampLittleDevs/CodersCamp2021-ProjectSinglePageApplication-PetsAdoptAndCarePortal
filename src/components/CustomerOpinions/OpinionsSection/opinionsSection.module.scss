@@ -1,0 +1,24 @@
+.section {
+  background-color: rgb(212, 238, 247);
+  width: 95vw;
+  text-align: center;
+  margin: 0 auto;
+  padding: 5px;
+  font-family: "Ebrima", serif;
+  color: rgb(41, 36, 112);
+}
+
+.title {
+  color: #292470;
+  font-size: 16px;
+  padding: 10px 0 20px;
+  @media screen and (min-width: 767px) {
+    font-size: 20px;
+  }
+  @media screen and (min-width: 1023px) {
+    font-size: 28px;
+  }
+  @media screen and (min-width: 1439px) {
+    font-size: 36px;
+  }
+}

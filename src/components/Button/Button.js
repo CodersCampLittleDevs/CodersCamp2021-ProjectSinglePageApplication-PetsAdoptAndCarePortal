@@ -5,6 +5,7 @@ export const Button = ({ to, children, type, classes, onClick, disabled }) => {
   if (to) {
     return <Link to={to}>{children}</Link>;
   }
+
   return (
     <button
       type={type}

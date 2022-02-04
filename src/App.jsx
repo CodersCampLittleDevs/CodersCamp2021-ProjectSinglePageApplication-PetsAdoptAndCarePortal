@@ -1,11 +1,13 @@
 import { AppRoutes } from "./routes/Routes";
-import { Footer } from "./components/footer";
+import { OpinionsSection } from "./components/CustomerOpinions/OpinionsSection/OpinionsSection";
+import { Footer } from "./components/Footer/footer";
 
 function App() {
   return (
     <div className="App">
       <h1>Coderscamp</h1>
       <AppRoutes />
+      <OpinionsSection />
       <Footer />
     </div>
   );
