@@ -10,7 +10,7 @@ export const Footer = () => {
         <p className={styles.description}>
           Wszystkie usługi dla Twojego pupila w jednym miejscu.
         </p>
-        <p>Copyright &copy; 2022</p>
+        <p className={styles.description}>Copyright &copy; 2022</p>
       </div>
       <section className={styles.column}>
         <header className={styles.header}>Usługi dla zwierząt</header>
