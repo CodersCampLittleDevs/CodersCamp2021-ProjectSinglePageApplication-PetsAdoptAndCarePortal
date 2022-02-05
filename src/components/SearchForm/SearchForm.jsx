@@ -31,14 +31,14 @@ export const SearchForm = ({ filterAnnouncements, setFilters }) => {
         params.set(key.toLowerCase(), data[key]);
       }
     });
-    return params;
+    return params.toString();
   };
 
   const onSubmit = (data) => {
     const params = createSearchParamsString(data);
     history.push({
       pathname: "/announcements",
-      search: params.toString(),
+      search: params,
     });
     const announcements = filterAnnouncements({
       Phrase: data.Phrase,

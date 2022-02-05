@@ -1,5 +1,5 @@
 import { Favorites } from "../pages/Favorites";
-import { AnnouncementList } from "../pages/Announcements";
+import { AnnouncementList } from "../pages/Announcements.jsx";
 import { AnnouncementNew } from "../pages/New";
 import { Announcement } from "../pages/Announcement";
 

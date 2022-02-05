@@ -2,28 +2,11 @@ import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { SearchForm } from "../../../components/SearchForm/SearchForm";
 import { ANNOUNCEMENTS_LIST } from "../../../constants/announcements";
+import { filterAnnouncements } from "./Announcements";
 
 export const AnnouncementList = () => {
   const [filteredAnnouncements, setFilteredAnnouncements] = useState([]);
   const { search } = useLocation();
-
-  const filterAnnouncements = (data) => {
-    const { Phrase, Category, City, Animals } = data;
-    let animalsArray;
-    let announcements = ANNOUNCEMENTS_LIST.filter(
-      (announcement) =>
-        announcement.title.toLowerCase().includes(Phrase.toLowerCase()) &&
-        announcement.category.toLowerCase().includes(Category) &&
-        announcement.city.toLowerCase().includes(City.toLowerCase()),
-    );
-    if (Animals) {
-      animalsArray = Animals.map((animal) => animal.toLowerCase());
-      announcements = announcements.filter((announcement) =>
-        animalsArray.includes(announcement.animal.toLowerCase()),
-      );
-    }
-    return announcements;
-  };
 
   const setFilters = (announcements) => {
     setFilteredAnnouncements(announcements);
@@ -45,7 +28,7 @@ export const AnnouncementList = () => {
     } else {
       setFilters(ANNOUNCEMENTS_LIST);
     }
-  }, []);
+  }, [search]);
   console.log(filteredAnnouncements);
 
   return (
