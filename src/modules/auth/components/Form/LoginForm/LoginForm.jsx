@@ -9,7 +9,7 @@ import styles from "../form.module.scss";
 import { DUMMY_LOGINS } from "../../../../../mock/auth";
 
 export const LoginForm = () => {
-  const authContext = useContext(AuthContext);
+  const { isLoggedIn, onLogin } = useContext(AuthContext);
   const [validData, setValidData] = useState(true);
 
   const schema = yup.object().shape({
@@ -19,9 +19,9 @@ export const LoginForm = () => {
       .required("Podaj poprawny email/login"),
     password: yup
       .string()
+      .required("Podaj hasło")
       .min(4, "Minimum 4 znaki")
-      .max(15, "Maksymalnie 15 znaków")
-      .required("Podaj hasło"),
+      .max(15, "Maksymalnie 15 znaków"),
   });
 
   const {
@@ -31,15 +31,14 @@ export const LoginForm = () => {
   } = useForm({ resolver: yupResolver(schema) });
 
   const login = () => {
-    authContext.onLogin();
+    onLogin();
   };
 
   const submitForm = (data) => {
-    const user = DUMMY_LOGINS.filter(
+    const user = DUMMY_LOGINS.find(
       (dummyUser) =>
         dummyUser.email === data.login || dummyUser.username === data.login,
-      setValidData(true),
-    )[0];
+    );
 
     if (user && user.password === data.password) {
       login();
@@ -50,7 +49,7 @@ export const LoginForm = () => {
 
   return (
     <>
-      {authContext.isLoggedIn ? <p>Zalogowany</p> : <p>Niezalogowany</p>}
+      {isLoggedIn ? <p>Zalogowany</p> : <p>Niezalogowany</p>}
       {!validData && <p>Podałeś błędne dane</p>}
       <form onSubmit={handleSubmit(submitForm)}>
         <Input

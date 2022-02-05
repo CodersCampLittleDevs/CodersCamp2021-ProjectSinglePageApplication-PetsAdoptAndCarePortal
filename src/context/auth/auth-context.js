@@ -31,7 +31,7 @@ export const AuthContextProvider = ({ children }) => {
     () => ({
       isLoggedIn,
       onLogout: logoutHandler,
-      onLogin: loginHandler,
+      onLogin: () => loginHandler(),
     }),
 
     [isLoggedIn],
