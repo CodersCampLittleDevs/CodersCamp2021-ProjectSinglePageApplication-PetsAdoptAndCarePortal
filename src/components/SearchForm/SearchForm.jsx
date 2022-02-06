@@ -10,6 +10,7 @@ import { SERVICES, CATEGORIES, CITIES, PETS } from "../../constants/options";
 import styles from "./search_form.module.scss";
 import { Button } from "../Button/Button";
 import searchButtonIcon from "../../assets/image/searchButton.png";
+import { createSearchParamsString } from "../../utils/createSearchParamString";
 
 export const SearchForm = ({ filterAnnouncements, setFilters }) => {
   const [filterState, setFilterState] = useState([]);
@@ -19,20 +20,6 @@ export const SearchForm = ({ filterAnnouncements, setFilters }) => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-
-  const createSearchParamsString = (data) => {
-    const params = new URLSearchParams();
-    Object.keys(data).forEach((key) => {
-      if (Array.isArray(data[key])) {
-        data[key].forEach((element) => {
-          params.set(key.toLowerCase(), element);
-        });
-      } else {
-        params.set(key.toLowerCase(), data[key]);
-      }
-    });
-    return params.toString();
-  };
 
   const onSubmit = (data) => {
     const params = createSearchParamsString(data);
