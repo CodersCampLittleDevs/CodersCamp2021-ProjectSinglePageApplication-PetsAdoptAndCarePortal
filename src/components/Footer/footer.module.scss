@@ -1,0 +1,119 @@
+.footer {
+  font-family: Ebrima, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 25px 0 25px;
+  padding: 10px 0;
+  @media screen and (min-width: 767px) {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: stretch;
+    margin: 50px 0 80px;
+  }
+
+  .logo_column {
+    font-size: 12px;
+    color: #243b70;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    @media screen and (min-width: 767px) {
+      align-items: flex-start;
+      font-size: 14px;
+      flex-basis: 260px;
+    }
+    @media screen and (min-width: 1023px) {
+      font-size: 16px;
+      flex-basis: 320px;
+    }
+    @media screen and (min-width: 1439px) {
+      font-size: 20px;
+    }
+  }
+
+  .logo {
+    width: 80px;
+    @media screen and (min-width: 767px) {
+      width: 100px;
+      margin-bottom: 25px;
+    }
+    @media screen and (min-width: 1023px) {
+      width: 120px;
+    }
+    @media screen and (min-width: 1439px) {
+      width: 140px;
+      margin-bottom: 50px;
+    }
+  }
+  .description {
+    line-height: 1.8;
+    @media screen and (min-width: 767px) {
+      margin: 0 0 25px;
+    }
+    @media screen and (min-width: 1439px) {
+      margin: 0 0 50px;
+    }
+  }
+
+  .column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+    @media screen and (min-width: 767px) {
+      align-items: flex-start;
+    }
+    .header {
+      font-size: 12px;
+      color: #243b70;
+      font-weight: bold;
+      margin-bottom: 10px;
+      @media screen and (min-width: 767px) {
+        font-size: 18px;
+        margin-bottom: 50px;
+      }
+      @media screen and (min-width: 1023px) {
+        font-size: 20px;
+      }
+      @media screen and (min-width: 1439px) {
+        font-size: 25px;
+      }
+    }
+    .link {
+      color: #385cb0;
+      font-size: 12px;
+      text-decoration: none;
+      padding: 2px 0;
+      transition: 0.2s;
+      &:hover {
+        text-shadow: 0 1px 1px #000;
+      }
+      @media screen and (min-width: 767px) {
+        font-size: 16px;
+        padding: 5px 0;
+      }
+      @media screen and (min-width: 1023px) {
+        font-size: 18px;
+      }
+      @media screen and (min-width: 1439px) {
+        font-size: 25px;
+        padding: 10px 0;
+      }
+    }
+    .break {
+      margin-bottom: 10px;
+      @media screen and (min-width: 768px) {
+        margin-bottom: 30px;
+      }
+      @media screen and (min-width: 1023px) {
+        margin-bottom: 40px;
+      }
+      @media screen and (min-width: 1439px) {
+        margin-bottom: 50px;
+      }
+    }
+  }
+}
