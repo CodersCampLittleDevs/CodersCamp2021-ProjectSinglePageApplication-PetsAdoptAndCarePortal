@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import styles from "./navbar.module.scss";
-import { Logo } from "../logo/Logo";
+import { Logo } from "../Logo/Logo";
 
 export const Menu = ({ list }) => {
   return (
