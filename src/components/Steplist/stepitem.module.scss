@@ -1,0 +1,32 @@
+.steplist {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.step h2 {
+  text-align: center;
+  color: #243b70;
+  font-family: Ebrima;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 50px;
+}
+.stepitem {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.steplist h3 {
+  color: #385cb0;
+  font-style: Ebrima;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 40px;
+  text-align: center;
+  margin-top: 30px;
+}
+@media screen and (max-width: 767px) {
+  .steplist {
+    flex-direction: column;
+  }
+}

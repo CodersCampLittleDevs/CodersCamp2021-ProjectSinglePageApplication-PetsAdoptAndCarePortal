@@ -1,10 +1,14 @@
 import PropTypes from "prop-types";
+import { forwardRef } from "react";
 
-export const DataList = ({ list, register, required }) => {
+export const DataList = forwardRef(({ list, onChange, onBlur, name }, ref) => {
   return (
     <>
       <input
-        {...register(list.title, { required })}
+        onChange={onChange}
+        onBlur={onBlur}
+        ref={ref}
+        name={name}
         list={list.title}
         type="text"
         placeholder={list.placeholder}
@@ -17,16 +21,13 @@ export const DataList = ({ list, register, required }) => {
       </datalist>
     </>
   );
-};
+});
 
 DataList.propTypes = {
   list: PropTypes.objectOf(
     PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
   ).isRequired,
-  register: PropTypes.func.isRequired,
-  required: PropTypes.bool,
-};
-
-DataList.defaultProps = {
-  required: false,
+  onChange: PropTypes.func.isRequired,
+  onBlur: PropTypes.func.isRequired,
+  name: PropTypes.string.isRequired,
 };

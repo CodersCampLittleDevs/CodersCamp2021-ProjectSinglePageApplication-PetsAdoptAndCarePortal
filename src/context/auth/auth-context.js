@@ -1,5 +1,5 @@
 import { createContext, useState, useEffect, useMemo } from "react";
-import propTypes from "prop-types";
+import PropTypes from "prop-types";
 
 const AuthContext = createContext({
   isLoggedIn: false,
@@ -29,8 +29,9 @@ export const AuthContextProvider = ({ children }) => {
     () => ({
       isLoggedIn,
       onLogout: logoutHandler,
-      onLogin: loginHandler,
+      onLogin: () => loginHandler(),
     }),
+
     [isLoggedIn],
   );
   return (
@@ -41,5 +42,5 @@ export const AuthContextProvider = ({ children }) => {
 export default AuthContext;
 
 AuthContextProvider.propTypes = {
-  children: propTypes.node.isRequired,
+  children: PropTypes.node.isRequired,
 };

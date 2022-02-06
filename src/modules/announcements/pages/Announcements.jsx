@@ -1,34 +1,14 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { SearchFilter } from "../../../components/SearchFilter/SearchFilter";
+import { SearchForm } from "../../../components/SearchForm/SearchForm";
 import { ANNOUNCEMENTS_LIST } from "../../../constants/announcements";
+import { filterAnnouncements } from "./Announcements";
 
 export const AnnouncementList = () => {
   const [filteredAnnouncements, setFilteredAnnouncements] = useState([]);
   const { search } = useLocation();
 
-  const filterAnnouncements = (data) => {
-    const { Phrase, Category, City, Animals } = data;
-    let announcements = [...ANNOUNCEMENTS_LIST];
-    let animalsArray;
-
-    announcements = announcements
-      .filter((announcement) =>
-        announcement.title.toLowerCase().includes(Phrase.toLowerCase()),
-      )
-      .filter((announcement) =>
-        announcement.category.toLowerCase().includes(Category),
-      )
-      .filter((announcement) =>
-        announcement.city.toLowerCase().includes(City.toLowerCase()),
-      );
-    if (Animals) {
-      animalsArray = Animals.map((animal) => animal.toLowerCase());
-      announcements = announcements.filter((announcement) =>
-        animalsArray.includes(announcement.animal.toLowerCase()),
-      );
-    }
-
+  const setFilters = (announcements) => {
     setFilteredAnnouncements(announcements);
   };
   useEffect(() => {
@@ -38,16 +18,25 @@ export const AnnouncementList = () => {
       const Category = params.get("category");
       const City = params.get("city");
       const Animals = params.getAll("animal");
-      filterAnnouncements({ Phrase, Category, City, Animals });
+      const announcements = filterAnnouncements({
+        Phrase,
+        Category,
+        City,
+        Animals,
+      });
+      setFilters(announcements);
     } else {
-      setFilteredAnnouncements(ANNOUNCEMENTS_LIST);
+      setFilters(ANNOUNCEMENTS_LIST);
     }
-  }, []);
+  }, [search]);
   console.log(filteredAnnouncements);
 
   return (
     <div>
-      <SearchFilter filterAnnouncements={filterAnnouncements} />
+      <SearchForm
+        filterAnnouncements={filterAnnouncements}
+        setFilters={setFilters}
+      />
     </div>
   );
 };

@@ -1,11 +1,12 @@
 import { Section } from "../components/EncourageSection/Section";
 import dog from "../../../assets/image/encourages/dog.jpg";
-import { SearchFilter } from "../../../components/SearchFilter/SearchFilter";
+import { SearchForm } from "../../../components/SearchForm/SearchForm";
 
 export const Main = () => {
   return (
     <div>
-      <SearchFilter />
+      Main
+      <SearchForm />
       <Section
         imageSrc={dog}
         title="W trosce o potrzeby Twojego zwierzaka"
