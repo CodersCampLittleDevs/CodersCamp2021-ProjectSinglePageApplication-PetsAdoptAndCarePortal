@@ -1,4 +1,4 @@
-import { ANNOUNCEMENTS_LIST } from "../../../constants/announcements";
+import { ANNOUNCEMENTS_LIST } from "../constants/announcements";
 
 export const filterAnnouncements = (data) => {
   const { Phrase, Category, City, Animals } = data;
