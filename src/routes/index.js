@@ -1,5 +1,4 @@
-import { FaRegIdCard, FaGratipay, FaUserCog, FaUserPlus } from "react-icons/fa";
-import { Auth } from "../modules/auth";
+import { authRoutes } from "../modules/auth/routes";
 import { Main } from "../modules/main";
 import { Account } from "../modules/account";
 import { Favorites } from "../modules/announcements/pages/Favorites";
@@ -24,26 +23,18 @@ export const routes = [
     path: "/announcements/new",
     component: <AnnouncementNew />,
     title: "Dodaj post",
-    icon: <FaRegIdCard />,
   },
   {
     path: "/announcements/favorites",
     component: <Favorites />,
     title: "Ulubione",
-    icon: <FaGratipay />,
     visibleWhenLogged: true,
   },
-  {
-    path: "/auth",
-    component: <Auth />,
-    title: "Zarejestruj sie",
-    icon: <FaUserPlus />,
-  },
+  ...authRoutes,
   {
     path: "/account",
     component: <Account />,
     title: "Moje konto",
-    icon: <FaUserCog />,
     visibleWhenLogged: true,
   },
 ];

@@ -1,0 +1,16 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  &__input {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    span {
+    }
+  }
+  &__error {
+    font-size: 12px;
+    font-weight: bold;
+    color: red;
+  }
+}
