@@ -56,8 +56,8 @@ export const ForgotForm = () => {
     <>
       {!passwordState.isUserRegistered && (
         <p>
-          Jeśli użytkownik jest zalogowany to wysłano nowe hasło na powiązany
-          adres e-mail
+          Jeśli użytkownik jest zarejestrowany to wysłano nowe hasło na
+          powiązany adres e-mail
         </p>
       )}
       {passwordState.isUserRegistered && passwordState.forgottenPassword && (
