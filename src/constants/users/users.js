@@ -18,5 +18,7 @@ export const USERS_LIST = [
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, placeat?",
     announcement: [1, 2, 3, 8, 9],
     phoneNumber: "123 456 789",
+    company: "zwierzaki.pl",
+    openHours: "8-18",
   },
 ];

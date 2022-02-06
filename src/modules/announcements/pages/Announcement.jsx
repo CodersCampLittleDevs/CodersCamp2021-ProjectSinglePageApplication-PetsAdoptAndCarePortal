@@ -23,10 +23,10 @@ export const Announcement = () => {
         <div className={styles.announcement__contact}>
           <p>{user?.name}</p>
           <img src={user?.image} alt="" />
-          {announcement.company && (
+          {user.company && (
             <>
-              <p>{announcement.company}</p>
-              <p>Otwarte w godzinach {announcement.openHours}</p>
+              <p>{user.company}</p>
+              <p>Otwarte w godzinach: {user.openHours}</p>
             </>
           )}
           <Link to={`/announcements/user/${announcement.userId}`}>
@@ -42,13 +42,13 @@ export const Announcement = () => {
         </div>
       </div>
       <div className={styles.announcement__details}>
-        <h1 className={styles.announcement__title}>{announcement.title}</h1>
-        <p className={styles.announcement__price}>{announcement.price}</p>
+        <h2 className={styles.announcement__title}>{announcement.title}</h2>
+        <p className={styles.announcement__price}>Cena: {announcement.price}</p>
         <p className={styles.announcement__rate}>
           Ocena ogłoszenia: {announcement.rate}
         </p>
-        <h2>Opis</h2>
-        <p className={styles.annoucemenet__description}>
+        <h3>Opis</h3>
+        <p className={styles.announcemenet__description}>
           {announcement.description}
         </p>
       </div>
