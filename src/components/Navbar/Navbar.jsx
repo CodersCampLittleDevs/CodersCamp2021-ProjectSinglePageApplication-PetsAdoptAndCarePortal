@@ -18,7 +18,7 @@ const Hamburger = ({ isOpen, handleHamburgerClick }) => {
 
   return (
     <button
-      className={isOpen ? hamburgerClasses : styles.hamburger}
+      className={hamburgerClasses}
       id={styles.hamburger}
       onClick={hamburgerClick}
       onKeyDown={hamburgerClick}
