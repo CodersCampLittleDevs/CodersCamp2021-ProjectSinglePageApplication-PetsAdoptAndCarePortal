@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { SearchForm } from "../../../components/SearchForm/SearchForm";
 import { ANNOUNCEMENTS_LIST } from "../../../constants/announcements";
-import { filterAnnouncements } from "../../../utils/filterAnnouncements";
+import { filterAnnouncements } from "../../../utils";
 
 export const AnnouncementList = () => {
   const [filteredAnnouncements, setFilteredAnnouncements] = useState([]);
