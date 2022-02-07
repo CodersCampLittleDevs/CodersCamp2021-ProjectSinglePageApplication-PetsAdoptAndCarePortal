@@ -22,8 +22,17 @@
     font-size: 36px;
     margin: 30px 0px;
   }
+  button {
+    border-radius: 50px;
+    border: none;
+    background-image: linear-gradient(to left, #3e6ff0, #fff);
+    padding: 25px;
+  }
   @media screen and(min-width: $desktop-breakpoint) {
-    // width: 900px;
+    width: 80%;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
 
     grid-template-columns: 25% 25% 50%;
     grid-template-areas:
@@ -41,13 +50,14 @@
   }
   &__contactContainer {
     grid-area: user;
+    align-self: center;
   }
   &__contact {
-    position: sticky;
     top: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
   }
   &__details {
     grid-area: description;
@@ -67,3 +77,53 @@
   &__phoneNumber {
   }
 }
+// .announcement {
+//   color: #385cb0;
+//   font-family: Ebrima;
+//   font-size: 25px;
+//   h2 {
+//     color: #243b70;
+//     font-size: 36px;
+//   }
+//   h3 {
+//     color: #243b70;
+//     font-size: 36px;
+//   }
+//   &__section {
+//     display: flex;
+//     justify-content: space-between;
+//   }
+//   &__image {
+//     img {
+//       margin-left: 10%;
+//       width: 500px;
+//     }
+//   }
+//   &__contactContainer {
+//     margin-right: 10%;
+//   }
+//   &__contact {
+//   }
+//   &__details {
+//     margin: 50px 10%;
+//   }
+//   &__title {
+//   }
+//   &__price {
+//   }
+//   &__description {
+//   }
+//   &__rate {
+//   }
+//   &__phoneNumber {
+//   }
+// }
+// @media screen and(max-width: 767px) {
+//   .announcement {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     &__section {
+//     }
+//   }
+// }
