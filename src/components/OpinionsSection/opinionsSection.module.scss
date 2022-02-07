@@ -6,6 +6,7 @@
   padding: 5px;
   font-family: "Ebrima", serif;
   color: rgb(41, 36, 112);
+  position: relative;
 }
 
 .title {
@@ -21,4 +22,10 @@
   @media screen and (min-width: 1439px) {
     font-size: 36px;
   }
+}
+
+.sliderContainer {
+  position: relative;
+  width: 1440px;
+  margin: 0 auto;
 }
