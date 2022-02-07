@@ -17,6 +17,10 @@ code {
     monospace;
 }
 
+section div.swiper {
+  z-index: 0;
+}
+
 .swiper-button-next,
 .swiper-button-prev {
   transform: scale(0.6);

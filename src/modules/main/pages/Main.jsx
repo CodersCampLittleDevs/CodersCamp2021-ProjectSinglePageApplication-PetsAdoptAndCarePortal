@@ -5,7 +5,6 @@ import { SearchForm } from "../../../components/SearchForm/SearchForm";
 export const Main = () => {
   return (
     <div>
-      Main
       <SearchForm />
       <Section
         imageSrc={dog}
