@@ -4,8 +4,6 @@ import "./index.scss";
 import App from "./App";
 import { AuthContextProvider } from "./context/auth/auth-context";
 
-import { AuthContextProvider } from "./context/auth/auth-context";
-
 ReactDOM.render(
   <React.StrictMode>
     <AuthContextProvider>
