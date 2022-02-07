@@ -4,6 +4,7 @@ import { Account } from "../modules/account";
 import { Favorites } from "../modules/announcements/pages/Favorites";
 import { AnnouncementList } from "../modules/announcements/pages/Announcements";
 import { AnnouncementNew } from "../modules/announcements/pages/New";
+import { Announcement } from "../modules/announcements/pages/Announcement";
 
 export const routes = [
   {
@@ -35,6 +36,12 @@ export const routes = [
     path: "/account",
     component: <Account />,
     title: "Moje konto",
+    visibleWhenLogged: true,
+  },
+  {
+    path: "/announcements/:id",
+    component: <Announcement />,
+    title: "Ogłoszenie",
     visibleWhenLogged: true,
   },
 ];
