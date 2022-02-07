@@ -15,7 +15,7 @@ export const OpinionsSection = () => {
       <h2 className={styles.title}>Opinie naszych klientów</h2>
       <Swiper
         slidesPerView={1}
-        spaceBetween={0}
+        spaceBetween={10}
         navigation={{
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
@@ -23,7 +23,7 @@ export const OpinionsSection = () => {
         breakpoints={{
           768: {
             slidesPerView: 2,
-            spaceBetween: 20,
+            spaceBetween: 0,
           },
         }}
       >
