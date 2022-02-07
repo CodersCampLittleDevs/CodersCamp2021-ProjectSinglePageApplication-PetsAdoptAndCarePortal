@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation } from "swiper";
 import { Opinion } from "../Opinion/Opinion";
 import styles from "./opinionsSection.module.scss";
-import { OPINIONS_LIST } from "../../constants/opinions";
+import { OPINIONS_LIST } from "../../../constants/opinions";
 import "swiper/css";
 import "swiper/css/navigation";
 

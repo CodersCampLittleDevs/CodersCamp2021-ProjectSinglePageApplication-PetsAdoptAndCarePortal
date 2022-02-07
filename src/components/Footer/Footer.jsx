@@ -1,12 +1,10 @@
 import { BrowserRouter as Router, NavLink } from "react-router-dom";
 import styles from "./footer.module.scss";
 import logo from "../../assets/image/footer/Layer 2.png";
-import photoBottom from "../../assets/image/footer/Photo bottom.png";
 
 export const Footer = () => {
   return (
     <div>
-      <img className={styles.photo} src={photoBottom} alt="buldog francuski" />
       <footer className={styles.footer}>
         <div className={styles.logo_column}>
           <img className={styles.logo} src={logo} alt="logo" />

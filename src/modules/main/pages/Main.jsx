@@ -1,6 +1,7 @@
 import { Section } from "../components/EncourageSection/Section";
 import dog from "../../../assets/image/encourages/dog.jpg";
 import { SearchForm } from "../../../components/SearchForm/SearchForm";
+import { DividerSection } from "../../../components/DividerSection/DividerSection";
 
 export const Main = () => {
   return (
@@ -13,6 +14,7 @@ export const Main = () => {
         description="Kompleksowa wyszukiwarka usług dla zwięrząt, która powstała z myślą 
         o czworonogach i ich właścicielach ułatwiając im dostęp do szerokiego pasma specjalistów."
       />
+      <DividerSection />
     </div>
   );
 };

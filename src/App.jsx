@@ -3,7 +3,7 @@ import { Navbar } from "./components/Navbar/Navbar";
 import { AppRoutes } from "./routes/Routes";
 import { StepByStepList } from "./components/Steplist/StepList";
 import { OpinionsSection } from "./components/CustomerOpinions/OpinionsSection/OpinionsSection";
-import { Footer } from "./components/Footer/footer";
+import { Footer } from "./components/Footer/Footer";
 import { ServicesList } from "./components/ServicesList/ServicesList";
 
 function App() {
