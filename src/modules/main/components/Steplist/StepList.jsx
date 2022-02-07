@@ -1,6 +1,6 @@
 import { StepByStepItem } from "./StepItem";
 import styles from "./stepitem.module.scss";
-import { STEPS } from "../../constants/steps";
+import { STEPS } from "../../../../constants/steps";
 
 export const StepByStepList = () => (
   <div className={styles.step}>
