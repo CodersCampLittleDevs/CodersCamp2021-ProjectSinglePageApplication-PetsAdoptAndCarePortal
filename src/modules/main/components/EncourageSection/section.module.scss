@@ -19,5 +19,9 @@
 }
 
 .section__image {
-  transform: scale(0.2);
+  width: 600px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
 }

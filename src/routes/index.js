@@ -11,24 +11,27 @@ export const routes = [
     component: <Main />,
     exact: true,
     title: "logo",
-    logo: true,
+    isMain: true,
   },
   {
     path: "/announcements",
     component: <AnnouncementList />,
     exact: true,
-    title: "ogloszenia",
+    title: "Ogloszenia",
+    displayOnLeftSide: true,
   },
   {
     path: "/announcements/new",
     component: <AnnouncementNew />,
     title: "Dodaj post",
+    displayOnLeftSide: true,
   },
   {
     path: "/announcements/favorites",
     component: <Favorites />,
     title: "Ulubione",
     visibleWhenLogged: true,
+    displayOnLeftSide: true,
   },
   ...authRoutes,
   {
@@ -36,5 +39,6 @@ export const routes = [
     component: <Account />,
     title: "Moje konto",
     visibleWhenLogged: true,
+    displayOnRightSide: true,
   },
 ];
