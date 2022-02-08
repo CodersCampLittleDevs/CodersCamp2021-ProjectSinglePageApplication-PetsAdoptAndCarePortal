@@ -1,7 +1,9 @@
 import { Section } from "../components/EncourageSection/Section";
 import dog from "../../../assets/image/encourages/dog.png";
-import { SearchForm, OpinionsSection } from "../../../components";
-import { StepByStepList } from "../components/Steplist/StepList";
+import { SearchForm } from "../../../components/SearchForm/SearchForm";
+import { DividerSection } from "../../../components/DividerSection/DividerSection";
+import { OpinionsSection } from "../../../components/OpinionsSection/OpinionsSection";
+import { ServicesList } from "../../../components/ServicesList/ServicesList";
 
 export const Main = () => {
   return (
@@ -13,8 +15,9 @@ export const Main = () => {
         description="Kompleksowa wyszukiwarka usług dla zwięrząt, która powstała z myślą 
         o czworonogach i ich właścicielach ułatwiając im dostęp do szerokiego pasma specjalistów."
       />
-      <StepByStepList />
+      <ServicesList />
       <OpinionsSection />
+      <DividerSection />
     </div>
   );
 };
