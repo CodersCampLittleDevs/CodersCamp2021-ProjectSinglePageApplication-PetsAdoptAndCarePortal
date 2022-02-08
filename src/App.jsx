@@ -8,9 +8,7 @@ function App() {
     <div className="App">
       <Router>
         <Navbar />
-        <h1>Coderscamp</h1>
         <AppRoutes />
-
         <Footer />
       </Router>
     </div>

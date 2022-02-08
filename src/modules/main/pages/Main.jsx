@@ -1,5 +1,5 @@
 import { Section } from "../components/EncourageSection/Section";
-import dog from "../../../assets/image/encourages/dog.jpg";
+import dog from "../../../assets/image/encourages/dog.png";
 import { SearchForm, OpinionsSection } from "../../../components";
 import { StepByStepList } from "../components/Steplist/StepList";
 

@@ -1,22 +1,21 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import PropTypes from "prop-types";
 import clsx from "clsx";
 import styles from "./navbar.module.scss";
-import { routes } from "../../routes/index";
+import { useAppRoutes } from "../../hooks/useAppRoutes";
 import { Menu } from "./Menu";
+import { Logo } from "../Logo/Logo";
 
-let hamburgerClasses = styles.hamburger;
+const Hamburger = ({ isOpen, handleHamburgerClick }) => {
+  const hamburgerClasses = clsx(styles.hamburger, {
+    [styles.isActive]: isOpen,
+  });
 
-const Hamburger = () => {
-  const [change, setChange] = useState(false);
   const hamburgerClick = () => {
-    setChange(!change);
-    if (change === false) {
-      hamburgerClasses = clsx([styles.hamburger, styles.isActive]);
-    } else {
-      setChange(!change);
-      hamburgerClasses = styles.hamburger;
-    }
+    handleHamburgerClick(!isOpen);
   };
+
   return (
     <button
       className={hamburgerClasses}
@@ -30,11 +29,29 @@ const Hamburger = () => {
     </button>
   );
 };
+
 export const Navbar = () => {
+  const { mainRoute } = useAppRoutes();
+  const [isOpen, setIsOpen] = useState(false);
+  const handleHamburgerClick = (value) => setIsOpen(value);
+  const location = useLocation();
+
+  useEffect(() => {
+    setIsOpen(false);
+  }, [location]);
+
   return (
     <nav className={styles.navbar}>
-      <Hamburger />
-      <Menu list={routes} />
+      <Link to={mainRoute.path} key={mainRoute.title}>
+        <Logo classes={styles.navbar__logo} />
+      </Link>
+      <Hamburger isOpen={isOpen} handleHamburgerClick={handleHamburgerClick} />
+      <Menu isOpen={isOpen} />
     </nav>
   );
+};
+
+Hamburger.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  handleHamburgerClick: PropTypes.func.isRequired,
 };
