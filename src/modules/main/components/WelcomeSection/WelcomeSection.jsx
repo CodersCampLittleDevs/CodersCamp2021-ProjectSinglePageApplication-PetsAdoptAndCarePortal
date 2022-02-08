@@ -1,8 +1,8 @@
-import styles from "./encourage_section.module.scss";
+import styles from "./welcome_section.module.scss";
 import dog from "../../../../assets/image/encourages/dog.png";
 import { Section } from "../../../../components";
 
-export const EncourageSection = () => {
+export const WelcomeSection = () => {
   return (
     <Section>
       <div className={styles.section__description}>
