@@ -1,0 +1,11 @@
+.wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    align-items: center;
+    justify-content: center;
+  }
+}
