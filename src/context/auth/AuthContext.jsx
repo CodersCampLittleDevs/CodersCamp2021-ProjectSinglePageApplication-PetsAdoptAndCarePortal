@@ -1,7 +1,7 @@
 import { createContext, useState, useEffect, useMemo } from "react";
 import PropTypes from "prop-types";
 
-const AuthContext = createContext({
+export const AuthContext = createContext({
   isLoggedIn: false,
   onLogout: () => {},
   onLogin: () => {},
@@ -40,8 +40,6 @@ export const AuthContextProvider = ({ children }) => {
     <AuthContext.Provider value={context}>{children}</AuthContext.Provider>
   );
 };
-
-export default AuthContext;
 
 AuthContextProvider.propTypes = {
   children: PropTypes.node.isRequired,

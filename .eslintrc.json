@@ -18,6 +18,7 @@
   },
   "plugins": ["react", "react-hooks"],
   "rules": {
+    "import/no-cycle": "off",
     "react/no-unused-prop-types": "error",
     "react/no-unused-state": "error",
     "no-unused-vars": "error",

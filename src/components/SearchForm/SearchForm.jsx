@@ -10,7 +10,7 @@ import { SERVICES, CATEGORIES, CITIES, PETS } from "../../constants/options";
 import styles from "./search_form.module.scss";
 import { Button } from "../Button/Button";
 import searchButtonIcon from "../../assets/image/searchButton.png";
-import { createSearchParamsString } from "../../utils/createSearchParamString";
+import { createSearchParamsString } from "../../utils";
 
 export const SearchForm = ({ filterAnnouncements, setFilters }) => {
   const [filterState, setFilterState] = useState([]);

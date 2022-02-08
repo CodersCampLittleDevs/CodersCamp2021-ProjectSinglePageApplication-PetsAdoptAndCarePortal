@@ -8,7 +8,6 @@ import { ServicesList } from "../../../components/ServicesList/ServicesList";
 export const Main = () => {
   return (
     <div>
-      Main
       <SearchForm />
       <Section
         imageSrc={dog}
