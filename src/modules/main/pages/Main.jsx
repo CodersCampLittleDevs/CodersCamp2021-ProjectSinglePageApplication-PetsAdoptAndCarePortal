@@ -1,5 +1,5 @@
 import { Section } from "../components/EncourageSection/Section";
-import dog from "../../../assets/image/encourages/dog.jpg";
+import dog from "../../../assets/image/encourages/dog.png";
 import { SearchForm } from "../../../components/SearchForm/SearchForm";
 import { DividerSection } from "../../../components/DividerSection/DividerSection";
 import { OpinionsSection } from "../../../components/CustomerOpinions/OpinionsSection/OpinionsSection";
