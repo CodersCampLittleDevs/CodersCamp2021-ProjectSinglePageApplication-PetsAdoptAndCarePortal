@@ -27,7 +27,6 @@ export const Announcement = () => {
           {user.company && (
             <>
               <p>{user.company}</p>
-              <p>Otwarte w godzinach: {user.openHours}</p>
             </>
           )}
           <Link to={`/announcements/user/${announcement.userId}`}>
