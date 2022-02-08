@@ -2,7 +2,7 @@ import { authRoutes } from "../modules/auth/routes";
 import { Main } from "../modules/main";
 import { Account } from "../modules/account";
 import { Favorites } from "../modules/announcements/pages/Favorites";
-import { AnnouncementList } from "../modules/announcements/pages/Announcements.jsx";
+import { AnnouncementList } from "../modules/announcements/pages/Announcements";
 import { AnnouncementNew } from "../modules/announcements/pages/New";
 
 export const routes = [
