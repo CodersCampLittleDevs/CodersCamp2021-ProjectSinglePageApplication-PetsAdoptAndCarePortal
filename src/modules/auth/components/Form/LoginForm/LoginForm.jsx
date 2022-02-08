@@ -2,11 +2,12 @@ import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import clsx from "clsx";
 import { Button } from "../../../../../components/Button/Button";
 import { Input } from "../../../../../components/Input/Input";
 import { AuthContext } from "../../../../../context/auth/AuthContext";
-import styles from "../form.module.scss";
 import { DUMMY_LOGINS } from "../../../../../mock/auth";
+import styles from "../form.module.scss";
 
 export const LoginForm = () => {
   const { isLoggedIn, onLogin } = useContext(AuthContext);
@@ -51,13 +52,15 @@ export const LoginForm = () => {
     <>
       {isLoggedIn ? <p>Zalogowany</p> : <p>Niezalogowany</p>}
       {!validData && <p>Podałeś błędne dane</p>}
-      <form onSubmit={handleSubmit(submitForm)}>
+      <form
+        onSubmit={handleSubmit(submitForm)}
+        className={clsx([styles.form, styles.form__auth])}
+      >
         <Input
           {...register("login")}
           placeholder="E-mail / Login"
           label="E-mail / Login"
           type="text"
-          classes={styles.registerForm__input}
         />
         <span className={styles.form__error}>{errors.login?.message}</span>
         <Input
@@ -65,7 +68,6 @@ export const LoginForm = () => {
           placeholder="Hasło"
           label="Hasło"
           type="password"
-          classes={styles.registerForm__input}
         />
         <span className={styles.form__error}>{errors.password?.message}</span>
         <Button type="submit" onClick={() => {}}>
