@@ -68,10 +68,7 @@ export const SearchForm = ({ filterAnnouncements, setFilters }) => {
       <div className={styles.searchFilter__bottom}>
         <label htmlFor={SERVICES.title} className={styles.label}>
           <DataList
-            register={register}
-            title={SERVICES.title}
-            required
-            // {...register(SERVICES.title, { required: true })}
+            {...register(SERVICES.title, { required: true })}
             list={SERVICES}
           />
           {errors[SERVICES.title] && (
@@ -81,7 +78,6 @@ export const SearchForm = ({ filterAnnouncements, setFilters }) => {
         <label htmlFor={CATEGORIES.title} className={styles.label}>
           <Select
             {...register(CATEGORIES.title, { required: true })}
-            required
             list={CATEGORIES}
           />
           {errors[CATEGORIES.title] && (
