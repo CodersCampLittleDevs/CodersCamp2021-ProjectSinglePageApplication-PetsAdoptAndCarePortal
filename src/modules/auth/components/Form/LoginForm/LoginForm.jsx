@@ -4,7 +4,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { Button } from "../../../../../components/Button/Button";
 import { Input } from "../../../../../components/Input/Input";
-import AuthContext from "../../../../../context/auth/auth-context";
+import { AuthContext } from "../../../../../context/auth/AuthContext";
 import styles from "../form.module.scss";
 import { DUMMY_LOGINS } from "../../../../../mock/auth";
 

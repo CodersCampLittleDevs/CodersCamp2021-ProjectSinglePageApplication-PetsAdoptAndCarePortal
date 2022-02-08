@@ -1,9 +1,7 @@
 import { BrowserRouter as Router } from "react-router-dom";
-import { Navbar } from "./components/Navbar/Navbar";
+import { Footer } from "./components";
 import { AppRoutes } from "./routes/Routes";
-import { StepByStepList } from "./components/Steplist/StepList";
-import { OpinionsSection } from "./components/CustomerOpinions/OpinionsSection/OpinionsSection";
-import { Footer } from "./components/Footer/footer";
+import { Navbar } from "./components/Navbar/Navbar";
 
 function App() {
   return (
@@ -11,8 +9,6 @@ function App() {
       <Router>
         <Navbar />
         <AppRoutes />
-        <StepByStepList />
-        <OpinionsSection />
         <Footer />
       </Router>
     </div>

@@ -2,8 +2,7 @@ import { useReducer } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import { Button } from "../../../../../components/Button/Button";
-import { Input } from "../../../../../components/Input/Input";
+import { Button, Input } from "../../../../../components";
 import styles from "../form.module.scss";
 import { DUMMY_LOGINS } from "../../../../../mock/auth";
 
@@ -18,7 +17,6 @@ const passwordReducer = (state, action) => {
       if (user) {
         newState.forgottenPassword = user.password;
         newState.isUserRegistered = true;
-        console.log(newState);
       } else {
         newState.isUserRegistered = false;
       }
