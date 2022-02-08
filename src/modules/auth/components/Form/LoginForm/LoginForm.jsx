@@ -6,8 +6,8 @@ import clsx from "clsx";
 import { Button } from "../../../../../components/Button/Button";
 import { Input } from "../../../../../components/Input/Input";
 import { AuthContext } from "../../../../../context/auth/AuthContext";
-import { DUMMY_LOGINS } from "../../../../../mock/auth";
 import styles from "../form.module.scss";
+import { DUMMY_LOGINS } from "../../../../../mock/auth";
 
 export const LoginForm = () => {
   const { isLoggedIn, onLogin } = useContext(AuthContext);
