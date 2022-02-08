@@ -1,11 +1,11 @@
-import adoptImage from "../assets/image/services/Group 46.png";
-import vetImage from "../assets/image/services/Group 45.png";
-import behaveImage from "../assets/image/services/Group 44.png";
-import hotelImage from "../assets/image/services/Group 43.png";
-import groomerImage from "../assets/image/services/Group 42.png";
-import shopImage from "../assets/image/services/Group 41.png";
+import adoptImage from "../assets/image/services/adoptImage.png";
+import vetImage from "../assets/image/services/vetImage.png";
+import behaveImage from "../assets/image/services/behaveImage.png";
+import hotelImage from "../assets/image/services/hotelImage.png";
+import groomerImage from "../assets/image/services/groomerImage.png";
+import shopImage from "../assets/image/services/shopImage.png";
 
-export const Services = [
+export const SERVICES = [
   adoptImage,
   vetImage,
   behaveImage,
