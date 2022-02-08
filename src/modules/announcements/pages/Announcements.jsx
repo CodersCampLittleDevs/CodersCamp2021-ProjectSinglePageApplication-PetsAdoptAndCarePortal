@@ -3,9 +3,9 @@ import { useLocation } from "react-router-dom";
 import { SearchForm } from "../../../components";
 import { ANNOUNCEMENTS_LIST } from "../../../constants/announcements";
 import { filterAnnouncements } from "../../../utils";
-import { SearchAnnouncements } from "./SearchAnnouncements";
+import { AnnouncementsList } from "../components/AnnouncementsList";
 
-export const AnnouncementList = () => {
+export const Announcements = () => {
   const [filteredAnnouncements, setFilteredAnnouncements] = useState([]);
   const { search } = useLocation();
 
@@ -38,7 +38,7 @@ export const AnnouncementList = () => {
         filterAnnouncements={filterAnnouncements}
         setFilters={setFilters}
       />
-      <SearchAnnouncements filteredAnnouncements={filteredAnnouncements} />
+      <AnnouncementsList filteredAnnouncements={filteredAnnouncements} />
     </div>
   );
 };
