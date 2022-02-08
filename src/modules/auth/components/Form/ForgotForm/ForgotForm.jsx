@@ -74,7 +74,7 @@ export const ForgotForm = () => {
           classes={styles.registerForm__input}
         />
         <span className={styles.form__error}>{errors.login?.message}</span>
-        <div className={styles.form__separator}> </div>
+        <div className={styles.form__separator} />
         <Button type="submit" onClick={() => {}}>
           Odzyskaj hasło
         </Button>

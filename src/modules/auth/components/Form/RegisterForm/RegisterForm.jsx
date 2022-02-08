@@ -141,7 +141,7 @@ export const RegisterForm = () => {
           <span className={styles.form__error}>{errors.NIP?.message}</span>
         </>
       )}
-      <div className={styles.form__separator}> </div>
+      <div className={styles.form__separator} />
       <Button type="submit" onClick={() => {}}>
         Zarejestruj
       </Button>
