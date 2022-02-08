@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import { SearchForm } from "../../../components";
 import { ANNOUNCEMENTS_LIST } from "../../../constants/announcements";
 import { filterAnnouncements } from "../../../utils";
+import { SearchAnnouncements } from "./SearchAnnouncements";
 
 export const AnnouncementList = () => {
   const [filteredAnnouncements, setFilteredAnnouncements] = useState([]);
@@ -37,6 +38,7 @@ export const AnnouncementList = () => {
         filterAnnouncements={filterAnnouncements}
         setFilters={setFilters}
       />
+      <SearchAnnouncements filteredAnnouncements={filteredAnnouncements} />
     </div>
   );
 };
