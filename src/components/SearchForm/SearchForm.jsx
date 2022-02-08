@@ -102,6 +102,7 @@ export const SearchForm = ({ filterAnnouncements, setFilters }) => {
           classes={styles.searchFilter__button}
           onClick={() => {}}
         >
+          <span>Szukaj</span>
           <img src={searchButtonIcon} alt="" />
         </Button>
       </div>

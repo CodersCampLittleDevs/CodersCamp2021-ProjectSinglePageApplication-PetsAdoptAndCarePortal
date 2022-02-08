@@ -70,6 +70,7 @@ export const LoginForm = () => {
           type="password"
         />
         <span className={styles.form__error}>{errors.password?.message}</span>
+        <div className={styles.form__separator}> </div>
         <Button type="submit" onClick={() => {}}>
           Zaloguj się
         </Button>
