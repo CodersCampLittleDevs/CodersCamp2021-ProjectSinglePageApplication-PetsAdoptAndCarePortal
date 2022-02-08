@@ -1,0 +1,11 @@
+.box {
+  background: linear-gradient(
+    108.1deg,
+    rgba(255, 255, 255, 0.4) 12.41%,
+    rgba(254, 254, 254, 0.1) 88.76%
+  );
+  box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(25px);
+  border-radius: 25px;
+  padding: 1rem;
+}

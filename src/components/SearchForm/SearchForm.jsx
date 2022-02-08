@@ -68,7 +68,10 @@ export const SearchForm = ({ filterAnnouncements, setFilters }) => {
       <div className={styles.searchFilter__bottom}>
         <label htmlFor={SERVICES.title} className={styles.label}>
           <DataList
-            {...register(SERVICES.title, { required: true })}
+            register={register}
+            title={SERVICES.title}
+            required
+            // {...register(SERVICES.title, { required: true })}
             list={SERVICES}
           />
           {errors[SERVICES.title] && (

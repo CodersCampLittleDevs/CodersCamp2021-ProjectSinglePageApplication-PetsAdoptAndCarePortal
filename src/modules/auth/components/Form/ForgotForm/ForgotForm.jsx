@@ -69,7 +69,6 @@ export const ForgotForm = () => {
         <Input
           {...register("login")}
           placeholder="E-mail / Login"
-          label="E-mail / Login"
           type="text"
           classes={styles.registerForm__input}
         />

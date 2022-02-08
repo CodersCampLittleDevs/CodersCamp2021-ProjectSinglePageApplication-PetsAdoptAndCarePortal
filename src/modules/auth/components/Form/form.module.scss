@@ -10,6 +10,9 @@
       width: 400px;
     }
   }
+  &__new {
+    align-items: stretch;
+  }
   &__error {
     font-size: 12px;
     font-weight: bold;
