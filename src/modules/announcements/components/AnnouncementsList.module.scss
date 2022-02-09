@@ -1,0 +1,84 @@
+* {
+  margin: 0;
+}
+li {
+  list-style: none;
+}
+.allAnnouncements {
+  margin-top: 100px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+a,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
+.singleAnnouncement {
+  margin: 0px 90px 50px 90px;
+  height: 200px;
+  border-radius: 25px;
+  display: grid;
+  grid-template-areas:
+    "Title Rating"
+    "Description SetAppointment";
+  box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.4) 0%;
+  backdrop-filter: blur(25px);
+  grid-gap: 30px 30px;
+}
+@media screen and (max-width: 767px) {
+  .singleAnnouncement {
+    grid-template-areas:
+      "Title"
+      "Rating"
+      "Description"
+      "SetAppointment";
+    height: 100%;
+  }
+}
+
+.name {
+  grid-area: Title;
+  justify-self: start;
+  align-self: start;
+  padding-left: 30px;
+  padding-top: 10px;
+  font-family: Ebrima;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 40px;
+  color: #243b70;
+}
+.description {
+  grid-area: Description;
+  justify-self: start;
+  align-self: end;
+  padding-left: 30px;
+  padding-bottom: 15px;
+  overflow: hidden;
+  font-family: Ebrima;
+  font-weight: normal;
+  color: #385cb0;
+}
+.rating {
+  grid-area: Rating;
+  justify-self: end;
+  align-self: start;
+  padding-right: 30px;
+  padding-top: 15px;
+}
+.setAppointment {
+  grid-area: SetAppointment;
+  justify-self: end;
+  align-self: end;
+  padding-right: 30px;
+  padding-bottom: 15px;
+  color: #243b70;
+  font-family: Ebrima;
+  font-weight: bold;
+  font-size: 25px;
+}
