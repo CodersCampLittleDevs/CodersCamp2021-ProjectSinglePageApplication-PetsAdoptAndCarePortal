@@ -18,7 +18,6 @@ const passwordReducer = (state, action) => {
       if (user) {
         newState.forgottenPassword = user.password;
         newState.isUserRegistered = true;
-        console.log(newState);
       } else {
         newState.isUserRegistered = false;
       }
