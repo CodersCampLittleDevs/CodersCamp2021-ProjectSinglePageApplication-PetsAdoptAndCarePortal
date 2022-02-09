@@ -1,20 +1,16 @@
-import { Section } from "../components/EncourageSection/Section";
-import dog from "../../../assets/image/encourages/dog.png";
-import { SearchForm, OpinionsSection } from "../../../components";
-import { StepByStepList } from "../components/Steplist/StepList";
+import { EncourageSection } from "../components/EncourageSection/EncourageSection";
+import { DividerSection } from "../../../components/DividerSection/DividerSection";
+import { ServicesList } from "../../../components/ServicesList/ServicesList";
+import { OpinionsSection, SearchForm } from "../../../components";
 
 export const Main = () => {
   return (
     <div>
+      <EncourageSection />
       <SearchForm />
-      <Section
-        imageSrc={dog}
-        title="W trosce o potrzeby Twojego zwierzaka"
-        description="Kompleksowa wyszukiwarka usług dla zwięrząt, która powstała z myślą 
-        o czworonogach i ich właścicielach ułatwiając im dostęp do szerokiego pasma specjalistów."
-      />
-      <StepByStepList />
+      <ServicesList />
       <OpinionsSection />
+      <DividerSection />
     </div>
   );
 };
