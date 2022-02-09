@@ -22,8 +22,9 @@ export const AuthContextProvider = ({ children }) => {
     setIsLoggedIn(false);
   };
 
-  const loginHandler = () => {
+  const loginHandler = (user) => {
     localStorage.setItem("isLoggedIn", "1");
+    localStorage.setItem("user", JSON.stringify(user));
     setIsLoggedIn(true);
   };
 
@@ -31,7 +32,7 @@ export const AuthContextProvider = ({ children }) => {
     () => ({
       isLoggedIn,
       onLogout: logoutHandler,
-      onLogin: () => loginHandler(),
+      onLogin: loginHandler,
     }),
 
     [isLoggedIn],

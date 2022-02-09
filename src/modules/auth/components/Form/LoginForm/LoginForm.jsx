@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import clsx from "clsx";
 import { Button } from "../../../../../components/Button/Button";
 import { Input } from "../../../../../components/Input/Input";
 import { AuthContext } from "../../../../../context/auth/AuthContext";
@@ -30,8 +31,8 @@ export const LoginForm = () => {
     formState: { errors },
   } = useForm({ resolver: yupResolver(schema) });
 
-  const login = () => {
-    onLogin();
+  const login = (user) => {
+    onLogin(user);
   };
 
   const submitForm = (data) => {
@@ -39,9 +40,15 @@ export const LoginForm = () => {
       (dummyUser) =>
         dummyUser.email === data.login || dummyUser.username === data.login,
     );
+    const userDataWithoutPassword = {};
+    Object.keys(user).forEach((key) => {
+      if (key !== "password") {
+        userDataWithoutPassword[key] = user[key];
+      }
+    });
 
     if (user && user.password === data.password) {
-      login();
+      login(userDataWithoutPassword);
     } else {
       setValidData(false);
     }
@@ -51,13 +58,15 @@ export const LoginForm = () => {
     <>
       {isLoggedIn ? <p>Zalogowany</p> : <p>Niezalogowany</p>}
       {!validData && <p>Podałeś błędne dane</p>}
-      <form onSubmit={handleSubmit(submitForm)}>
+      <form
+        onSubmit={handleSubmit(submitForm)}
+        className={clsx([styles.form, styles.form__auth])}
+      >
         <Input
           {...register("login")}
           placeholder="E-mail / Login"
           label="E-mail / Login"
           type="text"
-          classes={styles.registerForm__input}
         />
         <span className={styles.form__error}>{errors.login?.message}</span>
         <Input
@@ -65,9 +74,9 @@ export const LoginForm = () => {
           placeholder="Hasło"
           label="Hasło"
           type="password"
-          classes={styles.registerForm__input}
         />
         <span className={styles.form__error}>{errors.password?.message}</span>
+        <div className={styles.form__separator}> </div>
         <Button type="submit" onClick={() => {}}>
           Zaloguj się
         </Button>

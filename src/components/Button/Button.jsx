@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
+import clsx from "clsx";
+import styles from "./button.module.scss";
 
 export const Button = ({ to, children, type, classes, onClick, disabled }) => {
   if (to) {
@@ -9,7 +11,7 @@ export const Button = ({ to, children, type, classes, onClick, disabled }) => {
   return (
     <button
       type={type}
-      className={classes}
+      className={clsx([styles.button, classes])}
       onClick={() => onClick()}
       disabled={disabled}
     >

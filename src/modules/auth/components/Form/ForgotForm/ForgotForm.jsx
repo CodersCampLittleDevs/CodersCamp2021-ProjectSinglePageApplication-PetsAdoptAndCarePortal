@@ -1,6 +1,7 @@
 import { useReducer } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import clsx from "clsx";
 import * as yup from "yup";
 import { Button, Input } from "../../../../../components";
 import styles from "../form.module.scss";
@@ -61,16 +62,18 @@ export const ForgotForm = () => {
       {passwordState.isUserRegistered && passwordState.forgottenPassword && (
         <p>Twoje hasło: {passwordState.forgottenPassword}</p>
       )}
-      <form onSubmit={handleSubmit(submitForm)}>
+      <form
+        onSubmit={handleSubmit(submitForm)}
+        className={clsx([styles.form, styles.form__auth])}
+      >
         <Input
           {...register("login")}
           placeholder="E-mail / Login"
-          label="E-mail / Login"
           type="text"
           classes={styles.registerForm__input}
         />
         <span className={styles.form__error}>{errors.login?.message}</span>
-        <span className={styles.form__error}>{errors.password?.message}</span>
+        <div className={styles.form__separator}> </div>
         <Button type="submit" onClick={() => {}}>
           Odzyskaj hasło
         </Button>

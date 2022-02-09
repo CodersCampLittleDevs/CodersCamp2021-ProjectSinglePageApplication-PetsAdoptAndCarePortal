@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import clsx from "clsx";
 import { Button, Input } from "../../../../../components";
 import styles from "../form.module.scss";
 import { DUMMY_LOGINS } from "../../../../../mock/auth";
@@ -10,14 +11,14 @@ export const RegisterForm = () => {
   const schema = yup.object().shape({
     email: yup
       .string()
+      .required("Podaj adres e-mail")
       .email("Podaj poprawny email")
-      .max(25, "Maksymalnie 25 znaków")
-      .required("Podaj adres e-mail"),
+      .max(25, "Maksymalnie 25 znaków"),
     username: yup
       .string()
+      .required("Podaj nazwę użytkownika")
       .min(3, "Minimum 3 znaki")
-      .max(15, "Maksymalnie 15 znaków")
-      .required("Podaj nazwę użytkownika"),
+      .max(15, "Maksymalnie 15 znaków"),
     city: yup.string().required("Podaj miasto"),
     phone: yup
       .string()
@@ -27,9 +28,9 @@ export const RegisterForm = () => {
       .max(10, "Numer musi posiadać maksymalnie 10 znaków"),
     password: yup
       .string()
+      .required("Podaj hasło")
       .min(4, "Minimum 4 znaki")
-      .max(15, "Maksymalnie 15 znaków")
-      .required("Podaj hasło"),
+      .max(15, "Maksymalnie 15 znaków"),
     confirmPassword: yup
       .string()
       .oneOf([yup.ref("password"), null], "Hasła muszą być identyczne")
@@ -66,7 +67,10 @@ export const RegisterForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(formSubmit)} className={styles.form}>
+    <form
+      onSubmit={handleSubmit(formSubmit)}
+      className={clsx([styles.form, styles.form__auth])}
+    >
       <Input
         {...register("email")}
         placeholder="E-mail"
@@ -110,11 +114,13 @@ export const RegisterForm = () => {
       <Input
         {...register("confirmPassword")}
         type="password"
-        placeholder="Hasło"
+        placeholder="Powtórz hasło"
         label="Powtórz hasło"
         classes={styles.form__input}
       />
-      <p className={styles.form__error}>{errors.confirmPassword?.message}</p>
+      <span className={styles.form__error}>
+        {errors.confirmPassword?.message}
+      </span>
       {!isPrivateMode && (
         <>
           <Input
@@ -135,6 +141,7 @@ export const RegisterForm = () => {
           <span className={styles.form__error}>{errors.NIP?.message}</span>
         </>
       )}
+      <div className={styles.form__separator}> </div>
       <Button type="submit" onClick={() => {}}>
         Zarejestruj
       </Button>
