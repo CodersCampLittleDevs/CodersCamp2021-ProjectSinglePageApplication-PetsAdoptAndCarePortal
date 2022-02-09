@@ -103,9 +103,10 @@ export const SearchForm = ({ filterAnnouncements, setFilters }) => {
 
 SearchForm.propTypes = {
   filterAnnouncements: PropTypes.func,
-  setFilters: PropTypes.func.isRequired,
+  setFilters: PropTypes.func,
 };
 
 SearchForm.defaultProps = {
   filterAnnouncements: () => {},
+  setFilters: undefined,
 };

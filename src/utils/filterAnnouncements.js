@@ -1,6 +1,7 @@
 import { ANNOUNCEMENTS_LIST } from "../constants/announcements";
 
 export const filterAnnouncements = (data) => {
+  console.log(data);
   const { Phrase, Category, City, Animals } = data;
   let animalsArray;
   let announcements = ANNOUNCEMENTS_LIST.filter(
@@ -9,7 +10,7 @@ export const filterAnnouncements = (data) => {
       announcement.category.toLowerCase().includes(Category) &&
       announcement.city.toLowerCase().includes(City.toLowerCase()),
   );
-  if (Animals) {
+  if (Animals.length) {
     animalsArray = Animals.map((animal) => animal.toLowerCase());
     announcements = announcements.filter((announcement) =>
       animalsArray.includes(announcement.animal.toLowerCase()),
