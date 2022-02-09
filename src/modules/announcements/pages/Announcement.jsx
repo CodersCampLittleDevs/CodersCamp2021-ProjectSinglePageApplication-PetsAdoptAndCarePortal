@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useParams, Link } from "react-router-dom";
+import ReactStars from "react-rating-stars-component";
 import { ANNOUNCEMENTS_LIST } from "../../../constants/announcements";
 import { Button } from "../../../components/Button/Button";
 import styles from "../components/Announcement/Announcement.module.scss";
@@ -16,7 +17,7 @@ export const Announcement = () => {
     (userItem) => userItem.id === announcement.userId,
   );
   return (
-    <div className={centered_Aannouncement}>
+    <div className={styles.centered__announcement}>
       <section className={styles.announcement}>
         <div className={styles.announcement__image}>
           <img src={announcement.image} alt={announcement.title} />
@@ -25,11 +26,7 @@ export const Announcement = () => {
           <div className={styles.announcement__contact}>
             <p>{user?.name}</p>
             <img src={user.image ? user.image : SampleUser} alt="" />
-            {user.company && (
-              <>
-                <p>{user.company}</p>
-              </>
-            )}
+            {user.company && <p>{user.company}</p>}
             <Link to={`/announcements/user/${announcement.userId}`}>
               Więcej od tego ogłoszeniodawcy
             </Link>
@@ -43,17 +40,24 @@ export const Announcement = () => {
           </div>
         </div>
         <div className={styles.announcement__details}>
-          <h2 className={styles.announcement__title}>{announcement.title}</h2>
-          <p className={styles.announcement__price}>
+          <h2 className={styles.announcement__title}>
+            {announcement.title}
+            <br />
             Cena: {announcement.price}
-          </p>
-          <p className={styles.announcement__rate}>
-            Ocena ogłoszenia: {announcement.rate}
-          </p>
-          <h3>Opis</h3>
-          <p className={styles.announcemenet__description}>
+          </h2>
+          <div className={styles.announcement__rate}>
+            Ocena ogłoszenia:
+            <ReactStars
+              size={36}
+              value={announcement.rate}
+              edit={false}
+              activeColor="rgba(240, 140, 62, 1)"
+            />
+          </div>
+          <div className={styles.announcement__description}>
+            <h3>Opis:</h3>
             {announcement.description}
-          </p>
+          </div>
         </div>
       </section>
     </div>
