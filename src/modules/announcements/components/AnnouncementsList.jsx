@@ -6,10 +6,10 @@ import styles from "./AnnouncementsList.module.scss";
 export const AnnouncementsList = ({ filteredAnnouncements }) => {
   if (filteredAnnouncements.length === 0) {
     return (
-      <p>
+      <h3 className={styles.announcementNotFound}>
         Przeprazamy, niestety nie ma żadnych ogłoszeń spełniających kryteria
         Twoich wyszukiwań
-      </p>
+      </h3>
     );
   }
   return (
