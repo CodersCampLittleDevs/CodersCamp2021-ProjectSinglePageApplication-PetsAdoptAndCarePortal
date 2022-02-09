@@ -3,12 +3,10 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import clsx from "clsx";
-import { Button } from "../../../../../components/Button/Button";
-import { Input } from "../../../../../components/Input/Input";
+import { Button, Input, ErrorBox } from "../../../../../components";
 import { AuthContext } from "../../../../../context/auth/AuthContext";
 import styles from "../form.module.scss";
 import { DUMMY_LOGINS } from "../../../../../mock/auth";
-import { ErrorBox } from "../../../../../components/ErrorBox/ErrorBox";
 
 export const LoginForm = () => {
   const { onLogin } = useContext(AuthContext);
@@ -61,14 +59,14 @@ export const LoginForm = () => {
         label="E-mail / Login"
         type="text"
       />
-      <ErrorBox error={errors.login?.message} />
+      <ErrorBox>{errors.login?.message}</ErrorBox>
       <Input
         {...register("password")}
         placeholder="Hasło"
         label="Hasło"
         type="password"
       />
-      <ErrorBox error={errors.password?.message} />
+      <ErrorBox>{errors.password?.message}</ErrorBox>
       <div className={styles.form__separator} />
       <Button type="submit" onClick={() => {}}>
         Zaloguj się

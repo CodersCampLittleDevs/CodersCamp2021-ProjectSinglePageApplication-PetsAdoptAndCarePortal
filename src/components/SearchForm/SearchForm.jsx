@@ -3,15 +3,11 @@ import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
 import PropTypes from "prop-types";
 import clsx from "clsx";
-import { Select } from "../Select/Select";
-import { DataList } from "../DataList/DataList";
-import { Checkbox } from "../Checkbox/Checkbox";
+import { Select, ErrorBox, Checkbox, DataList, Button } from "..";
 import { SERVICES, CATEGORIES, CITIES, PETS } from "../../constants/options";
 import styles from "./search_form.module.scss";
-import { Button } from "../Button/Button";
 import searchButtonIcon from "../../assets/image/searchButton.png";
 import { createSearchParamsString } from "../../utils";
-import { ErrorBox } from "../ErrorBox/ErrorBox";
 
 export const SearchForm = ({ filterAnnouncements, setFilters }) => {
   const [filterState, setFilterState] = useState([]);
@@ -72,7 +68,7 @@ export const SearchForm = ({ filterAnnouncements, setFilters }) => {
             {...register(SERVICES.title, { required: true })}
             list={SERVICES}
           />
-          {errors[SERVICES.title] && <ErrorBox error="Wpisz czego szukasz" />}
+          {errors[SERVICES.title] && <ErrorBox>Wpisz czego szukasz</ErrorBox>}
         </label>
         <label htmlFor={CATEGORIES.title} className={styles.label}>
           <Select
@@ -81,7 +77,7 @@ export const SearchForm = ({ filterAnnouncements, setFilters }) => {
             list={CATEGORIES}
           />
           {errors[CATEGORIES.title] && (
-            <ErrorBox error="Wybierz kategorię której szukasz" />
+            <ErrorBox>Wybierz kategorię której szukasz</ErrorBox>
           )}
         </label>
         <label htmlFor={CITIES.title} className={styles.label}>
@@ -90,7 +86,7 @@ export const SearchForm = ({ filterAnnouncements, setFilters }) => {
             required
             list={CITIES}
           />
-          {errors[CITIES.title] && <ErrorBox error="Wpisz miasto" />}
+          {errors[CITIES.title] && <ErrorBox>Wpisz miasto</ErrorBox>}
         </label>
         <Button
           type="submit"

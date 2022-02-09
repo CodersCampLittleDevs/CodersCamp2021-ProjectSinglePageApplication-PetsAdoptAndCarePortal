@@ -3,10 +3,9 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import clsx from "clsx";
 import * as yup from "yup";
-import { Button, Input } from "../../../../../components";
+import { Button, Input, ErrorBox } from "../../../../../components";
 import styles from "../form.module.scss";
 import { DUMMY_LOGINS } from "../../../../../mock/auth";
-import { ErrorBox } from "../../../../../components/ErrorBox/ErrorBox";
 
 const passwordReducer = (state, action) => {
   const newState = { ...state };
@@ -74,7 +73,7 @@ export const ForgotForm = () => {
           type="text"
           classes={styles.registerForm__input}
         />
-        <ErrorBox error={errors.login?.message} />
+        <ErrorBox>{errors.login?.message}</ErrorBox>
         <div className={styles.form__separator} />
         <Button type="submit" onClick={() => {}}>
           Odzyskaj hasło

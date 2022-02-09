@@ -3,10 +3,9 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import clsx from "clsx";
-import { Button, Input } from "../../../../../components";
+import { Button, Input, ErrorBox } from "../../../../../components";
 import styles from "../form.module.scss";
 import { DUMMY_LOGINS } from "../../../../../mock/auth";
-import { ErrorBox } from "../../../../../components/ErrorBox/ErrorBox";
 
 export const RegisterForm = () => {
   const schema = yup.object().shape({
@@ -79,7 +78,7 @@ export const RegisterForm = () => {
         type="text"
         classes={styles.form__input}
       />
-      <ErrorBox error={errors.email?.message} />
+      <ErrorBox>{errors.email?.message}</ErrorBox>
       <Input
         {...register("username")}
         placeholder="Nazwa użytkownika"
@@ -87,7 +86,7 @@ export const RegisterForm = () => {
         type="text"
         classes={styles.form__input}
       />
-      <ErrorBox error={errors.username?.message} />
+      <ErrorBox>{errors.username?.message}</ErrorBox>
       <Input
         {...register("city")}
         placeholder="Miasto"
@@ -95,7 +94,7 @@ export const RegisterForm = () => {
         type="text"
         classes={styles.form__input}
       />
-      <ErrorBox error={errors.city?.message} />
+      <ErrorBox>{errors.city?.message}</ErrorBox>
       <Input
         {...register("phone")}
         placeholder="Numer telefonu"
@@ -103,7 +102,7 @@ export const RegisterForm = () => {
         type="string"
         classes={styles.form__input}
       />
-      <ErrorBox error={errors.phone?.message} />
+      <ErrorBox>{errors.phone?.message}</ErrorBox>
       <Input
         {...register("password")}
         type="password"
@@ -111,7 +110,7 @@ export const RegisterForm = () => {
         label="Hasło"
         classes={styles.form__input}
       />
-      <ErrorBox error={errors.password?.message} />
+      <ErrorBox>{errors.password?.message}</ErrorBox>
       <Input
         {...register("confirmPassword")}
         type="password"
@@ -119,7 +118,7 @@ export const RegisterForm = () => {
         label="Powtórz hasło"
         classes={styles.form__input}
       />
-      <ErrorBox error={errors.confirmPassword?.message} />
+      <ErrorBox>{errors.confirmPassword?.message}</ErrorBox>
       {!isPrivateMode && (
         <>
           <Input
@@ -129,7 +128,7 @@ export const RegisterForm = () => {
             type="text"
             classes={styles.form__input}
           />
-          <ErrorBox error={errors.business?.message} />
+          <ErrorBox>{errors.business?.message}</ErrorBox>
           <Input
             {...register("NIP")}
             placeholder="NIP"
@@ -137,7 +136,7 @@ export const RegisterForm = () => {
             type="text"
             classes={styles.form__input}
           />
-          <ErrorBox error={errors.NIP?.message} />
+          <ErrorBox>{errors.NIP?.message}</ErrorBox>
         </>
       )}
       <div className={styles.form__separator} />
