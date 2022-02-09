@@ -11,7 +11,6 @@ export const Section = ({ children, imageSide }) => {
       {children}
     </div>
   );
-};
 
 Section.propTypes = {
   children: PropTypes.node.isRequired,
