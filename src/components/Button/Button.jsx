@@ -5,7 +5,11 @@ import styles from "./button.module.scss";
 
 export const Button = ({ to, children, type, classes, onClick, disabled }) => {
   if (to) {
-    return <Link to={to}>{children}</Link>;
+    return (
+      <Link className={clsx([styles.button, classes])} to={to}>
+        {children}
+      </Link>
+    );
   }
 
   return (

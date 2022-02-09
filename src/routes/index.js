@@ -3,7 +3,7 @@ import { Main } from "../modules/main";
 import { Account } from "../modules/account";
 import { Favorites } from "../modules/announcements/pages/Favorites";
 import { Announcements } from "../modules/announcements/pages/Announcements";
-import { AnnouncementNew } from "../modules/announcements/pages/New";
+import { NewAnnouncement } from "../modules/announcements/pages/NewAnnouncement";
 
 export const routes = [
   {
@@ -24,8 +24,9 @@ export const routes = [
   },
   {
     path: "/announcements/new",
-    component: <AnnouncementNew />,
+    component: <NewAnnouncement />,
     title: "Dodaj ogłoszenie",
+    exact: true,
     isLoggedIn: true,
     visibleWhenLogged: true,
     displayOnLeftSide: true,

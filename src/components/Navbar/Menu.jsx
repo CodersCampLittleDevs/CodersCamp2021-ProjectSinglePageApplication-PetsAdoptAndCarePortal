@@ -1,5 +1,5 @@
 /* eslint-disable no-else-return */
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { useContext } from "react";
@@ -31,43 +31,47 @@ export const Menu = ({ isOpen }) => {
       <div className={styles.menu__left}>
         {isLoggedIn
           ? leftSideRoutes.map((item) => (
-              <Link
+              <NavLink
                 className={styles.navbar__Link}
                 key={item.title}
                 to={item.path}
+                activeClassName={styles.activeLink}
               >
                 {item.title}
-              </Link>
+              </NavLink>
             ))
           : leftSideRoutesLoggedOut.map((item) => (
-              <Link
+              <NavLink
                 className={styles.navbar__Link}
                 key={item.title}
                 to={item.path}
+                activeClassName={styles.activeLink}
               >
                 {item.title}
-              </Link>
+              </NavLink>
             ))}
       </div>
       <div className={styles.menu__right}>
         {isLoggedIn
           ? rightSideRoutesLoggedIn.map((item) => (
-              <Link
+              <NavLink
                 className={styles.navbar__Link}
                 key={item.title}
                 to={item.path}
+                activeClassName={styles.activeLink}
               >
                 {item.title}
-              </Link>
+              </NavLink>
             ))
           : rightSideRoutesLoggedOut.map((item) => (
-              <Link
+              <NavLink
                 className={styles.navbar__Link}
                 key={item.title}
                 to={item.path}
+                activeClassName={styles.activeLink}
               >
                 {item.title}
-              </Link>
+              </NavLink>
             ))}
         {isLoggedIn && (
           <Button classes={styles.button} onClick={logout}>

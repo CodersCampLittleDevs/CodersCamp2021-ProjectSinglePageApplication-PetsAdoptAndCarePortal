@@ -73,7 +73,6 @@ export const SearchForm = ({ filterAnnouncements, setFilters }) => {
         <label htmlFor={CATEGORIES.title} className={styles.label}>
           <Select
             {...register(CATEGORIES.title, { required: true })}
-            required
             list={CATEGORIES}
           />
           {errors[CATEGORIES.title] && (

@@ -3,12 +3,13 @@
     width: 90px;
   }
   .button {
-    color: #243b70;
+    color: #000;
     background: none;
     box-shadow: none;
     padding: 0;
     font-weight: bold;
     cursor: pointer;
+    margin-left: 40px;
   }
 }
 .hamburger .line {
@@ -193,6 +194,7 @@
     font-weight: bold;
     font-size: 25px;
     margin-left: 40px;
+    white-space: nowrap;
     &:hover {
       color: #800080;
     }
@@ -202,4 +204,7 @@
     display: none;
     z-index: 0;
   }
+}
+.activeLink {
+  color: #385cb0 !important;
 }

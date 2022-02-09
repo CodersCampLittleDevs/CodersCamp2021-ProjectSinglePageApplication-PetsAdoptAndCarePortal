@@ -18,6 +18,7 @@ export const SERVICES = {
 
 export const PETS = {
   title: "Animals",
+  placeholder: "Zwierzę",
   items: ["Psy", "Koty", "Gryzonie", "Ptaki", "Pajęczaki", "Ryby"],
 };
 

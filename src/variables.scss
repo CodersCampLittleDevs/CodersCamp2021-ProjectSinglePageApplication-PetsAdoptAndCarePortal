@@ -1,0 +1,17 @@
+$menu-font: 24px;
+$header-font: 30px;
+$text-font: 19px;
+$tiny-font: 14px;
+@media screen and (min-width: 1030px) {
+  $menu-font: 30px;
+  $header-font: 36px;
+  $text-font: 25px;
+  $tiny-font: 20px;
+}
+
+$white-color: #ffffff;
+$black-color: #000000;
+$primary-color: #243b70;
+$secondary-color: #385cb0;
+$yellow-color: #fdc763;
+$orange-color: #f08c3e;

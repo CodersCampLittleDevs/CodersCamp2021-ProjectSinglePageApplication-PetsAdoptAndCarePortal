@@ -30,8 +30,8 @@ export const LoginForm = () => {
     formState: { errors },
   } = useForm({ resolver: yupResolver(schema) });
 
-  const login = () => {
-    onLogin();
+  const login = (user) => {
+    onLogin(user);
   };
 
   const submitForm = (data) => {
@@ -39,9 +39,15 @@ export const LoginForm = () => {
       (dummyUser) =>
         dummyUser.email === data.login || dummyUser.username === data.login,
     );
+    const userDataWithoutPassword = {};
+    Object.keys(user).forEach((key) => {
+      if (key !== "password") {
+        userDataWithoutPassword[key] = user[key];
+      }
+    });
 
     if (user && user.password === data.password) {
-      login();
+      login(userDataWithoutPassword);
     } else {
       setValidData(false);
     }
@@ -70,6 +76,9 @@ export const LoginForm = () => {
       <div className={styles.form__separator} />
       <Button type="submit" onClick={() => {}}>
         Zaloguj się
+      </Button>
+      <Button type="submit" to="/auth/forgot" onClick={() => {}}>
+        Przypomnij hasło
       </Button>
     </form>
   );
