@@ -36,6 +36,7 @@ export const Menu = ({ isOpen }) => {
                 key={item.title}
                 to={item.path}
                 activeClassName={styles.activeLink}
+                exact
               >
                 {item.title}
               </NavLink>
@@ -46,6 +47,7 @@ export const Menu = ({ isOpen }) => {
                 key={item.title}
                 to={item.path}
                 activeClassName={styles.activeLink}
+                exact
               >
                 {item.title}
               </NavLink>
@@ -59,6 +61,7 @@ export const Menu = ({ isOpen }) => {
                 key={item.title}
                 to={item.path}
                 activeClassName={styles.activeLink}
+                exact
               >
                 {item.title}
               </NavLink>
@@ -69,6 +72,7 @@ export const Menu = ({ isOpen }) => {
                 key={item.title}
                 to={item.path}
                 activeClassName={styles.activeLink}
+                exact
               >
                 {item.title}
               </NavLink>
