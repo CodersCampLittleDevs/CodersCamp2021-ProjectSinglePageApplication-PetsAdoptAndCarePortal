@@ -1,10 +1,15 @@
-.wrapper {
+.wrapper__right_side {
   display: flex;
   flex-direction: row;
 }
 
+.wrapper__left_side {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
 @media (max-width: 768px) {
-  .wrapper {
+  .wrapper__right_side {
     align-items: center;
     justify-content: center;
   }

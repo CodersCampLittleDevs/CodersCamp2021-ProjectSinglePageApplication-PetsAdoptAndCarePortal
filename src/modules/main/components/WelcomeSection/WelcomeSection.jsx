@@ -4,7 +4,7 @@ import { Section } from "../../../../components";
 
 export const WelcomeSection = () => {
   return (
-    <Section>
+    <Section imageSide>
       <div className={styles.section__description}>
         <h3 className={styles.description__title}>
           W trosce o potrzeby Twojego zwierzaka
