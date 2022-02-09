@@ -2,7 +2,8 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import { Button, Input } from "../../../../../components";
+import clsx from "clsx";
+import { Button, Input, ErrorBox } from "../../../../../components";
 import styles from "../form.module.scss";
 import { DUMMY_LOGINS } from "../../../../../mock/auth";
 
@@ -10,14 +11,14 @@ export const RegisterForm = () => {
   const schema = yup.object().shape({
     email: yup
       .string()
+      .required("Podaj adres e-mail")
       .email("Podaj poprawny email")
-      .max(25, "Maksymalnie 25 znaków")
-      .required("Podaj adres e-mail"),
+      .max(25, "Maksymalnie 25 znaków"),
     username: yup
       .string()
+      .required("Podaj nazwę użytkownika")
       .min(3, "Minimum 3 znaki")
-      .max(15, "Maksymalnie 15 znaków")
-      .required("Podaj nazwę użytkownika"),
+      .max(15, "Maksymalnie 15 znaków"),
     city: yup.string().required("Podaj miasto"),
     phone: yup
       .string()
@@ -27,9 +28,9 @@ export const RegisterForm = () => {
       .max(10, "Numer musi posiadać maksymalnie 10 znaków"),
     password: yup
       .string()
+      .required("Podaj hasło")
       .min(4, "Minimum 4 znaki")
-      .max(15, "Maksymalnie 15 znaków")
-      .required("Podaj hasło"),
+      .max(15, "Maksymalnie 15 znaków"),
     confirmPassword: yup
       .string()
       .oneOf([yup.ref("password"), null], "Hasła muszą być identyczne")
@@ -66,7 +67,10 @@ export const RegisterForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(formSubmit)} className={styles.form}>
+    <form
+      onSubmit={handleSubmit(formSubmit)}
+      className={clsx([styles.form, styles.form__auth])}
+    >
       <Input
         {...register("email")}
         placeholder="E-mail"
@@ -74,7 +78,7 @@ export const RegisterForm = () => {
         type="text"
         classes={styles.form__input}
       />
-      <span className={styles.form__error}>{errors.email?.message}</span>
+      <ErrorBox>{errors.email?.message}</ErrorBox>
       <Input
         {...register("username")}
         placeholder="Nazwa użytkownika"
@@ -82,7 +86,7 @@ export const RegisterForm = () => {
         type="text"
         classes={styles.form__input}
       />
-      <span className={styles.form__error}>{errors.username?.message}</span>
+      <ErrorBox>{errors.username?.message}</ErrorBox>
       <Input
         {...register("city")}
         placeholder="Miasto"
@@ -90,7 +94,7 @@ export const RegisterForm = () => {
         type="text"
         classes={styles.form__input}
       />
-      <span className={styles.form__error}>{errors.city?.message}</span>
+      <ErrorBox>{errors.city?.message}</ErrorBox>
       <Input
         {...register("phone")}
         placeholder="Numer telefonu"
@@ -98,7 +102,7 @@ export const RegisterForm = () => {
         type="string"
         classes={styles.form__input}
       />
-      <span className={styles.form__error}>{errors.phone?.message}</span>
+      <ErrorBox>{errors.phone?.message}</ErrorBox>
       <Input
         {...register("password")}
         type="password"
@@ -106,15 +110,15 @@ export const RegisterForm = () => {
         label="Hasło"
         classes={styles.form__input}
       />
-      <span className={styles.form__error}>{errors.password?.message}</span>
+      <ErrorBox>{errors.password?.message}</ErrorBox>
       <Input
         {...register("confirmPassword")}
         type="password"
-        placeholder="Hasło"
+        placeholder="Powtórz hasło"
         label="Powtórz hasło"
         classes={styles.form__input}
       />
-      <p className={styles.form__error}>{errors.confirmPassword?.message}</p>
+      <ErrorBox>{errors.confirmPassword?.message}</ErrorBox>
       {!isPrivateMode && (
         <>
           <Input
@@ -124,7 +128,7 @@ export const RegisterForm = () => {
             type="text"
             classes={styles.form__input}
           />
-          <span className={styles.form__error}>{errors.business?.message}</span>
+          <ErrorBox>{errors.business?.message}</ErrorBox>
           <Input
             {...register("NIP")}
             placeholder="NIP"
@@ -132,9 +136,10 @@ export const RegisterForm = () => {
             type="text"
             classes={styles.form__input}
           />
-          <span className={styles.form__error}>{errors.NIP?.message}</span>
+          <ErrorBox>{errors.NIP?.message}</ErrorBox>
         </>
       )}
+      <div className={styles.form__separator} />
       <Button type="submit" onClick={() => {}}>
         Zarejestruj
       </Button>
