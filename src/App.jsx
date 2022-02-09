@@ -1,15 +1,15 @@
-import { BrowserRouter as Router } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import { Navbar, Footer } from "./components";
 import { AppRoutes } from "./routes/Routes";
 
 function App() {
   return (
     <div className="App">
-      <Router>
+      <HashRouter basename={process.env.PUBLIC_URL}>
         <Navbar />
         <AppRoutes />
         <Footer />
-      </Router>
+      </HashRouter>
     </div>
   );
 }
