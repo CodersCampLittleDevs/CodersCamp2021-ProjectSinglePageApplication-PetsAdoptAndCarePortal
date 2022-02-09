@@ -31,12 +31,14 @@ export const Announcement = () => {
               Więcej od tego ogłoszeniodawcy
             </Link>
             <p className={styles.annoucemenet__phoneNumber}>{phoneNumber}</p>
-            <Button
-              type="button"
-              onClick={() => setPhoneNumber(user?.phoneNumber)}
-            >
-              Pokaż numer telefonu
-            </Button>
+            <div className={styles.announcement__button}>
+              <Button
+                type="button"
+                onClick={() => setPhoneNumber(user?.phoneNumber)}
+              >
+                Pokaż numer telefonu
+              </Button>
+            </div>
           </div>
         </div>
         <div className={styles.announcement__details}>
@@ -46,7 +48,7 @@ export const Announcement = () => {
             Cena: {announcement.price}
           </h2>
           <div className={styles.announcement__rate}>
-            Ocena ogłoszenia:
+            <p>Ocena ogłoszenia:</p>
             <ReactStars
               size={36}
               value={announcement.rate}
@@ -56,7 +58,7 @@ export const Announcement = () => {
           </div>
           <div className={styles.announcement__description}>
             <h3>Opis:</h3>
-            {announcement.description}
+            <p>{announcement.description}</p>
           </div>
         </div>
       </section>

@@ -15,6 +15,29 @@
   grid-template-areas:
     "image contact"
     "description description";
+  & h2 {
+    color: #243b70;
+    font-family: Ebrima;
+    font-weight: bold;
+    font-size: 25px;
+  }
+  & h3 {
+    color: #243b70;
+    font-family: Ebrima;
+    font-weight: bold;
+    font-size: 25px;
+  }
+  & p {
+    font-family: Ebrima;
+    font-size: 25px;
+    color: #385cb0;
+  }
+  & a {
+    font-family: Ebrima;
+    font-size: 25px;
+    color: #385cb0;
+    text-decoration: none;
+  }
   &__image {
     grid-area: image;
     padding-top: 50px;
@@ -54,6 +77,19 @@
     grid-area: description;
     padding-left: 75px;
     padding-bottom: 25px;
+  }
+  &__button button {
+    border-radius: 25px;
+    box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.1);
+    background-color: linear-gradient(
+      rgba(255, 255, 255, 0.4) rgba(254, 254, 254, 0.1) 100%
+    );
+    backdrop-filter: blur(25px);
+    padding: 20px;
+    border-style: none;
+    &:hover {
+      cursor: pointer;
+    }
   }
 }
 @media only screen and (max-width: 767px) {
