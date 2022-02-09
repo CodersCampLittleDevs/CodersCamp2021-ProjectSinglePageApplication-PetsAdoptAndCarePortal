@@ -4,8 +4,8 @@ export const DUMMY_LOGINS = [
     name: "userTest",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, placeat?",
-    announcement: [4, 5, 6, 7],
-    phoneNumber: "666 777 888",
+    announcementIds: [4, 5, 6, 7],
+    phoneNumber: "666777888",
   },
   {
     id: 2,
@@ -13,7 +13,7 @@ export const DUMMY_LOGINS = [
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, placeat?",
     announcement: [1, 2, 3, 8, 9],
-    phoneNumber: "123 456 789",
+    phoneNumber: "123456789",
     company: "zwierzaki.pl",
     openHours: "8-18",
   },
