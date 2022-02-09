@@ -1,5 +1,5 @@
 import styles from "./welcome_section.module.scss";
-import welcomeSectionImage from "../../../../assets/image/encourages/encourage_image.png";
+import welcomeSectionImage from "../../../../assets/image/encourages/welcome_section_image.png";
 import { Section } from "../../../../components";
 
 export const WelcomeSection = () => {

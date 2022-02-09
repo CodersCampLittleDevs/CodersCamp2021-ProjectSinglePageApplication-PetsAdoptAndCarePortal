@@ -1,5 +1,5 @@
 import styles from "./encourage_section.module.scss";
-import encourageSectionImage from "../../../../assets/image/encourages/encourage_image2.png";
+import encourageSectionImage from "../../../../assets/image/encourages/encourage_section_image.png";
 import { Section } from "../../../../components";
 
 export const EncourageSection = () => {

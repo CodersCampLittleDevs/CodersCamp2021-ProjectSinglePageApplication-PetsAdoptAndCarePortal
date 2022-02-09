@@ -1,4 +1,4 @@
-import dog from "../assets/image/encourages/encourage_image.png";
+import dog from "../assets/image/encourages/encourage_section_image.png";
 
 export const ANNOUNCEMENTS_LIST = [
   {
