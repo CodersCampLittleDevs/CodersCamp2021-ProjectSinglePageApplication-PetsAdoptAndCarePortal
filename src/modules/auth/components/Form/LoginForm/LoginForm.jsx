@@ -71,6 +71,9 @@ export const LoginForm = () => {
       <Button type="submit" onClick={() => {}}>
         Zaloguj się
       </Button>
+      <Button type="submit" onClick={() => {}}>
+        Zarejestruj się
+      </Button>
     </form>
   );
 };

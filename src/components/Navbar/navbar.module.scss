@@ -2,6 +2,14 @@
   &__logo {
     width: 90px;
   }
+  .button {
+    color: #243b70;
+    background: none;
+    box-shadow: none;
+    padding: 0;
+    font-weight: bold;
+    cursor: pointer;
+  }
 }
 .hamburger .line {
   width: 50px;
@@ -169,17 +177,14 @@
   .menu__left {
     display: flex;
     align-items: center;
-    width: 50%;
     margin: 10px 10px;
   }
 
   .menu__right {
     display: flex;
-    width: 30%;
     align-items: center;
     justify-content: flex-start;
     margin: 10px 20px;
-    flex-direction: row-reverse;
   }
 
   .navbar__Link {
@@ -188,7 +193,6 @@
     font-weight: bold;
     font-size: 25px;
     margin-left: 40px;
-
     &:hover {
       color: #800080;
     }
