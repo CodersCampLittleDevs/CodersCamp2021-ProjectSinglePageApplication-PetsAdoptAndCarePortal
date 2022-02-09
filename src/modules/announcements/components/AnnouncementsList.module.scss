@@ -9,7 +9,6 @@ li {
   position: relative;
   display: flex;
   justify-content: center;
-  z-index: 0;
 }
 a,
 a:visited,
@@ -21,18 +20,29 @@ a:active {
 .singleAnnouncement {
   margin: 0px 90px 50px 90px;
   height: 200px;
-  width: 1260px;
   border-radius: 25px;
   display: grid;
   grid-template-areas:
-    "Name Rating"
+    "Title Rating"
     "Description SetAppointment";
   box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.1);
   background-color: rgba(255, 255, 255, 0.4) 0%;
   backdrop-filter: blur(25px);
+  grid-gap: 30px 30px;
 }
+@media screen and (max-width: 767px) {
+  .singleAnnouncement {
+    grid-template-areas:
+      "Title"
+      "Rating"
+      "Description"
+      "SetAppointment";
+    height: 100%;
+  }
+}
+
 .name {
-  grid-area: Name;
+  grid-area: Title;
   justify-self: start;
   align-self: start;
   padding-left: 30px;
@@ -48,11 +58,10 @@ a:active {
   justify-self: start;
   align-self: end;
   padding-left: 30px;
-  padding-bottom: 30px;
+  padding-bottom: 15px;
   overflow: hidden;
   font-family: Ebrima;
   font-weight: normal;
-  // font-size: 25px;
   color: #385cb0;
 }
 .rating {
@@ -68,4 +77,8 @@ a:active {
   align-self: end;
   padding-right: 30px;
   padding-bottom: 15px;
+  color: #243b70;
+  font-family: Ebrima;
+  font-weight: bold;
+  font-size: 25px;
 }
