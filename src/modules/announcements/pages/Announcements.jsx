@@ -30,7 +30,6 @@ export const Announcements = () => {
       setFilters(ANNOUNCEMENTS_LIST);
     }
   }, [search]);
-  console.log(filteredAnnouncements);
 
   return (
     <div>
