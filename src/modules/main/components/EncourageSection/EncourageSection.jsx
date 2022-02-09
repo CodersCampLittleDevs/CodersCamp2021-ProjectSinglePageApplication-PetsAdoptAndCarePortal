@@ -1,10 +1,10 @@
 import styles from "./encourage_section.module.scss";
-import dog2 from "../../../../assets/image/encourages/dog2.png";
+import encourageSectionImage from "../../../../assets/image/encourages/encourage_image2.png";
 import { Section } from "../../../../components";
 
 export const EncourageSection = () => {
   return (
-    <Section imageSide={false}>
+    <Section imageSide="left" imageSrc={encourageSectionImage}>
       <div className={styles.section__description}>
         <h3 className={styles.description__title}>
           Wszystkie usługi w jednym miejscu!
@@ -42,7 +42,6 @@ export const EncourageSection = () => {
           </p>
         </div>
       </div>
-      <img className={styles.section__image} src={dog2} alt="" />
     </Section>
   );
 };

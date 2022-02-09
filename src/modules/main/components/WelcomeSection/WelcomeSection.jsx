@@ -1,10 +1,10 @@
 import styles from "./welcome_section.module.scss";
-import dog from "../../../../assets/image/encourages/dog.png";
+import welcomeSectionImage from "../../../../assets/image/encourages/encourage_image.png";
 import { Section } from "../../../../components";
 
 export const WelcomeSection = () => {
   return (
-    <Section imageSide>
+    <Section imageSide="right" imageSrc={welcomeSectionImage}>
       <div className={styles.section__description}>
         <h3 className={styles.description__title}>
           W trosce o potrzeby Twojego zwierzaka
@@ -15,7 +15,6 @@ export const WelcomeSection = () => {
           grona specjalistów.
         </p>
       </div>
-      <img className={styles.section__image} src={dog} alt="" />
     </Section>
   );
 };
