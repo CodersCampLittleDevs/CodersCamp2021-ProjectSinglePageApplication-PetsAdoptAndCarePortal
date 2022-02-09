@@ -6,6 +6,7 @@ import clsx from "clsx";
 import { Button, Input } from "../../../../../components";
 import styles from "../form.module.scss";
 import { DUMMY_LOGINS } from "../../../../../mock/auth";
+import { ErrorBox } from "../../../../../components/ErrorBox/ErrorBox";
 
 export const RegisterForm = () => {
   const schema = yup.object().shape({
@@ -78,7 +79,7 @@ export const RegisterForm = () => {
         type="text"
         classes={styles.form__input}
       />
-      <span className={styles.form__error}>{errors.email?.message}</span>
+      <ErrorBox error={errors.email?.message} />
       <Input
         {...register("username")}
         placeholder="Nazwa użytkownika"
@@ -86,7 +87,7 @@ export const RegisterForm = () => {
         type="text"
         classes={styles.form__input}
       />
-      <span className={styles.form__error}>{errors.username?.message}</span>
+      <ErrorBox error={errors.username?.message} />
       <Input
         {...register("city")}
         placeholder="Miasto"
@@ -94,7 +95,7 @@ export const RegisterForm = () => {
         type="text"
         classes={styles.form__input}
       />
-      <span className={styles.form__error}>{errors.city?.message}</span>
+      <ErrorBox error={errors.city?.message} />
       <Input
         {...register("phone")}
         placeholder="Numer telefonu"
@@ -102,7 +103,7 @@ export const RegisterForm = () => {
         type="string"
         classes={styles.form__input}
       />
-      <span className={styles.form__error}>{errors.phone?.message}</span>
+      <ErrorBox error={errors.phone?.message} />
       <Input
         {...register("password")}
         type="password"
@@ -110,7 +111,7 @@ export const RegisterForm = () => {
         label="Hasło"
         classes={styles.form__input}
       />
-      <span className={styles.form__error}>{errors.password?.message}</span>
+      <ErrorBox error={errors.password?.message} />
       <Input
         {...register("confirmPassword")}
         type="password"
@@ -118,9 +119,7 @@ export const RegisterForm = () => {
         label="Powtórz hasło"
         classes={styles.form__input}
       />
-      <span className={styles.form__error}>
-        {errors.confirmPassword?.message}
-      </span>
+      <ErrorBox error={errors.confirmPassword?.message} />
       {!isPrivateMode && (
         <>
           <Input
@@ -130,7 +129,7 @@ export const RegisterForm = () => {
             type="text"
             classes={styles.form__input}
           />
-          <span className={styles.form__error}>{errors.business?.message}</span>
+          <ErrorBox error={errors.business?.message} />
           <Input
             {...register("NIP")}
             placeholder="NIP"
@@ -138,7 +137,7 @@ export const RegisterForm = () => {
             type="text"
             classes={styles.form__input}
           />
-          <span className={styles.form__error}>{errors.NIP?.message}</span>
+          <ErrorBox error={errors.NIP?.message} />
         </>
       )}
       <div className={styles.form__separator} />

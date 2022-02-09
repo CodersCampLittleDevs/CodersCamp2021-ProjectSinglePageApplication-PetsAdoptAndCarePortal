@@ -6,6 +6,7 @@ import * as yup from "yup";
 import { Button, Input } from "../../../../../components";
 import styles from "../form.module.scss";
 import { DUMMY_LOGINS } from "../../../../../mock/auth";
+import { ErrorBox } from "../../../../../components/ErrorBox/ErrorBox";
 
 const passwordReducer = (state, action) => {
   const newState = { ...state };
@@ -73,7 +74,7 @@ export const ForgotForm = () => {
           type="text"
           classes={styles.registerForm__input}
         />
-        <span className={styles.form__error}>{errors.login?.message}</span>
+        <ErrorBox error={errors.login?.message} />
         <div className={styles.form__separator} />
         <Button type="submit" onClick={() => {}}>
           Odzyskaj hasło

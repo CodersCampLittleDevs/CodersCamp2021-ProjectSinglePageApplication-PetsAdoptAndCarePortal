@@ -8,9 +8,10 @@ import { Input } from "../../../../../components/Input/Input";
 import { AuthContext } from "../../../../../context/auth/AuthContext";
 import styles from "../form.module.scss";
 import { DUMMY_LOGINS } from "../../../../../mock/auth";
+import { ErrorBox } from "../../../../../components/ErrorBox/ErrorBox";
 
 export const LoginForm = () => {
-  const { isLoggedIn, onLogin } = useContext(AuthContext);
+  const { onLogin } = useContext(AuthContext);
   const [validData, setValidData] = useState(true);
 
   const schema = yup.object().shape({
@@ -49,32 +50,29 @@ export const LoginForm = () => {
   };
 
   return (
-    <>
-      {isLoggedIn ? <p>Zalogowany</p> : <p>Niezalogowany</p>}
-      {!validData && <p>Podałeś błędne dane</p>}
-      <form
-        onSubmit={handleSubmit(submitForm)}
-        className={clsx([styles.form, styles.form__auth])}
-      >
-        <Input
-          {...register("login")}
-          placeholder="E-mail / Login"
-          label="E-mail / Login"
-          type="text"
-        />
-        <span className={styles.form__error}>{errors.login?.message}</span>
-        <Input
-          {...register("password")}
-          placeholder="Hasło"
-          label="Hasło"
-          type="password"
-        />
-        <span className={styles.form__error}>{errors.password?.message}</span>
-        <div className={styles.form__separator} />
-        <Button type="submit" onClick={() => {}}>
-          Zaloguj się
-        </Button>
-      </form>
-    </>
+    <form
+      onSubmit={handleSubmit(submitForm)}
+      className={clsx([styles.form, styles.form__auth])}
+    >
+      {!validData && <ErrorBox error="Podałeś błędne dane" />}
+      <Input
+        {...register("login")}
+        placeholder="E-mail / Login"
+        label="E-mail / Login"
+        type="text"
+      />
+      <ErrorBox error={errors.login?.message} />
+      <Input
+        {...register("password")}
+        placeholder="Hasło"
+        label="Hasło"
+        type="password"
+      />
+      <ErrorBox error={errors.password?.message} />
+      <div className={styles.form__separator} />
+      <Button type="submit" onClick={() => {}}>
+        Zaloguj się
+      </Button>
+    </form>
   );
 };

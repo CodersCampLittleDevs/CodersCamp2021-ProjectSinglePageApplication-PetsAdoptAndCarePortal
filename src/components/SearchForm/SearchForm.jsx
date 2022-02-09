@@ -11,6 +11,7 @@ import styles from "./search_form.module.scss";
 import { Button } from "../Button/Button";
 import searchButtonIcon from "../../assets/image/searchButton.png";
 import { createSearchParamsString } from "../../utils";
+import { ErrorBox } from "../ErrorBox/ErrorBox";
 
 export const SearchForm = ({ filterAnnouncements, setFilters }) => {
   const [filterState, setFilterState] = useState([]);
@@ -71,9 +72,7 @@ export const SearchForm = ({ filterAnnouncements, setFilters }) => {
             {...register(SERVICES.title, { required: true })}
             list={SERVICES}
           />
-          {errors[SERVICES.title] && (
-            <span className={styles.error}>Wpisz czego szukasz</span>
-          )}
+          {errors[SERVICES.title] && <ErrorBox error="Wpisz czego szukasz" />}
         </label>
         <label htmlFor={CATEGORIES.title} className={styles.label}>
           <Select
@@ -82,9 +81,7 @@ export const SearchForm = ({ filterAnnouncements, setFilters }) => {
             list={CATEGORIES}
           />
           {errors[CATEGORIES.title] && (
-            <span className={styles.error}>
-              Wybierz kategorię której szukasz
-            </span>
+            <ErrorBox error="Wybierz kategorię której szukasz" />
           )}
         </label>
         <label htmlFor={CITIES.title} className={styles.label}>
@@ -93,9 +90,7 @@ export const SearchForm = ({ filterAnnouncements, setFilters }) => {
             required
             list={CITIES}
           />
-          {errors[CITIES.title] && (
-            <span className={styles.error}>Wpisz czego szukasz</span>
-          )}
+          {errors[CITIES.title] && <ErrorBox error="Wpisz miasto" />}
         </label>
         <Button
           type="submit"
