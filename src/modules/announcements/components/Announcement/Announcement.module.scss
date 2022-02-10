@@ -38,7 +38,7 @@
     color: #385cb0;
     text-decoration: none;
   }
-  &__image {
+  &__image_section {
     grid-area: image;
     padding-top: 50px;
     align-self: center;
@@ -93,21 +93,54 @@
   }
 }
 @media only screen and (max-width: 767px) {
+  .centered__announcement {
+    margin: 0;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+  }
+
   .announcement {
     grid-template-areas: "image" "contact" "description";
     &__details {
       grid-template-areas: "title" "rating" "description";
     }
+    &__image_section {
+      img {
+        width: 250px;
+      }
+    }
+
+    & a {
+      margin: 15px 0;
+      width: 200px;
+      text-align: center;
+    }
+
+    &__contact {
+      align-items: center;
+      justify-content: center;
+    }
     &__rate {
-      justify-self: end;
-      padding-right: 20%;
+      padding-left: 10%;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
     }
     &__title {
-      padding-left: 20%;
+      padding: 0;
     }
     &__details {
-      padding-left: 20%;
-      padding-right: 20%;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      margin: 0 auto;
+    }
+    &__description {
+      padding: 10px 10px;
     }
   }
 }

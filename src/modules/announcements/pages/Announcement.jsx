@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import ReactStars from "react-rating-stars-component";
 import { useState } from "react";
 import { Button } from "../../../components/Button/Button";
-import styles from "../components/Announcement/Announcement.module.scss";
+import styles from "../components/Announcement/announcement.module.scss";
 import SampleUser from "../../../assets/image/SampleUser/SampleUser.png";
 import { useAnnoucement } from "../hook/useAnnouncement";
 
@@ -15,7 +15,7 @@ export const Announcement = () => {
   return (
     <div className={styles.centered__announcement}>
       <section className={styles.announcement}>
-        <div className={styles.announcement__image}>
+        <div className={styles.announcement__image_section}>
           <img src={announcement.image} alt={announcement.title} />
         </div>
         <div className={styles.announcement__contactContainer}>
