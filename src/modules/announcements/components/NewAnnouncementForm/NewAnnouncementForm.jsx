@@ -6,6 +6,7 @@ import { Input, Button, Select } from "../../../../components";
 import styles from "../../../auth/components/Form/form.module.scss";
 import { CATEGORIES, PETS } from "../../../../constants/options";
 import { ANNOUNCEMENTS_LIST } from "../../../../constants/announcements";
+import { clearFormAfterSubmit } from "../../../../utils/clearFormAfterSubmit";
 
 const NewAnnouncementForm = () => {
   const schema = yup.object().shape({
@@ -34,6 +35,8 @@ const NewAnnouncementForm = () => {
   const {
     register,
     handleSubmit,
+    getValues,
+    setValue,
     formState: { errors },
   } = useForm({ resolver: yupResolver(schema) });
 
@@ -60,6 +63,8 @@ const NewAnnouncementForm = () => {
       company: user.business,
       rate: 0.0,
     });
+    console.log(ANNOUNCEMENTS_LIST);
+    clearFormAfterSubmit(getValues, setValue);
   };
 
   return (

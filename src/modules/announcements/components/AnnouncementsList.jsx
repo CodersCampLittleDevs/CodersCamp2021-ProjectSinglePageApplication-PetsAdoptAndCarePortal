@@ -20,7 +20,7 @@ export const AnnouncementsList = ({ filteredAnnouncements }) => {
             <Link to={`/announcements/ ${+e.id}`}>
               <div className={styles.singleAnnouncement}>
                 <h3 className={styles.name}>
-                  {e.company ? e.company : e.title}
+                  {e.title}
                   <br />
                   {e.city}
                 </h3>

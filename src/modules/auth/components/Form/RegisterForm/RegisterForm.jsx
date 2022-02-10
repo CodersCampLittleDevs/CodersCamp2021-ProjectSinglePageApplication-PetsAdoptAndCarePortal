@@ -6,6 +6,7 @@ import clsx from "clsx";
 import { Button, Input, ErrorBox } from "../../../../../components";
 import styles from "../form.module.scss";
 import { DUMMY_LOGINS } from "../../../../../mock/auth";
+import { clearFormAfterSubmit } from "../../../../../utils/clearFormAfterSubmit";
 
 export const RegisterForm = () => {
   const schema = yup.object().shape({
@@ -43,6 +44,8 @@ export const RegisterForm = () => {
     register,
     handleSubmit,
     formState: { errors },
+    getValues,
+    setValue,
   } = useForm({
     resolver: yupResolver(schema),
   });
@@ -64,6 +67,7 @@ export const RegisterForm = () => {
       business,
       NIP,
     });
+    clearFormAfterSubmit(getValues, setValue);
   };
 
   return (
