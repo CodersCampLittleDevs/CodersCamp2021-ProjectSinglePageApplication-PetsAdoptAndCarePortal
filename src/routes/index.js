@@ -4,6 +4,7 @@ import { Account } from "../modules/account";
 import { Favorites } from "../modules/announcements/pages/Favorites";
 import { Announcements } from "../modules/announcements/pages/Announcements";
 import { NewAnnouncement } from "../modules/announcements/pages/NewAnnouncement";
+import { Announcement } from "../modules/announcements/pages/Announcement";
 
 export const routes = [
   {
@@ -49,4 +50,10 @@ export const routes = [
     removeRouteWhenLogged: false,
   },
   ...authRoutes,
+  {
+    path: "/announcements/:id",
+    component: <Announcement />,
+    title: "Ogłoszenie",
+    visibleWhenLogged: true,
+  },
 ];
