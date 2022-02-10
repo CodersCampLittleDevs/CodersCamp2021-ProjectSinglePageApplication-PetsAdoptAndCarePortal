@@ -4,6 +4,7 @@ export const DUMMY_LOGINS = [
     email: "test@example.com",
     username: "test",
     password: "test123",
+    favouritesIds: [1, 2, 3],
   },
   {
     id: 2,
@@ -14,5 +15,6 @@ export const DUMMY_LOGINS = [
     phone: 555666555,
     business: "business",
     NIP: 56463745,
+    favouritesIds: [1, 2, 3],
   },
 ];
