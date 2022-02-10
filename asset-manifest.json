@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/CodersCamp2021-ProjectSinglePageApplication-PetsAdoptAndCarePortal/static/css/main.69590bfa.css",
+    "main.css": "/CodersCamp2021-ProjectSinglePageApplication-PetsAdoptAndCarePortal/static/css/main.e398d378.css",
     "main.js": "/CodersCamp2021-ProjectSinglePageApplication-PetsAdoptAndCarePortal/static/js/main.69671075.js",
     "static/media/background_image.png": "/CodersCamp2021-ProjectSinglePageApplication-PetsAdoptAndCarePortal/static/media/background_image.1e5e4410c3dd8dcc7ef5.png",
     "static/media/photoBottom.png": "/CodersCamp2021-ProjectSinglePageApplication-PetsAdoptAndCarePortal/static/media/photoBottom.59c762e4c816922b89d7.png",
     "static/media/encourage_section_image.png": "/CodersCamp2021-ProjectSinglePageApplication-PetsAdoptAndCarePortal/static/media/encourage_section_image.cdbbc8cdb850029fbb78.png",
     "static/media/welcome_section_image.png": "/CodersCamp2021-ProjectSinglePageApplication-PetsAdoptAndCarePortal/static/media/welcome_section_image.42ce3044d27eb3e35996.png",
     "index.html": "/CodersCamp2021-ProjectSinglePageApplication-PetsAdoptAndCarePortal/index.html",
-    "main.69590bfa.css.map": "/CodersCamp2021-ProjectSinglePageApplication-PetsAdoptAndCarePortal/static/css/main.69590bfa.css.map",
+    "main.e398d378.css.map": "/CodersCamp2021-ProjectSinglePageApplication-PetsAdoptAndCarePortal/static/css/main.e398d378.css.map",
     "main.69671075.js.map": "/CodersCamp2021-ProjectSinglePageApplication-PetsAdoptAndCarePortal/static/js/main.69671075.js.map"
   },
   "entrypoints": [
-    "static/css/main.69590bfa.css",
+    "static/css/main.e398d378.css",
     "static/js/main.69671075.js"
   ]
 }
