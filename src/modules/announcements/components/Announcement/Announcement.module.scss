@@ -1,0 +1,113 @@
+@import "../../../../index.scss";
+.centered__announcement {
+  margin: 100px 90px 50px 90px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  border-radius: 25px;
+  box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.4) 0%;
+  backdrop-filter: blur(25px);
+  overflow: hidden;
+}
+.announcement {
+  display: grid;
+  grid-template-areas:
+    "image contact"
+    "description description";
+  & h2 {
+    color: #243b70;
+    font-family: Ebrima;
+    font-weight: bold;
+    font-size: 25px;
+  }
+  & h3 {
+    color: #243b70;
+    font-family: Ebrima;
+    font-weight: bold;
+    font-size: 25px;
+  }
+  & p {
+    font-family: Ebrima;
+    font-size: 25px;
+    color: #385cb0;
+  }
+  & a {
+    font-family: Ebrima;
+    font-size: 25px;
+    color: #385cb0;
+    text-decoration: none;
+  }
+  &__image {
+    grid-area: image;
+    padding-top: 50px;
+    align-self: center;
+    justify-self: center;
+    object-fit: cover;
+  }
+  &__contact {
+    grid-area: contact;
+    align-self: center;
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+  }
+  &__details {
+    grid-area: description;
+    display: grid;
+    grid-template-areas:
+      "title rating"
+      "description .";
+  }
+  &__title {
+    grid-area: title;
+    padding-top: 25px;
+    padding-left: 75px;
+    margin: 0;
+  }
+  &__rate {
+    grid-area: rating;
+    padding-right: 25px;
+    padding-top: 25px;
+  }
+  &__description {
+    grid-area: description;
+    padding-left: 75px;
+    padding-bottom: 25px;
+  }
+  &__button button {
+    border-radius: 25px;
+    box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.1);
+    background-color: linear-gradient(
+      rgba(255, 255, 255, 0.4) rgba(254, 254, 254, 0.1) 100%
+    );
+    backdrop-filter: blur(25px);
+    padding: 20px;
+    border-style: none;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+@media only screen and (max-width: 767px) {
+  .announcement {
+    grid-template-areas: "image" "contact" "description";
+    &__details {
+      grid-template-areas: "title" "rating" "description";
+    }
+    &__rate {
+      justify-self: end;
+      padding-right: 20%;
+    }
+    &__title {
+      padding-left: 20%;
+    }
+    &__details {
+      padding-left: 20%;
+      padding-right: 20%;
+    }
+  }
+}
