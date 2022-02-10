@@ -1,13 +1,12 @@
-$menu-font: 24px;
-$header-font: 30px;
-$text-font: 19px;
-$tiny-font: 14px;
-@media screen and (min-width: 1030px) {
-  $menu-font: 30px;
-  $header-font: 36px;
-  $text-font: 25px;
-  $tiny-font: 20px;
-}
+$menu-desktop-font: 30px;
+$header-desktop-font: 36px;
+$text-desktop-font: 25px;
+$tiny-desktop-font: 20px;
+
+$menu-tablet-font: 24px;
+$header-tablet-font: 30px;
+$text-tablet-font: 19px;
+$tiny-tablet-font: 14px;
 
 $white-color: #ffffff;
 $black-color: #000000;

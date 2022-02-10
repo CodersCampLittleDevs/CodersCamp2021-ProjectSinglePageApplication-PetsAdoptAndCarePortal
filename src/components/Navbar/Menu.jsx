@@ -35,7 +35,7 @@ export const Menu = ({ isOpen }) => {
                 className={styles.navbar__Link}
                 key={item.title}
                 to={item.path}
-                activeClassName={styles.activeLink}
+                activeClassName={styles.link__active}
                 exact
               >
                 {item.title}
@@ -46,7 +46,7 @@ export const Menu = ({ isOpen }) => {
                 className={styles.navbar__Link}
                 key={item.title}
                 to={item.path}
-                activeClassName={styles.activeLink}
+                activeClassName={styles.link__active}
                 exact
               >
                 {item.title}
@@ -60,7 +60,7 @@ export const Menu = ({ isOpen }) => {
                 className={styles.navbar__Link}
                 key={item.title}
                 to={item.path}
-                activeClassName={styles.activeLink}
+                activeClassName={styles.link__active}
                 exact
               >
                 {item.title}
@@ -71,7 +71,7 @@ export const Menu = ({ isOpen }) => {
                 className={styles.navbar__Link}
                 key={item.title}
                 to={item.path}
-                activeClassName={styles.activeLink}
+                activeClassName={styles.link__active}
                 exact
               >
                 {item.title}
