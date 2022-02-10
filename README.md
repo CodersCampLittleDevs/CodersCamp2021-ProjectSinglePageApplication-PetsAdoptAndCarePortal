@@ -1,70 +1,70 @@
-# Getting Started with Create React App
+# CodersCamp 2021 - JavaScript Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**The project was created as part of the 7th edition of the CodersCamp course.**
 
-## Available Scripts
+## Table of Contests
 
-In the project directory, you can run:
+- [The Project Team](#team)
+- [General info](#general)
+- [Features](#features)
+- [Technologies](#technologies)
+- [Setup](#setup)
+- [Organization of work](#organization)
 
-### `npm start`
+## <a name="team">The project team</a>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Authors of this project are participants who worked under supervision of an experienced mentor.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+**Authors:**
 
-### `npm test`
+- **[Dawid Starzyk](https://github.com/JustD1d1t)**
+- **[Alicja Guzik ](https://github.com/alicjaguzik)**
+- **[Maciej Ponicki](https://github.com/MaciekPon)**
+- **[Dawid Żłobecki](https://github.com/DawidZlobecki)**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Mentor **[Filip Kuca](https://github.com/ruljin)**
 
-### `npm run build`
+## <a name="general">General Info</a>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Our project is a service for people who search services or hotel for their pupils. If you want to adopt any animal you are also in right place.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## <a name="features">Features</a>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- The main page contains enoucrage section that inform users what they can find on this website. Scrolling down you can see search-form where you can find announcements that you are interesed in. We associate specialists like groomers, behaviorists, vets or people who owns shop. Below you can see step by step section that infomr what steps you should do to find what you need. Next you can see comments from our users.
+- **Not logged** users can see announcements or go to the register, login or forgot password form
+- **Logged** users can add announcement, check their account or favourites announcements that they are interested in.
 
-### `npm run eject`
+## <a name="technologies">Technologies</a>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- React
+- Webpack
+- BEM Methodology
+- Figma
+- Trello (scrum)
+- Third libraries like swiper, react-icons, prop-types, react-hook-form, yup, clsx etc
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## <a name="setup">Setup</a>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+**DEMO**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+To view demo click [here](https://coderscamplittledevs.github.io/CodersCamp2021-ProjectSinglePageApplication-PetsAdoptAndCarePortal/#/)
 
-## Learn More
+**Getting Started**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+You can login to app using:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **login** - test@test.pl / testpl
+- **password** - testpl123
 
-### Code Splitting
+If you want to run the application on the local machine, follow these steps:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1. Clone down this repo
+2. Install dependencies with the command: npm install
+3. Start development server npm start
+4. The application will be available at http://localhost:3000/ - it should run automatically
 
-### Analyzing the Bundle Size
+## <a name="organization">Organization</a>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+**Figma**
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Using Figma, we created our own prototype of a user interface adapted to Desktop, and also made a version adapted to display on Phones.
