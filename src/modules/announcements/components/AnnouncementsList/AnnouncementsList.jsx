@@ -16,7 +16,7 @@ export const AnnouncementsList = ({ filteredAnnouncements }) => {
   }
   return (
     <div className={styles.allAnnouncements}>
-      <ul>
+      <ul className={styles.list}>
         {filteredAnnouncements.map((announcement) => (
           <li key={announcement.id}>
             <Link to={`${ANNOUNCEMENT_ROUTE}${+announcement.id}`}>
