@@ -25,7 +25,7 @@ export const OpinionsSection = () => {
             prevEl: ".swiper-button-prev",
           }}
           breakpoints={{
-            768: {
+            640: {
               slidesPerView: 2,
             },
           }}

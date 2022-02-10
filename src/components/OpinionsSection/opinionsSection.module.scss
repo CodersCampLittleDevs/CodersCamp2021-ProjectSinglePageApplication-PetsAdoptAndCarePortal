@@ -25,6 +25,8 @@
 
 .sliderContainer {
   position: relative;
-  width: 1440px;
   margin: 0 auto;
+  @media screen and(min-width: 1439px) {
+    width: 1440px;
+  }
 }
