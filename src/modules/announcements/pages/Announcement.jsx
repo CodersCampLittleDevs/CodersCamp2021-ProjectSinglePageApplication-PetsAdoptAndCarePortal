@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import ReactStars from "react-rating-stars-component";
 import { useState } from "react";
 import { Button } from "../../../components/Button/Button";
-import styles from "../components/Announcement/announcement.module.scss";
+import styles from "../components/Announcement/Announcement.module.scss";
 import SampleUser from "../../../assets/image/SampleUser/SampleUser.png";
 import { useAnnoucement } from "../hook/useAnnouncement";
 
