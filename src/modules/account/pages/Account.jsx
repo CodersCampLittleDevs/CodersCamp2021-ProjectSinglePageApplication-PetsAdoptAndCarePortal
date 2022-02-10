@@ -7,8 +7,8 @@ export const Account = () => {
     <div className={styles.account_section}>
       <h1 className={styles.title}>Moje konto</h1>
       <div className={styles.wrapper}>
-        <form className={styles.form} id="privateOrFirm">
-          <label htmlFor={person} className={styles.label_first}>
+        <form className={styles.form}>
+          <label htmlFor={person} className={styles.label}>
             <input
               type="radio"
               className={styles.input}
@@ -28,8 +28,6 @@ export const Account = () => {
             />{" "}
             Firma
           </label>
-        </form>
-        <form className={styles.form} id="email">
           <label htmlFor={mail} className={styles.label}>
             Adres email
             <input
@@ -39,8 +37,6 @@ export const Account = () => {
               id={mail}
             />
           </label>
-        </form>
-        <form className={styles.form} id="login">
           <label htmlFor={login} className={styles.label}>
             Login
             <input
@@ -50,8 +46,6 @@ export const Account = () => {
               id={login}
             />
           </label>
-        </form>
-        <form className={styles.form} id="city">
           <label htmlFor={city} className={styles.label}>
             Miasto
             <input
@@ -61,8 +55,6 @@ export const Account = () => {
               id={city}
             />
           </label>
-        </form>
-        <form className={styles.form} id="phone">
           <label htmlFor={phone} className={styles.label}>
             Numer Telefonu
             <input
@@ -72,8 +64,6 @@ export const Account = () => {
               id={phone}
             />
           </label>
-        </form>
-        <form className={styles.form} id="company">
           <label htmlFor={company} className={styles.label}>
             Nazwa firmy
             <input
@@ -83,8 +73,6 @@ export const Account = () => {
               id={company}
             />
           </label>
-        </form>
-        <form className={styles.form} id="nip">
           <label htmlFor={nip} className={styles.label}>
             NIP
             <input
