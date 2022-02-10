@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import clsx from "clsx";
-import { Input, Button, Select } from "../../../../components";
+import { Input, Button, Select, ErrorBox } from "../../../../components";
 import styles from "../../../auth/components/Form/form.module.scss";
 import { CATEGORIES, PETS } from "../../../../constants/options";
 import { ANNOUNCEMENTS_LIST } from "../../../../constants/announcements";
@@ -79,7 +79,7 @@ const NewAnnouncementForm = () => {
         type="text"
         classes={" "}
       />
-      <span className={styles.form__error}>{errors.title?.message}</span>
+      <ErrorBox>{errors.title?.message}</ErrorBox>
       <Input
         {...register("description")}
         placeholder="Opis"
@@ -87,7 +87,7 @@ const NewAnnouncementForm = () => {
         type="text"
         classes={" "}
       />
-      <span className={styles.form__error}>{errors.description?.message}</span>
+      <ErrorBox>{errors.description?.message}</ErrorBox>
       <Input
         {...register("price")}
         placeholder="Cena"
@@ -95,21 +95,21 @@ const NewAnnouncementForm = () => {
         type="text"
         classes={" "}
       />
-      <span className={styles.form__error}>{errors.price?.message}</span>
+      <ErrorBox>{errors.price?.message}</ErrorBox>
       <Select
         {...register("category", { required: true })}
         required
         list={CATEGORIES}
         fullWidth
       />
-      <span className={styles.form__error}>{errors.category?.message}</span>
+      <ErrorBox>{errors.category?.message}</ErrorBox>
       <Select
         {...register("animal", { required: true })}
         required
         list={PETS}
         fullWidth
       />
-      <span className={styles.form__error}>{errors.animal?.message}</span>
+      <ErrorBox>{errors.animal?.message}</ErrorBox>
       <Input
         {...register("city")}
         placeholder="Miasto"
@@ -117,7 +117,7 @@ const NewAnnouncementForm = () => {
         type="text"
         classes={" "}
       />
-      <span className={styles.form__error}>{errors.city?.message}</span>
+      <ErrorBox>{errors.city?.message}</ErrorBox>
       <div className={styles.form__separator}> </div>
       <Button type="submit" onClick={() => {}}>
         Dodaj ogłoszenie

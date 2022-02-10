@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import clsx from "clsx";
-import { Button, Input, ErrorBox } from "../../../../../components";
+import { Button, Input, ErrorBox, PageTitle } from "../../../../../components";
 import { AuthContext } from "../../../../../context/auth/AuthContext";
 import styles from "../form.module.scss";
 import { DUMMY_LOGINS } from "../../../../../mock/auth";
@@ -54,32 +54,35 @@ export const LoginForm = () => {
   };
 
   return (
-    <form
-      onSubmit={handleSubmit(submitForm)}
-      className={clsx([styles.form, styles.form__auth])}
-    >
-      {!validData && <ErrorBox error="Podałeś błędne dane" />}
-      <Input
-        {...register("login")}
-        placeholder="E-mail / Login"
-        label="E-mail / Login"
-        type="text"
-      />
-      <ErrorBox>{errors.login?.message}</ErrorBox>
-      <Input
-        {...register("password")}
-        placeholder="Hasło"
-        label="Hasło"
-        type="password"
-      />
-      <ErrorBox>{errors.password?.message}</ErrorBox>
-      <div className={styles.form__separator} />
-      <Button type="submit" onClick={() => {}}>
-        Zaloguj się
-      </Button>
-      <Button type="submit" to="/auth/forgot" onClick={() => {}}>
-        Przypomnij hasło
-      </Button>
-    </form>
+    <>
+      <PageTitle>Logowanie</PageTitle>
+      <form
+        onSubmit={handleSubmit(submitForm)}
+        className={clsx([styles.form, styles.form__auth])}
+      >
+        {!validData && <ErrorBox error="Podałeś błędne dane" />}
+        <Input
+          {...register("login")}
+          placeholder="E-mail / Login"
+          label="E-mail / Login"
+          type="text"
+        />
+        <ErrorBox>{errors.login?.message}</ErrorBox>
+        <Input
+          {...register("password")}
+          placeholder="Hasło"
+          label="Hasło"
+          type="password"
+        />
+        <ErrorBox>{errors.password?.message}</ErrorBox>
+        <div className={styles.form__separator} />
+        <Button type="submit" onClick={() => {}}>
+          Zaloguj się
+        </Button>
+        <Button type="submit" to="/auth/forgot" onClick={() => {}}>
+          Przypomnij hasło
+        </Button>
+      </form>
+    </>
   );
 };

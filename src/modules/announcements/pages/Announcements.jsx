@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { SearchForm } from "../../../components";
+import { SearchForm, PageTitle } from "../../../components";
 import { ANNOUNCEMENTS_LIST } from "../../../constants/announcements";
 import { filterAnnouncements } from "../../../utils";
 import { AnnouncementsList } from "../components/AnnouncementsList/AnnouncementsList";
@@ -33,6 +33,7 @@ export const Announcements = () => {
 
   return (
     <div>
+      <PageTitle>Ogłoszenia</PageTitle>
       <SearchForm
         filterAnnouncements={filterAnnouncements}
         setFilters={setFilters}

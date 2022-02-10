@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import clsx from "clsx";
 import * as yup from "yup";
-import { Button, Input, ErrorBox } from "../../../../../components";
+import { Button, Input, ErrorBox, PageTitle } from "../../../../../components";
 import styles from "../form.module.scss";
 import { DUMMY_LOGINS } from "../../../../../mock/auth";
 
@@ -53,6 +53,7 @@ export const ForgotForm = () => {
 
   return (
     <>
+      <PageTitle>Przypomnij hasło</PageTitle>
       {!passwordState.isUserRegistered && (
         <p>
           Jeśli użytkownik jest zarejestrowany to wysłano nowe hasło na
