@@ -18,12 +18,7 @@
 
 .wrapper__left_side {
   display: flex;
-  flex-direction: row-reverse;
-
-  .section__image {
-    position: absolute;
-    left: 0;
-  }
+  justify-content: space-between;
 }
 
 @media (max-width: 768px) {

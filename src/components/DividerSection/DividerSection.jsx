@@ -1,4 +1,4 @@
-import styles from "./dividerSection.modules.scss";
+import styles from "./dividerSection.module.scss";
 import dogPhoto from "../../assets/image/photoBottom.png";
 
 export const DividerSection = () => {

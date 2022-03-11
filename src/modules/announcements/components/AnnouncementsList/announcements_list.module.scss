@@ -1,11 +1,14 @@
 * {
   margin: 0;
 }
+.list {
+  margin: 0;
+  padding: 0 1rem;
+}
 li {
   list-style: none;
 }
 .allAnnouncements {
-  margin-top: 100px;
   position: relative;
   display: flex;
   justify-content: center;
@@ -18,8 +21,6 @@ a:active {
   color: inherit;
 }
 .singleAnnouncement {
-  margin: 0px 90px 50px 90px;
-  height: 200px;
   border-radius: 25px;
   display: grid;
   grid-template-areas:
@@ -29,6 +30,7 @@ a:active {
   background-color: rgba(255, 255, 255, 0.4) 0%;
   backdrop-filter: blur(25px);
   grid-gap: 30px 30px;
+  margin-bottom: 2rem;
 }
 @media screen and (max-width: 767px) {
   .singleAnnouncement {

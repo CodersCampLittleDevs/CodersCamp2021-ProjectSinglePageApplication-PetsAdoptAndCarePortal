@@ -3,7 +3,8 @@ import { Main } from "../modules/main";
 import { Account } from "../modules/account";
 import { Favorites } from "../modules/announcements/pages/Favorites";
 import { Announcements } from "../modules/announcements/pages/Announcements";
-import { AnnouncementNew } from "../modules/announcements/pages/New";
+import { NewAnnouncement } from "../modules/announcements/pages/NewAnnouncement";
+import { Announcement } from "../modules/announcements/pages/Announcement";
 
 export const routes = [
   {
@@ -12,33 +13,47 @@ export const routes = [
     exact: true,
     title: "logo",
     isMain: true,
+    removeRouteWhenLogged: false,
   },
   {
     path: "/announcements",
     component: <Announcements />,
     exact: true,
-    title: "Ogloszenia",
+    title: "Ogłoszenia",
     displayOnLeftSide: true,
+    removeRouteWhenLogged: false,
   },
   {
     path: "/announcements/new",
-    component: <AnnouncementNew />,
-    title: "Dodaj post",
-    displayOnLeftSide: true,
-  },
-  {
-    path: "/announcements/favorites",
-    component: <Favorites />,
-    title: "Ulubione",
+    component: <NewAnnouncement />,
+    title: "Dodaj ogłoszenie",
+    exact: true,
+    isLoggedIn: true,
     visibleWhenLogged: true,
     displayOnLeftSide: true,
+    removeRouteWhenLogged: false,
   },
-  ...authRoutes,
   {
     path: "/account",
     component: <Account />,
     title: "Moje konto",
     visibleWhenLogged: true,
     displayOnRightSide: true,
+    removeRouteWhenLogged: false,
+  },
+  {
+    path: "/announcements/favorites",
+    component: <Favorites />,
+    title: "Ulubione",
+    visibleWhenLogged: true,
+    displayOnRightSide: true,
+    removeRouteWhenLogged: false,
+  },
+  ...authRoutes,
+  {
+    path: "/announcements/:id",
+    component: <Announcement />,
+    title: "Ogłoszenie",
+    visibleWhenLogged: true,
   },
 ];

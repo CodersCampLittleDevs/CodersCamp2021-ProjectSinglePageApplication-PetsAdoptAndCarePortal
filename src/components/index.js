@@ -10,3 +10,5 @@ export { SearchForm } from "./SearchForm/SearchForm";
 export { Select } from "./Select/Select";
 export { ErrorBox } from "./ErrorBox/ErrorBox";
 export { Section } from "./Section/Section";
+export { PageTitle } from "./PageTitle/PageTitle";
+export { Box } from "./Box/Box";

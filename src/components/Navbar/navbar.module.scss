@@ -1,6 +1,33 @@
+@import "../../variables.scss";
+
 .navbar {
+  & .navbar__Link {
+    color: $primary-color;
+
+    &:hover {
+      color: $yellow-color;
+    }
+  }
+
+  & .link__active {
+    color: $orange-color;
+  }
   &__logo {
     width: 90px;
+  }
+}
+.button {
+  font-family: Ebrima;
+  color: $primary-color;
+  background: none;
+  box-shadow: none;
+  padding: 0;
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 40px;
+
+  &:hover {
+    color: $yellow-color;
   }
 }
 .hamburger .line {
@@ -81,6 +108,7 @@
     width: 100%;
     position: sticky;
     top: 0;
+    left: 0;
     display: flex;
     justify-content: space-between;
     z-index: 1;
@@ -93,6 +121,11 @@
       z-index: 9999;
       margin: 10px 10px;
     }
+  }
+
+  .button {
+    margin: 0;
+    font-size: 25px;
   }
 
   .menu {
@@ -122,7 +155,9 @@
       margin-top: -30px;
       display: flex;
       align-items: center;
-      height: 10%;
+      justify-content: space-between;
+      flex-direction: column;
+      height: 30%;
     }
 
     &.active {
@@ -152,7 +187,7 @@
     display: flex;
     height: 120px;
     z-index: 1;
-
+    margin-bottom: 4rem;
     &__logo {
       margin: 10px 20px;
     }
@@ -169,17 +204,14 @@
   .menu__left {
     display: flex;
     align-items: center;
-    width: 50%;
     margin: 10px 10px;
   }
 
   .menu__right {
     display: flex;
-    width: 30%;
     align-items: center;
     justify-content: flex-start;
-    margin: 10px 20px;
-    flex-direction: row-reverse;
+    margin: 10px 30px;
   }
 
   .navbar__Link {
@@ -188,7 +220,7 @@
     font-weight: bold;
     font-size: 25px;
     margin-left: 40px;
-
+    white-space: nowrap;
     &:hover {
       color: #800080;
     }
@@ -198,4 +230,7 @@
     display: none;
     z-index: 0;
   }
+}
+.activeLink {
+  color: #385cb0 !important;
 }

@@ -73,7 +73,6 @@ export const SearchForm = ({ filterAnnouncements, setFilters }) => {
         <label htmlFor={CATEGORIES.title} className={styles.label}>
           <Select
             {...register(CATEGORIES.title, { required: true })}
-            required
             list={CATEGORIES}
           />
           {errors[CATEGORIES.title] && (
@@ -103,9 +102,10 @@ export const SearchForm = ({ filterAnnouncements, setFilters }) => {
 
 SearchForm.propTypes = {
   filterAnnouncements: PropTypes.func,
-  setFilters: PropTypes.func.isRequired,
+  setFilters: PropTypes.func,
 };
 
 SearchForm.defaultProps = {
   filterAnnouncements: () => {},
+  setFilters: undefined,
 };

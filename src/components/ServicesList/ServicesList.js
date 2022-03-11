@@ -5,7 +5,12 @@ export const ServicesList = () => {
   return (
     <div className={styles.services_section}>
       {SERVICES.map((service) => (
-        <img className={styles.service_item} src={service} alt="usługa" />
+        <img
+          className={styles.service_item}
+          key={service}
+          src={service}
+          alt="usługa"
+        />
       ))}
     </div>
   );
