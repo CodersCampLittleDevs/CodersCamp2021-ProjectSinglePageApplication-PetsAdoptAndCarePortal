@@ -6,5 +6,9 @@ export const ErrorBox = ({ children }) => {
 };
 
 ErrorBox.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
+};
+
+ErrorBox.defaultProps = {
+  children: null,
 };

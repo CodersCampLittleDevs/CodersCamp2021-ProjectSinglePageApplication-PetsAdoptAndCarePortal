@@ -5,7 +5,7 @@ export const CATEGORIES = {
 };
 
 export const SERVICES = {
-  title: "Phrase",
+  title: "title",
   placeholder: "Szukaj...",
   items: [
     "strzyżenie",

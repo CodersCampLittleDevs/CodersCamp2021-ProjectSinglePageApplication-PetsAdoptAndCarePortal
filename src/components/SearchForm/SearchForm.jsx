@@ -1,17 +1,14 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { useHistory } from "react-router-dom";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { Select, ErrorBox, Checkbox, DataList, Button } from "..";
 import { SERVICES, CATEGORIES, CITIES, PETS } from "../../constants/options";
 import styles from "./search_form.module.scss";
 import searchButtonIcon from "../../assets/image/searchButton.png";
-import { createSearchParamsString } from "../../utils";
 
-export const SearchForm = ({ filterAnnouncements, setFilters }) => {
+export const SearchForm = ({ getAnnouncements }) => {
   const [filterState, setFilterState] = useState([]);
-  const history = useHistory();
   const {
     register,
     handleSubmit,
@@ -19,18 +16,7 @@ export const SearchForm = ({ filterAnnouncements, setFilters }) => {
   } = useForm();
 
   const onSubmit = (data) => {
-    const params = createSearchParamsString(data);
-    history.push({
-      pathname: "/announcements",
-      search: params,
-    });
-    const announcements = filterAnnouncements({
-      Phrase: data.Phrase,
-      Category: data.Category,
-      City: data.City,
-      Animals: data.Animals,
-    });
-    setFilters(announcements);
+    getAnnouncements(data);
   };
 
   const toggleBadgeActive = (name) => {
@@ -101,11 +87,9 @@ export const SearchForm = ({ filterAnnouncements, setFilters }) => {
 };
 
 SearchForm.propTypes = {
-  filterAnnouncements: PropTypes.func,
-  setFilters: PropTypes.func,
+  getAnnouncements: PropTypes.func,
 };
 
 SearchForm.defaultProps = {
-  filterAnnouncements: () => {},
-  setFilters: undefined,
+  getAnnouncements: () => {},
 };

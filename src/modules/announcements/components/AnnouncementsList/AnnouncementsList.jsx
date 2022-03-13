@@ -10,16 +10,16 @@ const AnnouncementListEmptyState = () => (
     wyszukiwań
   </h3>
 );
-export const AnnouncementsList = ({ filteredAnnouncements }) => {
-  if (!filteredAnnouncements.length) {
+export const AnnouncementsList = ({ filteredAnnouncements, isLoading }) => {
+  if (!filteredAnnouncements.length && !isLoading) {
     return <AnnouncementListEmptyState />;
   }
   return (
     <div className={styles.allAnnouncements}>
       <ul className={styles.list}>
         {filteredAnnouncements.map((announcement) => (
-          <li key={announcement.id}>
-            <Link to={`${ANNOUNCEMENT_ROUTE}${+announcement.id}`}>
+          <li key={announcement["_id"]}>
+            <Link to={`${ANNOUNCEMENT_ROUTE}${announcement["_id"]}`}>
               <div className={styles.singleAnnouncement}>
                 <h3 className={styles.name}>
                   {announcement.company
@@ -48,4 +48,5 @@ export const AnnouncementsList = ({ filteredAnnouncements }) => {
 };
 AnnouncementsList.propTypes = {
   filteredAnnouncements: PropTypes.arrayOf(PropTypes.object).isRequired,
+  isLoading: PropTypes.bool.isRequired,
 };

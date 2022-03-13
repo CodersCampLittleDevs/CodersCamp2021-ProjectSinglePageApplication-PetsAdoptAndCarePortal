@@ -12,3 +12,4 @@ export { ErrorBox } from "./ErrorBox/ErrorBox";
 export { Section } from "./Section/Section";
 export { PageTitle } from "./PageTitle/PageTitle";
 export { Box } from "./Box/Box";
+export { LoadingSpinner } from "./LoadingSpinner/LoadingSpinner";

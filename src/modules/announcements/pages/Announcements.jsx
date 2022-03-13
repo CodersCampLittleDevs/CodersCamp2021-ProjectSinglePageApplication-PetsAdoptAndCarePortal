@@ -1,44 +1,43 @@
-import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
-import { SearchForm, PageTitle } from "../../../components";
-import { ANNOUNCEMENTS_LIST } from "../../../constants/announcements";
-import { filterAnnouncements } from "../../../utils";
+import { useEffect, useState, useCallback } from "react";
+import { SearchForm, PageTitle, LoadingSpinner } from "../../../components";
 import { AnnouncementsList } from "../components/AnnouncementsList/AnnouncementsList";
+import { useHttpClient } from "../../../hooks/httpHook";
+import { createSearchParamsString } from "../../../utils/createSearchParamString";
 
 export const Announcements = () => {
   const [filteredAnnouncements, setFilteredAnnouncements] = useState([]);
-  const { search } = useLocation();
+  const { isLoading, sendRequest } = useHttpClient();
 
-  const setFilters = (announcements) => {
-    setFilteredAnnouncements(announcements);
-  };
+  const getAnnouncements = useCallback(
+    async (data) => {
+      let queries = "";
+      if (data) {
+        queries = createSearchParamsString(data);
+      }
+      try {
+        const announcements = await sendRequest(
+          `http://localhost:8000/announcements?${queries}`,
+        );
+        setFilteredAnnouncements(announcements);
+      } catch (e) {
+        throw new Error(e);
+      }
+    },
+    [sendRequest],
+  );
   useEffect(() => {
-    if (search) {
-      const params = new URLSearchParams(search);
-      const Phrase = params.get("phrase");
-      const Category = params.get("category");
-      const City = params.get("city");
-      const Animals = params.getAll("animal");
-      const announcements = filterAnnouncements({
-        Phrase,
-        Category,
-        City,
-        Animals,
-      });
-      setFilters(announcements);
-    } else {
-      setFilters(ANNOUNCEMENTS_LIST);
-    }
-  }, [search]);
+    getAnnouncements();
+  }, [getAnnouncements]);
 
   return (
     <div>
       <PageTitle>Ogłoszenia</PageTitle>
-      <SearchForm
-        filterAnnouncements={filterAnnouncements}
-        setFilters={setFilters}
+      <SearchForm getAnnouncements={getAnnouncements} />
+      {isLoading && <LoadingSpinner />}
+      <AnnouncementsList
+        isLoading={isLoading}
+        filteredAnnouncements={filteredAnnouncements}
       />
-      <AnnouncementsList filteredAnnouncements={filteredAnnouncements} />
     </div>
   );
 };

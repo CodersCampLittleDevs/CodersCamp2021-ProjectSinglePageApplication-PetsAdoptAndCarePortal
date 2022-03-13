@@ -5,10 +5,11 @@ import * as yup from "yup";
 import clsx from "clsx";
 import { Button, Input, ErrorBox, PageTitle } from "../../../../../components";
 import styles from "../form.module.scss";
-import { DUMMY_LOGINS } from "../../../../../mock/auth";
 import { clearFormAfterSubmit } from "../../../../../utils/clearFormAfterSubmit";
+import { useHttpClient } from "../../../../../hooks/httpHook";
 
 export const RegisterForm = () => {
+  const { sendRequest } = useHttpClient();
   const schema = yup.object().shape({
     email: yup
       .string()
@@ -56,18 +57,27 @@ export const RegisterForm = () => {
     setIsPrivateMode((prevState) => !prevState);
   };
 
-  const formSubmit = (data) => {
-    const { city, email, password, phone, username, business, NIP } = data;
-    DUMMY_LOGINS.push({
-      city,
-      email,
-      password,
-      phone,
-      username,
-      business,
-      NIP,
-    });
-    clearFormAfterSubmit(getValues, setValue);
+  const formSubmit = async (data) => {
+    const { city, email, password, phone, username } = data;
+    try {
+      await sendRequest(
+        "http://localhost:8000/auth/register",
+        "POST",
+        JSON.stringify({
+          email,
+          password,
+          username,
+          city,
+          phone,
+        }),
+        {
+          "Content-Type": "application/json",
+        },
+      );
+    } catch (error) {
+      console.log(error);
+    }
+    console.log(clearFormAfterSubmit(getValues, setValue));
   };
 
   return (
